@@ -4,12 +4,13 @@
  * Сейчас: динамический import(). Phase 2: заменить на fetch('/api/questions/...')
  */
 
+import topicsData from '../data/topics.json';
 import { shuffle } from '../utils/shuffle.js';
 import { getErrors } from './errorsService.js';
 
 const SESSION_SIZE = 30;
 
-const topicsCache = import.meta.glob('../data/topics.json');
+
 const questionsCache = import.meta.glob('../data/questions/topic_*.json');
 
 /**
@@ -72,10 +73,5 @@ export async function loadTopicErrorQuestions(topicId) {
  * @returns {Promise<Array>}
  */
 export async function loadTopics() {
-  const path = '../data/topics.json';
-  if (!topicsCache[path]) {
-    throw new Error('Метаданные тем не найдены');
-  }
-  const module = await topicsCache[path]();
-  return module.default || module;
+  return topicsData;
 }

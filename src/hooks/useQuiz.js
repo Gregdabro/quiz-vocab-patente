@@ -118,7 +118,10 @@ export default function useQuiz(topicId) {
     setResults(newResults);
 
     // Проверяем завершение сессии
-    if (newResults.length === questions.length) {
+    if (newResults.length === questions.length && !isSavedRef.current) {
+      const correctCount = newResults.filter((r) => r.correct).length;
+      saveTestResult(topicId, correctCount, questions.length);
+      isSavedRef.current = true;
       setIsFinished(true);
     }
 
