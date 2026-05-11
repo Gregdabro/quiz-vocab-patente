@@ -32,10 +32,14 @@ const StatsPage = () => {
     const totalCorrect = topics.reduce((sum, topic) => {
       return sum + (topic.progress?.bestScore || 0);
     }, 0);
+    const totalQuestions = topics.reduce((sum, topic) => {
+      return sum + (topic.progress?.total || 0);
+    }, 0);
 
     return {
       completedTopics,
       totalCorrect,
+      totalQuestions,
     };
   }, [topics]);
 
@@ -105,7 +109,7 @@ const StatsPage = () => {
                 {stats.totalCorrect}
                 <span className="stats-summary__card-total">
                   {' '}
-                  / {stats.completedTopics * 30}
+                  / {stats.totalQuestions}
                 </span>
               </div>
             </div>

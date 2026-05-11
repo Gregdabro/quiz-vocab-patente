@@ -59,11 +59,11 @@ const HomePage = () => {
               
               <div className="topic-progress">
                 <div className="topic-progress__stats">
-                  <span>Прогресс: {topic.progress?.correct || 0} / {topic.questions_count}</span>
-                  <span>{Math.round((topic.progress?.correct || 0) / topic.questions_count * 100)}%</span>
+                  <span>Прогресс: {topic.progress?.bestScore || 0} / 30</span>
+                  <span>{Math.round((topic.progress?.bestScore || 0) / 30 * 100)}%</span>
                 </div>
                 <ProgressBar 
-                  progress={(topic.progress?.correct || 0) / topic.questions_count * 100} 
+                  progress={(topic.progress?.bestScore || 0) / 30 * 100} 
                 />
               </div>
             </Card>
