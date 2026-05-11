@@ -8,7 +8,6 @@ export default defineConfig({
     react(),
     legacy({
       targets: ['ios_saf >= 12', 'safari >= 12', 'chrome >= 92'],
-      additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
     }),
   ],
   build: {
