@@ -1,0 +1,13 @@
+/**
+ * Quiz Patente — Главная точка входа стилей
+ */
+
+@import './styles/global.css';
+@import './styles/layout.css';
+@import './styles/components.css';
+@import './styles/pages.css';
+
+/* Контейнер приложения */
+#root {
+  min-height: 100vh;
+}
