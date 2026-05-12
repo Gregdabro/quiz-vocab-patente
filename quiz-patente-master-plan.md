@@ -598,8 +598,8 @@ DictionaryPage.jsx    ← справочник слов темы + запуск 
 ### 🔲 Фаза 3 — Vocab-first система (React, frontend)
 
 **3.1 Сервисы**
-- [ ] `src/services/vocabService.js` — Leitner-4, `qp_vocab` localStorage
-- [ ] `src/services/blockService.js` — загрузка блоков, прогресс по блокам
+- [x] `src/services/vocabService.js` — Leitner-4, `qp_vocab` localStorage
+- [x] `src/services/blockService.js` — загрузка блоков, прогресс по блокам
 
 **3.2 Хуки**
 - [ ] `src/hooks/useVocab.js` — vocab-сессия (текущая карточка, оценка, прогресс)
