@@ -1,0 +1,2812 @@
+[
+  {
+    "id": "v001",
+    "word": "striscia bianca",
+    "lemma": "striscia bianco",
+    "translation_ru": null,
+    "frequency": 48,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "505.jpg",
+      "512.jpg",
+      "513.jpg",
+      "537.jpg",
+      "543.jpg",
+      "546.jpg",
+      "553.jpg",
+      "563.jpg"
+    ],
+    "example_question_id": 2386,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v002",
+    "word": "doppio senso",
+    "lemma": "doppio senso",
+    "translation_ru": null,
+    "frequency": 24,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "564.jpg"
+    ],
+    "example_question_id": 2388,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v003",
+    "word": "striscia continua",
+    "lemma": "striscia continuare",
+    "translation_ru": null,
+    "frequency": 20,
+    "sign_images": [
+      "501.jpg",
+      "509.jpg",
+      "515.jpg",
+      "553.jpg",
+      "563.jpg",
+      "567.jpg",
+      "568.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2403,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v004",
+    "word": "segnaletica indicata",
+    "lemma": "segnaletico indicare",
+    "translation_ru": null,
+    "frequency": 17,
+    "sign_images": [
+      "502.jpg",
+      "531.jpg",
+      "564.jpg"
+    ],
+    "example_question_id": 2500,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v005",
+    "word": "bianca discontinua",
+    "lemma": "bianco discontinuo",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "502.jpg",
+      "505.jpg",
+      "512.jpg",
+      "513.jpg",
+      "537.jpg"
+    ],
+    "example_question_id": 2386,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 2
+  },
+  {
+    "id": "v006",
+    "word": "senso circolazione",
+    "lemma": "senso circolazione",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "564.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2403,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v007",
+    "word": "rispetto veicolo",
+    "lemma": "rispetto veicolo",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2439,
+    "semantic_group": "veicoli",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v008",
+    "word": "veicolo procede",
+    "lemma": "veicolo procedere",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2439,
+    "semantic_group": "veicoli",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v009",
+    "word": "procede senso",
+    "lemma": "procedere senso",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2439,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v010",
+    "word": "senso freccia",
+    "lemma": "senso freccia",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2439,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v011",
+    "word": "freccia striscia",
+    "lemma": "freccia striscia",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "547.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2439,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v012",
+    "word": "senso unico",
+    "lemma": "senso unico",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "502.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2443,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v013",
+    "word": "circolazione segnaletica",
+    "lemma": "circolazione segnaletico",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "502.jpg",
+      "564.jpg"
+    ],
+    "example_question_id": 2531,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v014",
+    "word": "strisce guida",
+    "lemma": "striscia guida",
+    "translation_ru": null,
+    "frequency": 14,
+    "sign_images": [
+      "506.jpg",
+      "543.jpg",
+      "596.jpg"
+    ],
+    "example_question_id": 2413,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v015",
+    "word": "bordo marciapiede",
+    "lemma": "bordo marciapiede",
+    "translation_ru": null,
+    "frequency": 14,
+    "sign_images": [
+      "670.jpg"
+    ],
+    "example_question_id": 2457,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v016",
+    "word": "frecce direzionali",
+    "lemma": "freccia direzionale",
+    "translation_ru": null,
+    "frequency": 13,
+    "sign_images": [
+      "547.jpg"
+    ],
+    "example_question_id": 2420,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v017",
+    "word": "bianca continua",
+    "lemma": "bianco continuare",
+    "translation_ru": null,
+    "frequency": 13,
+    "sign_images": [
+      "501.jpg",
+      "553.jpg",
+      "563.jpg"
+    ],
+    "example_question_id": 2587,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v018",
+    "word": "svoltare sinistra",
+    "lemma": "svoltare sinistra",
+    "translation_ru": null,
+    "frequency": 12,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg",
+      "595.jpg",
+      "596.jpg"
+    ],
+    "example_question_id": 2407,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v019",
+    "word": "doppia striscia",
+    "lemma": "doppio striscia",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "564.jpg"
+    ],
+    "example_question_id": 2399,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v020",
+    "word": "unico circolazione",
+    "lemma": "unico circolazione",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "502.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2443,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v021",
+    "word": "rappresentata consente",
+    "lemma": "rappresentare consentire",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "564.jpg",
+      "565.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2489,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v022",
+    "word": "consente conducente",
+    "lemma": "consentire conducente",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "509.jpg",
+      "517.jpg",
+      "547.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2489,
+    "semantic_group": "veicoli",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v023",
+    "word": "pavimentazione scritta",
+    "lemma": "pavimentazione scritto",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "563.jpg"
+    ],
+    "example_question_id": 2519,
+    "semantic_group": "geometria_strada",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 2
+  },
+  {
+    "id": "v024",
+    "word": "striscia mezzo",
+    "lemma": "striscia mezzo",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2398,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v025",
+    "word": "striscia discontinua",
+    "lemma": "striscia discontinuo",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "502.jpg",
+      "505.jpg",
+      "512.jpg",
+      "513.jpg",
+      "537.jpg",
+      "566.jpg"
+    ],
+    "example_question_id": 2386,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v026",
+    "word": "striscia",
+    "lemma": "striscia",
+    "translation_ru": null,
+    "frequency": 141,
+    "sign_images": [
+      "445.jpg",
+      "501.jpg",
+      "502.jpg",
+      "505.jpg",
+      "506.jpg",
+      "509.jpg",
+      "512.jpg",
+      "513.jpg",
+      "515.jpg",
+      "534.jpg",
+      "537.jpg",
+      "543.jpg",
+      "545.jpg",
+      "546.jpg",
+      "547.jpg",
+      "553.jpg",
+      "563.jpg",
+      "564.jpg",
+      "565.jpg",
+      "566.jpg",
+      "567.jpg",
+      "568.jpg",
+      "574.jpg",
+      "595.jpg",
+      "596.jpg"
+    ],
+    "example_question_id": 2386,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "autobus",
+      "autovettura",
+      "azzurre"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v027",
+    "word": "senso",
+    "lemma": "senso",
+    "translation_ru": null,
+    "frequency": 64,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "564.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2388,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v028",
+    "word": "volta",
+    "lemma": "volta",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "567.jpg"
+    ],
+    "example_question_id": 2444,
+    "semantic_group": "generale",
+    "synonyms": [
+      "circolazione",
+      "consentire",
+      "continuare",
+      "curvo"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v029",
+    "word": "autovettura",
+    "lemma": "autovettura",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "546.jpg"
+    ],
+    "example_question_id": 2471,
+    "semantic_group": "veicoli",
+    "synonyms": [
+      "autobus",
+      "circolare",
+      "consentire",
+      "dell'area"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v030",
+    "word": "sole",
+    "lemma": "sole",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "501.jpg"
+    ],
+    "example_question_id": 2571,
+    "semantic_group": "generale",
+    "synonyms": [
+      "caso",
+      "circolazione",
+      "consentire",
+      "continuare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v031",
+    "word": "ruote",
+    "lemma": "ruote",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "501.jpg"
+    ],
+    "example_question_id": 2571,
+    "semantic_group": "generale",
+    "synonyms": [
+      "caso",
+      "circolazione",
+      "consentire",
+      "continuare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v032",
+    "word": "segnala",
+    "lemma": "segnala",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "531.jpg"
+    ],
+    "example_question_id": 2617,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "barriera",
+      "conducente"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v033",
+    "word": "corsia",
+    "lemma": "corsia",
+    "translation_ru": null,
+    "frequency": 62,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "537.jpg",
+      "547.jpg",
+      "553.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2387,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v034",
+    "word": "freccia",
+    "lemma": "freccia",
+    "translation_ru": null,
+    "frequency": 31,
+    "sign_images": [
+      "547.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2420,
+    "semantic_group": "generale",
+    "synonyms": [
+      "circolazione",
+      "conducente",
+      "consentire",
+      "continuare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v035",
+    "word": "doppio",
+    "lemma": "doppio",
+    "translation_ru": null,
+    "frequency": 35,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "564.jpg"
+    ],
+    "example_question_id": 2388,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v036",
+    "word": "esso",
+    "lemma": "esso",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg"
+    ],
+    "example_question_id": 2392,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v037",
+    "word": "pistare",
+    "lemma": "pistare",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg",
+      "505.jpg"
+    ],
+    "example_question_id": 2393,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v038",
+    "word": "viaggiare",
+    "lemma": "viaggiare",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg"
+    ],
+    "example_question_id": 2409,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v039",
+    "word": "file",
+    "lemma": "file",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg"
+    ],
+    "example_question_id": 2409,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v040",
+    "word": "parallele",
+    "lemma": "parallele",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg"
+    ],
+    "example_question_id": 2409,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v041",
+    "word": "venire",
+    "lemma": "venire",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "563.jpg",
+      "566.jpg"
+    ],
+    "example_question_id": 2452,
+    "semantic_group": "generale",
+    "synonyms": [
+      "bisognare",
+      "circolazione",
+      "conducente",
+      "consentire"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v042",
+    "word": "metro",
+    "lemma": "metro",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "531.jpg",
+      "546.jpg"
+    ],
+    "example_question_id": 2472,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "autovettura",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v043",
+    "word": "carico",
+    "lemma": "carico",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "445.jpg",
+      "528.jpg"
+    ],
+    "example_question_id": 2603,
+    "semantic_group": "generale",
+    "synonyms": [
+      "consentire",
+      "giallo",
+      "lasciare",
+      "parcheggio"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v044",
+    "word": "procedere",
+    "lemma": "procedere",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2439,
+    "semantic_group": "generale",
+    "synonyms": [
+      "circolazione",
+      "consentire",
+      "continuare",
+      "curvo"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v045",
+    "word": "emergenza",
+    "lemma": "emergenza",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "513.jpg",
+      "553.jpg"
+    ],
+    "example_question_id": 2614,
+    "semantic_group": "generale",
+    "synonyms": [
+      "caso",
+      "continuare",
+      "corsia",
+      "laterale"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v046",
+    "word": "condizione",
+    "lemma": "condizione",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg"
+    ],
+    "example_question_id": 2390,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v047",
+    "word": "purché",
+    "lemma": "purché",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "501.jpg"
+    ],
+    "example_question_id": 2398,
+    "semantic_group": "generale",
+    "synonyms": [
+      "caso",
+      "circolazione",
+      "consentire",
+      "continuare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v048",
+    "word": "seguire",
+    "lemma": "seguire",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "547.jpg"
+    ],
+    "example_question_id": 2423,
+    "semantic_group": "generale",
+    "synonyms": [
+      "conducente",
+      "consentire",
+      "corsia",
+      "freccia"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v049",
+    "word": "subito",
+    "lemma": "subito",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "566.jpg"
+    ],
+    "example_question_id": 2448,
+    "semantic_group": "generale",
+    "synonyms": [
+      "circolazione",
+      "consentire",
+      "curvo",
+      "discesa"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v050",
+    "word": "sorpassare",
+    "lemma": "sorpassare",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "502.jpg"
+    ],
+    "example_question_id": 2389,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v051",
+    "word": "continuare",
+    "lemma": "continuare",
+    "translation_ru": null,
+    "frequency": 41,
+    "sign_images": [
+      "501.jpg",
+      "509.jpg",
+      "515.jpg",
+      "553.jpg",
+      "563.jpg",
+      "567.jpg",
+      "568.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2403,
+    "semantic_group": "generale",
+    "synonyms": [
+      "bisognare",
+      "bordo",
+      "caso",
+      "circolare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v052",
+    "word": "stare",
+    "lemma": "stare",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg"
+    ],
+    "example_question_id": 2392,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v053",
+    "word": "rappresentare",
+    "lemma": "rappresentare",
+    "translation_ru": null,
+    "frequency": 34,
+    "sign_images": [
+      "531.jpg",
+      "535.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg",
+      "595.jpg"
+    ],
+    "example_question_id": 2476,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "azzurre",
+      "barriera"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v054",
+    "word": "veicolo",
+    "lemma": "veicolo",
+    "translation_ru": null,
+    "frequency": 48,
+    "sign_images": [
+      "445.jpg",
+      "517.jpg",
+      "528.jpg",
+      "543.jpg",
+      "553.jpg",
+      "563.jpg",
+      "566.jpg",
+      "567.jpg",
+      "574.jpg",
+      "595.jpg",
+      "596.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2415,
+    "semantic_group": "veicoli",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "attraversare",
+      "autobus"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v055",
+    "word": "spazio",
+    "lemma": "spazio",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "546.jpg"
+    ],
+    "example_question_id": 2466,
+    "semantic_group": "generale",
+    "synonyms": [
+      "autobus",
+      "autovettura",
+      "circolare",
+      "consentire"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v056",
+    "word": "barriera",
+    "lemma": "barriera",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "531.jpg"
+    ],
+    "example_question_id": 2622,
+    "semantic_group": "ferroviario",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "conducente",
+      "indicare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v057",
+    "word": "bordo",
+    "lemma": "bordo",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "509.jpg",
+      "512.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2408,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "circolare",
+      "circolazione"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v058",
+    "word": "unico",
+    "lemma": "unico",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "502.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2443,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v059",
+    "word": "indicare",
+    "lemma": "indicare",
+    "translation_ru": null,
+    "frequency": 29,
+    "sign_images": [
+      "502.jpg",
+      "531.jpg",
+      "547.jpg",
+      "564.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2421,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "autobus",
+      "barriera"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v060",
+    "word": "consentire",
+    "lemma": "consentire",
+    "translation_ru": null,
+    "frequency": 47,
+    "sign_images": [
+      "445.jpg",
+      "501.jpg",
+      "502.jpg",
+      "506.jpg",
+      "509.jpg",
+      "517.jpg",
+      "546.jpg",
+      "547.jpg",
+      "564.jpg",
+      "565.jpg",
+      "566.jpg",
+      "567.jpg",
+      "574.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2389,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "attraversare",
+      "autobus"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v061",
+    "word": "stradale",
+    "lemma": "stradale",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "502.jpg",
+      "563.jpg"
+    ],
+    "example_question_id": 2395,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v062",
+    "word": "strada",
+    "lemma": "strada",
+    "translation_ru": null,
+    "frequency": 45,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "512.jpg",
+      "517.jpg",
+      "535.jpg",
+      "543.jpg",
+      "547.jpg",
+      "566.jpg",
+      "567.jpg",
+      "595.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2388,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "attraversare",
+      "autobus"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v063",
+    "word": "lungo",
+    "lemma": "lungo",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "670.jpg"
+    ],
+    "example_question_id": 2396,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "bordo",
+      "consentire"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v064",
+    "word": "regolare",
+    "lemma": "regolare",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "531.jpg",
+      "563.jpg"
+    ],
+    "example_question_id": 2549,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "barriera",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v065",
+    "word": "pedone",
+    "lemma": "pedone",
+    "translation_ru": null,
+    "frequency": 8,
+    "sign_images": [
+      "517.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2463,
+    "semantic_group": "veicoli",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "attraversare",
+      "autobus"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v066",
+    "word": "guida",
+    "lemma": "guida",
+    "translation_ru": null,
+    "frequency": 15,
+    "sign_images": [
+      "506.jpg",
+      "543.jpg",
+      "596.jpg"
+    ],
+    "example_question_id": 2413,
+    "semantic_group": "generale",
+    "synonyms": [
+      "consentire",
+      "dovere",
+      "lasciare",
+      "precedenza"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v067",
+    "word": "mezzo",
+    "lemma": "mezzo",
+    "translation_ru": null,
+    "frequency": 24,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2398,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v068",
+    "word": "circolazione",
+    "lemma": "circolazione",
+    "translation_ru": null,
+    "frequency": 27,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "564.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2403,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v069",
+    "word": "bisognare",
+    "lemma": "bisognare",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "502.jpg",
+      "563.jpg"
+    ],
+    "example_question_id": 2539,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "caso",
+      "chiodio",
+      "circolare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v070",
+    "word": "ora",
+    "lemma": "ora",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "546.jpg",
+      "553.jpg"
+    ],
+    "example_question_id": 2475,
+    "semantic_group": "generale",
+    "synonyms": [
+      "autobus",
+      "autovettura",
+      "caso",
+      "circolare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v071",
+    "word": "discesa",
+    "lemma": "discesa",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2444,
+    "semantic_group": "generale",
+    "synonyms": [
+      "circolazione",
+      "consentire",
+      "continuare",
+      "curvo"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v072",
+    "word": "divieto",
+    "lemma": "divieto",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "563.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2457,
+    "semantic_group": "segnaletica",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "bisognare",
+      "bordo"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v073",
+    "word": "posto",
+    "lemma": "posto",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "535.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2458,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "bordo",
+      "consentire"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v074",
+    "word": "attenzione",
+    "lemma": "attenzione",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "531.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2463,
+    "semantic_group": "sicurezza",
+    "synonyms": [
+      "autobus",
+      "barriera",
+      "bordo",
+      "conducente"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v075",
+    "word": "fuori",
+    "lemma": "fuori",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg",
+      "517.jpg"
+    ],
+    "example_question_id": 2540,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "bisognare",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v076",
+    "word": "passo",
+    "lemma": "passo",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "505.jpg",
+      "517.jpg"
+    ],
+    "example_question_id": 2548,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "ciclista",
+      "conducente"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v077",
+    "word": "porre",
+    "lemma": "porre",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg",
+      "517.jpg"
+    ],
+    "example_question_id": 2576,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "bisognare",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v078",
+    "word": "traffico",
+    "lemma": "traffico",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "502.jpg",
+      "517.jpg",
+      "543.jpg",
+      "553.jpg",
+      "595.jpg"
+    ],
+    "example_question_id": 2419,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "azzurre",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v079",
+    "word": "parcheggio",
+    "lemma": "parcheggio",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "445.jpg",
+      "509.jpg",
+      "531.jpg",
+      "547.jpg",
+      "553.jpg"
+    ],
+    "example_question_id": 2411,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "barriera",
+      "bordo"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v080",
+    "word": "zona",
+    "lemma": "zona",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "546.jpg",
+      "553.jpg",
+      "595.jpg"
+    ],
+    "example_question_id": 2437,
+    "semantic_group": "generale",
+    "synonyms": [
+      "autobus",
+      "autovettura",
+      "azzurre",
+      "caso"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v081",
+    "word": "qualsiasi",
+    "lemma": "qualsiasi",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "502.jpg",
+      "595.jpg",
+      "596.jpg"
+    ],
+    "example_question_id": 2479,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "azzurre",
+      "bisognare",
+      "caso"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v082",
+    "word": "circolare",
+    "lemma": "circolare",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg",
+      "546.jpg",
+      "595.jpg"
+    ],
+    "example_question_id": 2392,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "autobus",
+      "autovettura",
+      "azzurre"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v083",
+    "word": "vicinanza",
+    "lemma": "vicinanza",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "531.jpg",
+      "563.jpg"
+    ],
+    "example_question_id": 2394,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "autobus",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v084",
+    "word": "pubblico",
+    "lemma": "pubblico",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "531.jpg",
+      "546.jpg"
+    ],
+    "example_question_id": 2465,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "autovettura",
+      "barriera"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v085",
+    "word": "ciclista",
+    "lemma": "ciclista",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "517.jpg"
+    ],
+    "example_question_id": 2528,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "conducente",
+      "consentire"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v086",
+    "word": "semaforo",
+    "lemma": "semaforo",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "563.jpg"
+    ],
+    "example_question_id": 2549,
+    "semantic_group": "generale",
+    "synonyms": [
+      "bisognare",
+      "conducente",
+      "continuare",
+      "divieto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v087",
+    "word": "segnaletico",
+    "lemma": "segnaletico",
+    "translation_ru": null,
+    "frequency": 62,
+    "sign_images": [
+      "502.jpg",
+      "517.jpg",
+      "531.jpg",
+      "546.jpg",
+      "553.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2395,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "attraversare",
+      "autobus"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v088",
+    "word": "servizio",
+    "lemma": "servizio",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "531.jpg",
+      "546.jpg"
+    ],
+    "example_question_id": 2465,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "autovettura",
+      "barriera"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v089",
+    "word": "laterale",
+    "lemma": "laterale",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "505.jpg",
+      "512.jpg",
+      "513.jpg",
+      "537.jpg"
+    ],
+    "example_question_id": 2609,
+    "semantic_group": "vento",
+    "synonyms": [
+      "bordo",
+      "caso",
+      "corsia",
+      "emergenza"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v090",
+    "word": "transito",
+    "lemma": "transito",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "517.jpg",
+      "528.jpg",
+      "553.jpg",
+      "595.jpg"
+    ],
+    "example_question_id": 2433,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "azzurre",
+      "carico"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v091",
+    "word": "sostituita",
+    "lemma": "sostituita",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg"
+    ],
+    "example_question_id": 2395,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v092",
+    "word": "chiodio",
+    "lemma": "chiodio",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "502.jpg"
+    ],
+    "example_question_id": 2395,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "circolare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 3
+  },
+  {
+    "id": "v093",
+    "word": "azzurre",
+    "lemma": "azzurre",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "595.jpg"
+    ],
+    "example_question_id": 2400,
+    "semantic_group": "generale",
+    "synonyms": [
+      "circolare",
+      "precedenza",
+      "presenza",
+      "qualsiasi"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 3
+  },
+  {
+    "id": "v094",
+    "word": "dell'area",
+    "lemma": "dell'area",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "546.jpg"
+    ],
+    "example_question_id": 2471,
+    "semantic_group": "generale",
+    "synonyms": [
+      "autobus",
+      "autovettura",
+      "circolare",
+      "consentire"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v095",
+    "word": "segnare",
+    "lemma": "segnare",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "546.jpg"
+    ],
+    "example_question_id": 2471,
+    "semantic_group": "generale",
+    "synonyms": [
+      "autobus",
+      "autovettura",
+      "circolare",
+      "consentire"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 3
+  },
+  {
+    "id": "v096",
+    "word": "luce",
+    "lemma": "luce",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "563.jpg"
+    ],
+    "example_question_id": 2552,
+    "semantic_group": "illuminazione",
+    "synonyms": [
+      "bisognare",
+      "conducente",
+      "continuare",
+      "divieto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v097",
+    "word": "rosso",
+    "lemma": "rosso",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "563.jpg"
+    ],
+    "example_question_id": 2552,
+    "semantic_group": "generale",
+    "synonyms": [
+      "bisognare",
+      "conducente",
+      "continuare",
+      "divieto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v098",
+    "word": "l'inizio",
+    "lemma": "l'inizio",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "563.jpg"
+    ],
+    "example_question_id": 2558,
+    "semantic_group": "generale",
+    "synonyms": [
+      "bisognare",
+      "conducente",
+      "continuare",
+      "divieto"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v099",
+    "word": "costituire",
+    "lemma": "costituire",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "509.jpg"
+    ],
+    "example_question_id": 2568,
+    "semantic_group": "generale",
+    "synonyms": [
+      "bordo",
+      "circolare",
+      "circolazione",
+      "conducente"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v100",
+    "word": "attraversare",
+    "lemma": "attraversare",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "517.jpg"
+    ],
+    "example_question_id": 2574,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "ciclista",
+      "conducente",
+      "consentire"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v101",
+    "word": "persona",
+    "lemma": "persona",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "445.jpg"
+    ],
+    "example_question_id": 2601,
+    "semantic_group": "generale",
+    "synonyms": [
+      "carico",
+      "consentire",
+      "giallo",
+      "lasciare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v102",
+    "word": "marcia",
+    "lemma": "marcia",
+    "translation_ru": null,
+    "frequency": 13,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2388,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v103",
+    "word": "occupare",
+    "lemma": "occupare",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "502.jpg",
+      "553.jpg"
+    ],
+    "example_question_id": 2389,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v104",
+    "word": "abitato",
+    "lemma": "abitato",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "502.jpg",
+      "517.jpg"
+    ],
+    "example_question_id": 2540,
+    "semantic_group": "strade",
+    "synonyms": [
+      "attraversare",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v105",
+    "word": "sosta",
+    "lemma": "sosta",
+    "translation_ru": null,
+    "frequency": 20,
+    "sign_images": [
+      "502.jpg",
+      "513.jpg",
+      "535.jpg",
+      "537.jpg",
+      "546.jpg",
+      "547.jpg",
+      "563.jpg",
+      "595.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2428,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "autobus",
+      "autovettura"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v106",
+    "word": "trovare",
+    "lemma": "trovare",
+    "translation_ru": null,
+    "frequency": 19,
+    "sign_images": [
+      "502.jpg",
+      "531.jpg",
+      "543.jpg",
+      "547.jpg",
+      "563.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2394,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "autobus",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v107",
+    "word": "riservato",
+    "lemma": "riservato",
+    "translation_ru": null,
+    "frequency": 9,
+    "sign_images": [
+      "445.jpg",
+      "502.jpg",
+      "517.jpg",
+      "546.jpg",
+      "553.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2470,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "autobus",
+      "autovettura"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v108",
+    "word": "segnalare",
+    "lemma": "segnalare",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "509.jpg",
+      "547.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2408,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "bordo",
+      "circolare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v109",
+    "word": "marciapiede",
+    "lemma": "marciapiede",
+    "translation_ru": null,
+    "frequency": 15,
+    "sign_images": [
+      "670.jpg"
+    ],
+    "example_question_id": 2457,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "bordo",
+      "consentire"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v110",
+    "word": "lasciare",
+    "lemma": "lasciare",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "445.jpg",
+      "543.jpg"
+    ],
+    "example_question_id": 2414,
+    "semantic_group": "generale",
+    "synonyms": [
+      "carico",
+      "consentire",
+      "dovere",
+      "giallo"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v111",
+    "word": "obbligare",
+    "lemma": "obbligare",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "517.jpg",
+      "547.jpg"
+    ],
+    "example_question_id": 2423,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attraversare",
+      "ciclista",
+      "conducente"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v112",
+    "word": "vicino",
+    "lemma": "vicino",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "531.jpg",
+      "547.jpg"
+    ],
+    "example_question_id": 2428,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "barriera",
+      "conducente"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v113",
+    "word": "sostare",
+    "lemma": "sostare",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "595.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2438,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "azzurre",
+      "bordo"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v114",
+    "word": "precedenza",
+    "lemma": "precedenza",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "517.jpg",
+      "563.jpg",
+      "595.jpg",
+      "596.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2480,
+    "semantic_group": "segnaletica",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "attraversare",
+      "autobus"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v115",
+    "word": "fermato",
+    "lemma": "fermato",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "546.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2460,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "autovettura",
+      "bordo"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v116",
+    "word": "dovere",
+    "lemma": "dovere",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "509.jpg",
+      "543.jpg",
+      "563.jpg",
+      "568.jpg"
+    ],
+    "example_question_id": 2410,
+    "semantic_group": "generale",
+    "synonyms": [
+      "bisognare",
+      "bordo",
+      "circolare",
+      "circolazione"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v117",
+    "word": "solo",
+    "lemma": "solo",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "502.jpg",
+      "513.jpg",
+      "531.jpg",
+      "553.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg",
+      "595.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2438,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "autobus",
+      "azzurre"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v118",
+    "word": "curvo",
+    "lemma": "curvo",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "502.jpg",
+      "566.jpg",
+      "567.jpg"
+    ],
+    "example_question_id": 2439,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "caso",
+      "chiodio"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v119",
+    "word": "svoltare",
+    "lemma": "svoltare",
+    "translation_ru": null,
+    "frequency": 21,
+    "sign_images": [
+      "502.jpg",
+      "509.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg",
+      "595.jpg",
+      "596.jpg"
+    ],
+    "example_question_id": 2407,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "azzurre",
+      "bisognare",
+      "bordo"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v120",
+    "word": "due",
+    "lemma": "due",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "509.jpg",
+      "566.jpg"
+    ],
+    "example_question_id": 2387,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "bordo",
+      "caso"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v121",
+    "word": "conducente",
+    "lemma": "conducente",
+    "translation_ru": null,
+    "frequency": 26,
+    "sign_images": [
+      "509.jpg",
+      "517.jpg",
+      "531.jpg",
+      "547.jpg",
+      "563.jpg",
+      "564.jpg",
+      "565.jpg",
+      "574.jpg"
+    ],
+    "example_question_id": 2410,
+    "semantic_group": "veicoli",
+    "synonyms": [
+      "abitato",
+      "attenzione",
+      "attraversare",
+      "autobus"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v122",
+    "word": "giallo",
+    "lemma": "giallo",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "445.jpg",
+      "545.jpg",
+      "546.jpg",
+      "547.jpg"
+    ],
+    "example_question_id": 2431,
+    "semantic_group": "generale",
+    "synonyms": [
+      "autobus",
+      "autovettura",
+      "carico",
+      "circolare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v123",
+    "word": "presenza",
+    "lemma": "presenza",
+    "translation_ru": null,
+    "frequency": 22,
+    "sign_images": [
+      "509.jpg",
+      "528.jpg",
+      "531.jpg",
+      "563.jpg",
+      "565.jpg",
+      "595.jpg",
+      "596.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2410,
+    "semantic_group": "generale",
+    "synonyms": [
+      "attenzione",
+      "autobus",
+      "azzurre",
+      "barriera"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v124",
+    "word": "autobus",
+    "lemma": "autobus",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "531.jpg",
+      "546.jpg",
+      "670.jpg"
+    ],
+    "example_question_id": 2461,
+    "semantic_group": "veicoli",
+    "synonyms": [
+      "attenzione",
+      "autovettura",
+      "barriera",
+      "bordo"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v125",
+    "word": "caso",
+    "lemma": "caso",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "501.jpg",
+      "502.jpg",
+      "513.jpg",
+      "553.jpg"
+    ],
+    "example_question_id": 2389,
+    "semantic_group": "generale",
+    "synonyms": [
+      "abitato",
+      "bisognare",
+      "chiodio",
+      "circolare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  }
+]

@@ -1,0 +1,2802 @@
+[
+  {
+    "id": "v001",
+    "word": "diritto precedenza",
+    "lemma": "diritto precedenza",
+    "translation_ru": null,
+    "frequency": 26,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2146,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v002",
+    "word": "precedenza veicoli",
+    "lemma": "precedenza veicolo",
+    "translation_ru": null,
+    "frequency": 21,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v003",
+    "word": "veicoli provenienti",
+    "lemma": "veicolo provenire",
+    "translation_ru": null,
+    "frequency": 21,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "veicoli",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v004",
+    "word": "presenza semaforo",
+    "lemma": "presenza semaforo",
+    "translation_ru": null,
+    "frequency": 19,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2171,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v005",
+    "word": "semaforo tre",
+    "lemma": "semaforo tre",
+    "translation_ru": null,
+    "frequency": 18,
+    "sign_images": [
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2198,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v006",
+    "word": "tre luci",
+    "lemma": "tre luce",
+    "translation_ru": null,
+    "frequency": 18,
+    "sign_images": [
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2198,
+    "semantic_group": "illuminazione",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v007",
+    "word": "precedenza semaforo",
+    "lemma": "precedenza semaforo",
+    "translation_ru": null,
+    "frequency": 17,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2249,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v008",
+    "word": "semaforo luce",
+    "lemma": "semaforo luce",
+    "translation_ru": null,
+    "frequency": 13,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2161,
+    "semantic_group": "illuminazione",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v009",
+    "word": "abbiamo precedenza",
+    "lemma": "avere precedenza",
+    "translation_ru": null,
+    "frequency": 13,
+    "sign_images": [
+      "045.jpg",
+      "050.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2249,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v010",
+    "word": "luci abbiamo",
+    "lemma": "luce avere",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2249,
+    "semantic_group": "illuminazione",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v011",
+    "word": "provenienti destra",
+    "lemma": "provenire destro",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v012",
+    "word": "destra sinistra",
+    "lemma": "destro sinistra",
+    "translation_ru": null,
+    "frequency": 9,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "045.jpg",
+      "047.jpg",
+      "049.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v013",
+    "word": "incrocio precedenza",
+    "lemma": "incrocio precedenza",
+    "translation_ru": null,
+    "frequency": 9,
+    "sign_images": [
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2191,
+    "semantic_group": "precedenza",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v014",
+    "word": "fermarsi precedenza",
+    "lemma": "fermare si precedenza",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "046.jpg",
+      "048.jpg"
+    ],
+    "example_question_id": 2164,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v015",
+    "word": "obbliga arrestarsi",
+    "lemma": "obbligare arrestare si",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "043.jpg",
+      "046.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2170,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v016",
+    "word": "precedenza destra",
+    "lemma": "precedenza destro",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v017",
+    "word": "dobbiamo precedenza",
+    "lemma": "dovere precedenza",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "042.jpg",
+      "045.jpg",
+      "046.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2189,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v018",
+    "word": "senso unico",
+    "lemma": "senso unico",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "045.jpg",
+      "046.jpg",
+      "051.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2233,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v019",
+    "word": "l'agente traffico",
+    "lemma": "l'agente traffico",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2251,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v020",
+    "word": "traffico ordina",
+    "lemma": "traffico ordinare",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2251,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 1
+  },
+  {
+    "id": "v021",
+    "word": "strada senza",
+    "lemma": "strada senza",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2269,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v022",
+    "word": "posto strada",
+    "lemma": "posto strada",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2146,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v023",
+    "word": "strada diritto",
+    "lemma": "strada diritto",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2146,
+    "semantic_group": "generale",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v024",
+    "word": "precedenza sensi",
+    "lemma": "precedenza senso",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "041.jpg",
+      "045.jpg",
+      "046.jpg",
+      "051.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2177,
+    "semantic_group": "segnaletica",
+    "synonyms": [],
+    "trap_word": false,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v025",
+    "word": "sensi unici",
+    "lemma": "senso unici",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "041.jpg",
+      "045.jpg"
+    ],
+    "example_question_id": 2177,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [],
+    "trap_word": true,
+    "is_phrase": true,
+    "level": 0
+  },
+  {
+    "id": "v026",
+    "word": "precedenza",
+    "lemma": "precedenza",
+    "translation_ru": null,
+    "frequency": 119,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2143,
+    "semantic_group": "segnaletica",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v027",
+    "word": "lungo",
+    "lemma": "lungo",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "040.jpg"
+    ],
+    "example_question_id": 2154,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "circolare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v028",
+    "word": "giorno",
+    "lemma": "giorno",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "045.jpg"
+    ],
+    "example_question_id": 2231,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v029",
+    "word": "servizio",
+    "lemma": "servizio",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "040.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2158,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v030",
+    "word": "l'obbligo",
+    "lemma": "l'obbligo",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "041.jpg",
+      "048.jpg"
+    ],
+    "example_question_id": 2177,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v031",
+    "word": "obbligatorio",
+    "lemma": "obbligatorio",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "040.jpg",
+      "042.jpg"
+    ],
+    "example_question_id": 2158,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v032",
+    "word": "arresto",
+    "lemma": "arresto",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "041.jpg"
+    ],
+    "example_question_id": 2168,
+    "semantic_group": "generale",
+    "synonyms": [
+      "alternare",
+      "arrestare si",
+      "centro",
+      "corrispondenza"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v033",
+    "word": "polizia",
+    "lemma": "polizia",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "041.jpg",
+      "043.jpg"
+    ],
+    "example_question_id": 2184,
+    "semantic_group": "generale",
+    "synonyms": [
+      "alternare",
+      "arrestare si",
+      "arresto",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v034",
+    "word": "barriera",
+    "lemma": "barriera",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "043.jpg",
+      "044.jpg"
+    ],
+    "example_question_id": 2208,
+    "semantic_group": "ferroviario",
+    "synonyms": [
+      "arrestare si",
+      "autostrada",
+      "bisognare",
+      "destro"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v035",
+    "word": "semaforo",
+    "lemma": "semaforo",
+    "translation_ru": null,
+    "frequency": 39,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2161,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v036",
+    "word": "divieto",
+    "lemma": "divieto",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "045.jpg",
+      "046.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2244,
+    "semantic_group": "segnaletica",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "avere"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v037",
+    "word": "luce",
+    "lemma": "luce",
+    "translation_ru": null,
+    "frequency": 33,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2161,
+    "semantic_group": "illuminazione",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v038",
+    "word": "tre",
+    "lemma": "tre",
+    "translation_ru": null,
+    "frequency": 18,
+    "sign_images": [
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2198,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v039",
+    "word": "pericolo",
+    "lemma": "pericolo",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "040.jpg",
+      "043.jpg",
+      "045.jpg"
+    ],
+    "example_question_id": 2157,
+    "semantic_group": "segnaletica",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v040",
+    "word": "senso",
+    "lemma": "senso",
+    "translation_ru": null,
+    "frequency": 26,
+    "sign_images": [
+      "041.jpg",
+      "045.jpg",
+      "046.jpg",
+      "051.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2177,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v041",
+    "word": "extraurbano",
+    "lemma": "extraurbano",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "040.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2148,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v042",
+    "word": "distanza",
+    "lemma": "distanza",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "040.jpg",
+      "042.jpg",
+      "044.jpg"
+    ],
+    "example_question_id": 2154,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v043",
+    "word": "doppio",
+    "lemma": "doppio",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "045.jpg",
+      "046.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2229,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "avere"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v044",
+    "word": "strada",
+    "lemma": "strada",
+    "translation_ru": null,
+    "frequency": 48,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2145,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v045",
+    "word": "avere",
+    "lemma": "avere",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "045.jpg",
+      "050.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2249,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "autostrada"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v046",
+    "word": "presenza",
+    "lemma": "presenza",
+    "translation_ru": null,
+    "frequency": 45,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2150,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v047",
+    "word": "carreggiare",
+    "lemma": "carreggiare",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "045.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2233,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "autostrada"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v048",
+    "word": "circolare",
+    "lemma": "circolare",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "040.jpg"
+    ],
+    "example_question_id": 2145,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "comportare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v049",
+    "word": "corrispondenza",
+    "lemma": "corrispondenza",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "041.jpg"
+    ],
+    "example_question_id": 2168,
+    "semantic_group": "generale",
+    "synonyms": [
+      "alternare",
+      "arrestare si",
+      "arresto",
+      "centro"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v050",
+    "word": "centro",
+    "lemma": "centro",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "041.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2174,
+    "semantic_group": "strade",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v051",
+    "word": "livello",
+    "lemma": "livello",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "041.jpg",
+      "044.jpg"
+    ],
+    "example_question_id": 2176,
+    "semantic_group": "generale",
+    "synonyms": [
+      "alternare",
+      "arrestare si",
+      "arresto",
+      "autostrada"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v052",
+    "word": "transito",
+    "lemma": "transito",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "041.jpg",
+      "045.jpg"
+    ],
+    "example_question_id": 2182,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v053",
+    "word": "necessario",
+    "lemma": "necessario",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "043.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2205,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "arrestare si",
+      "barriera",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v054",
+    "word": "esclusivamente",
+    "lemma": "esclusivamente",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "052.jpg"
+    ],
+    "example_question_id": 2350,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "arrestare si",
+      "bisognare",
+      "cautela"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v055",
+    "word": "percorrere",
+    "lemma": "percorrere",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "053.jpg"
+    ],
+    "example_question_id": 2367,
+    "semantic_group": "generale",
+    "synonyms": [
+      "avere",
+      "cautela",
+      "circolazione",
+      "diritto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v056",
+    "word": "fine",
+    "lemma": "fine",
+    "translation_ru": null,
+    "frequency": 13,
+    "sign_images": [
+      "040.jpg",
+      "045.jpg",
+      "046.jpg",
+      "050.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2163,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v057",
+    "word": "arrestare si",
+    "lemma": "arrestare si",
+    "translation_ru": null,
+    "frequency": 13,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "043.jpg",
+      "046.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2166,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arresto"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v058",
+    "word": "circolazione",
+    "lemma": "circolazione",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "045.jpg",
+      "046.jpg",
+      "051.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2230,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v059",
+    "word": "svolgere",
+    "lemma": "svolgere",
+    "translation_ru": null,
+    "frequency": 8,
+    "sign_images": [
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2288,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "autostrada",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v060",
+    "word": "occorrere",
+    "lemma": "occorrere",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "040.jpg",
+      "043.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2150,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v061",
+    "word": "maggiore",
+    "lemma": "maggiore",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "040.jpg",
+      "044.jpg",
+      "046.jpg"
+    ],
+    "example_question_id": 2154,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v062",
+    "word": "particolare",
+    "lemma": "particolare",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "041.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2175,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v063",
+    "word": "consentire",
+    "lemma": "consentire",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "045.jpg",
+      "050.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2242,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "autostrada"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v064",
+    "word": "stradale",
+    "lemma": "stradale",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "048.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2303,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v065",
+    "word": "solo",
+    "lemma": "solo",
+    "translation_ru": null,
+    "frequency": 10,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "045.jpg"
+    ],
+    "example_question_id": 2156,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v066",
+    "word": "procedere",
+    "lemma": "procedere",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "044.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2214,
+    "semantic_group": "generale",
+    "synonyms": [
+      "autostrada",
+      "avere",
+      "barriera",
+      "cautela"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v067",
+    "word": "rosso",
+    "lemma": "rosso",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2251,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v068",
+    "word": "conducente",
+    "lemma": "conducente",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "046.jpg",
+      "048.jpg"
+    ],
+    "example_question_id": 2258,
+    "semantic_group": "veicoli",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v069",
+    "word": "potere",
+    "lemma": "potere",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "051.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2333,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "autostrada",
+      "avere",
+      "carreggiare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v070",
+    "word": "opposto",
+    "lemma": "opposto",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2224,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v071",
+    "word": "venire",
+    "lemma": "venire",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "040.jpg",
+      "044.jpg",
+      "047.jpg",
+      "050.jpg"
+    ],
+    "example_question_id": 2146,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "avere"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v072",
+    "word": "metro",
+    "lemma": "metro",
+    "translation_ru": null,
+    "frequency": 14,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "047.jpg",
+      "050.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2153,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v073",
+    "word": "obbligare",
+    "lemma": "obbligare",
+    "translation_ru": null,
+    "frequency": 14,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "043.jpg",
+      "045.jpg",
+      "046.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v074",
+    "word": "posto",
+    "lemma": "posto",
+    "translation_ru": null,
+    "frequency": 25,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2146,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v075",
+    "word": "statale",
+    "lemma": "statale",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "052.jpg"
+    ],
+    "example_question_id": 2343,
+    "semantic_group": "strade",
+    "synonyms": [
+      "all'inizio",
+      "arrestare si",
+      "bisognare",
+      "cautela"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v076",
+    "word": "trovare",
+    "lemma": "trovare",
+    "translation_ru": null,
+    "frequency": 16,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2147,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v077",
+    "word": "autostrada",
+    "lemma": "autostrada",
+    "translation_ru": null,
+    "frequency": 12,
+    "sign_images": [
+      "040.jpg",
+      "044.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2147,
+    "semantic_group": "strade",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "avere",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v078",
+    "word": "dovere",
+    "lemma": "dovere",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "042.jpg",
+      "045.jpg",
+      "046.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2189,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "avere"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v079",
+    "word": "destro",
+    "lemma": "destro",
+    "translation_ru": null,
+    "frequency": 31,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v080",
+    "word": "sinistra",
+    "lemma": "sinistra",
+    "translation_ru": null,
+    "frequency": 20,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "045.jpg",
+      "047.jpg",
+      "049.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v081",
+    "word": "veicolo",
+    "lemma": "veicolo",
+    "translation_ru": null,
+    "frequency": 36,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "veicoli",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v082",
+    "word": "fermare si",
+    "lemma": "fermare si",
+    "translation_ru": null,
+    "frequency": 15,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "046.jpg",
+      "048.jpg"
+    ],
+    "example_question_id": 2149,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v083",
+    "word": "passaggio",
+    "lemma": "passaggio",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "041.jpg",
+      "044.jpg",
+      "045.jpg"
+    ],
+    "example_question_id": 2176,
+    "semantic_group": "ferroviario",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v084",
+    "word": "regolare",
+    "lemma": "regolare",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "042.jpg",
+      "044.jpg",
+      "047.jpg"
+    ],
+    "example_question_id": 2197,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "autostrada",
+      "barriera",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v085",
+    "word": "stare",
+    "lemma": "stare",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "046.jpg",
+      "048.jpg",
+      "049.jpg"
+    ],
+    "example_question_id": 2264,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v086",
+    "word": "urbano",
+    "lemma": "urbano",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "040.jpg",
+      "043.jpg",
+      "046.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2156,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v087",
+    "word": "precedere",
+    "lemma": "precedere",
+    "translation_ru": null,
+    "frequency": 11,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "044.jpg",
+      "045.jpg",
+      "047.jpg",
+      "050.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2148,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v088",
+    "word": "dell'incrocio",
+    "lemma": "dell'incrocio",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg"
+    ],
+    "example_question_id": 2153,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v089",
+    "word": "massimo",
+    "lemma": "massimo",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "040.jpg",
+      "050.jpg"
+    ],
+    "example_question_id": 2163,
+    "semantic_group": "velocita",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "avere"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v090",
+    "word": "evitare",
+    "lemma": "evitare",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "040.jpg",
+      "050.jpg"
+    ],
+    "example_question_id": 2163,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "avere"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v091",
+    "word": "incidente",
+    "lemma": "incidente",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "040.jpg",
+      "050.jpg"
+    ],
+    "example_question_id": 2163,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "avere"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v092",
+    "word": "doganale",
+    "lemma": "doganale",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "041.jpg",
+      "043.jpg"
+    ],
+    "example_question_id": 2178,
+    "semantic_group": "generale",
+    "synonyms": [
+      "alternare",
+      "arrestare si",
+      "arresto",
+      "barriera"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v093",
+    "word": "presegnalare",
+    "lemma": "presegnalare",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "043.jpg",
+      "044.jpg"
+    ],
+    "example_question_id": 2209,
+    "semantic_group": "generale",
+    "synonyms": [
+      "arrestare si",
+      "autostrada",
+      "barriera",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v094",
+    "word": "un'autostrada",
+    "lemma": "un'autostrada",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "046.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2274,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "arrestare si",
+      "bisognare",
+      "cautela"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v095",
+    "word": "rispetto",
+    "lemma": "rispetto",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "047.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2289,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v096",
+    "word": "lato",
+    "lemma": "lato",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "050.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2319,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "autostrada",
+      "avere",
+      "carreggiare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v097",
+    "word": "laterale",
+    "lemma": "laterale",
+    "translation_ru": null,
+    "frequency": 2,
+    "sign_images": [
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2335,
+    "semantic_group": "vento",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v098",
+    "word": "accelerazione",
+    "lemma": "accelerazione",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "040.jpg",
+      "047.jpg",
+      "048.jpg",
+      "050.jpg",
+      "051.jpg"
+    ],
+    "example_question_id": 2147,
+    "semantic_group": "generale",
+    "synonyms": [
+      "arrestare si",
+      "autostrada",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v099",
+    "word": "giallo",
+    "lemma": "giallo",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2161,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v100",
+    "word": "corsia",
+    "lemma": "corsia",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "040.jpg",
+      "047.jpg",
+      "048.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2147,
+    "semantic_group": "movimento_corsie",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v101",
+    "word": "incrocio",
+    "lemma": "incrocio",
+    "translation_ru": null,
+    "frequency": 25,
+    "sign_images": [
+      "041.jpg",
+      "042.jpg",
+      "043.jpg",
+      "044.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2179,
+    "semantic_group": "precedenza",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v102",
+    "word": "norma",
+    "lemma": "norma",
+    "translation_ru": null,
+    "frequency": 8,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg"
+    ],
+    "example_question_id": 2153,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v103",
+    "word": "all'inizio",
+    "lemma": "all'inizio",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "045.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2245,
+    "semantic_group": "generale",
+    "synonyms": [
+      "alternare",
+      "arrestare si",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v104",
+    "word": "diritto",
+    "lemma": "diritto",
+    "translation_ru": null,
+    "frequency": 26,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "042.jpg",
+      "044.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2146,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v105",
+    "word": "velocità",
+    "lemma": "velocità",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "040.jpg",
+      "044.jpg",
+      "046.jpg",
+      "050.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2149,
+    "semantic_group": "velocita",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v106",
+    "word": "comportare",
+    "lemma": "comportare",
+    "translation_ru": null,
+    "frequency": 4,
+    "sign_images": [
+      "040.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2145,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "arrestare si",
+      "autostrada"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v107",
+    "word": "alternare",
+    "lemma": "alternare",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "041.jpg",
+      "045.jpg"
+    ],
+    "example_question_id": 2177,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "arrestare si",
+      "arresto",
+      "avere"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v108",
+    "word": "rallentare",
+    "lemma": "rallentare",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "040.jpg",
+      "042.jpg",
+      "043.jpg",
+      "047.jpg"
+    ],
+    "example_question_id": 2150,
+    "semantic_group": "velocita",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "barriera"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v109",
+    "word": "lampeggiante",
+    "lemma": "lampeggiante",
+    "translation_ru": null,
+    "frequency": 7,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "045.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2161,
+    "semantic_group": "illuminazione",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v110",
+    "word": "provenire",
+    "lemma": "provenire",
+    "translation_ru": null,
+    "frequency": 22,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg",
+      "045.jpg",
+      "046.jpg",
+      "047.jpg",
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2144,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v111",
+    "word": "uscita",
+    "lemma": "uscita",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "046.jpg",
+      "048.jpg",
+      "049.jpg"
+    ],
+    "example_question_id": 2269,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "arrestare si",
+      "autostrada",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v112",
+    "word": "impegnare",
+    "lemma": "impegnare",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "040.jpg",
+      "041.jpg"
+    ],
+    "example_question_id": 2155,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "alternare",
+      "arrestare si",
+      "arresto"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v113",
+    "word": "incontrare",
+    "lemma": "incontrare",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "043.jpg",
+      "045.jpg"
+    ],
+    "example_question_id": 2211,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "avere"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v114",
+    "word": "l'inizio",
+    "lemma": "l'inizio",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "045.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2233,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "arrestare si",
+      "avere"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v115",
+    "word": "cautela",
+    "lemma": "cautela",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "052.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2362,
+    "semantic_group": "sicurezza",
+    "synonyms": [
+      "all'inizio",
+      "arrestare si",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 2
+  },
+  {
+    "id": "v116",
+    "word": "usare",
+    "lemma": "usare",
+    "translation_ru": null,
+    "frequency": 6,
+    "sign_images": [
+      "048.jpg",
+      "049.jpg",
+      "050.jpg",
+      "051.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2296,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "autostrada",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 1
+  },
+  {
+    "id": "v117",
+    "word": "fermare ci",
+    "lemma": "fermare ci",
+    "translation_ru": null,
+    "frequency": 5,
+    "sign_images": [
+      "042.jpg",
+      "045.jpg",
+      "053.jpg"
+    ],
+    "example_question_id": 2195,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "alternare",
+      "avere",
+      "bisognare"
+    ],
+    "trap_word": true,
+    "is_phrase": false,
+    "level": 3
+  },
+  {
+    "id": "v118",
+    "word": "bisognare",
+    "lemma": "bisognare",
+    "translation_ru": null,
+    "frequency": 9,
+    "sign_images": [
+      "042.jpg",
+      "043.jpg",
+      "045.jpg",
+      "047.jpg",
+      "048.jpg",
+      "052.jpg"
+    ],
+    "example_question_id": 2190,
+    "semantic_group": "generale",
+    "synonyms": [
+      "accelerazione",
+      "all'inizio",
+      "alternare",
+      "arrestare si"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 0
+  },
+  {
+    "id": "v119",
+    "word": "comunque",
+    "lemma": "comunque",
+    "translation_ru": null,
+    "frequency": 3,
+    "sign_images": [
+      "052.jpg"
+    ],
+    "example_question_id": 2344,
+    "semantic_group": "generale",
+    "synonyms": [
+      "all'inizio",
+      "arrestare si",
+      "bisognare",
+      "cautela"
+    ],
+    "trap_word": false,
+    "is_phrase": false,
+    "level": 2
+  }
+]

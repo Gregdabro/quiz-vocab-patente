@@ -576,19 +576,16 @@ DictionaryPage.jsx    ← справочник слов темы + запуск 
 
 ---
 
-### 🔲 Фаза 2 — Python-скрипты (генерация JSON, офлайн)
+### ✅ Фаза 2 — Python-скрипты (генерация JSON, офлайн) (завершено)
 
-> Запускаются один раз. Результат — статические JSON в `src/data/`.  
-> Не влияют на frontend. iPad mini 2 совместимо.
-
-- [ ] `scripts/generate-vocab.py`
+- [x] `scripts/generate-vocab.py`
   - Лемматизация через spaCy `it_core_news_sm`
   - Гибридный скоринг (TF_block + TF_topic + sign_specificity + trap_bonus)
   - Определение типа темы (A / B / C)
   - Генерация `topic_N_vocab.json` для всех 25 тем
   - Генерация `global_vocab.json` (22 универсальных слова — Уровень 0)
 
-- [ ] `scripts/generate-blocks.py`
+- [x] `scripts/generate-blocks.py`
   - Группировка вопросов по знакам (Тип A)
   - Граф знаков (networkx) + обход в ширину
   - Жадный алгоритм блоков (overlap_coefficient ≥ 0.4)
@@ -716,5 +713,5 @@ DictionaryPage.jsx    ← справочник слов темы + запуск 
 
 ---
 
-*Документ создан на основе NLP-анализа всех 25 тем датасета Quiz Patente.*  
+*Документ создан на основе [NLP_ANALYSIS.md](./NLP_ANALYSIS.md) всех 25 тем датасета Quiz Patente.*  
 *Версия: 1.0 · Дата: 2026-05*
