@@ -69,6 +69,55 @@ export async function loadTopicErrorQuestions(topicId) {
 }
 
 /**
+ * Загружает вопросы конкретного блока темы (без shuffle, без ограничения).
+ * Используется в блочном режиме QuizPage.
+ * @param {number|string} topicId
+ * @param {number|string} blockId
+ * @returns {Promise<Array>}
+ */
+export async function loadBlockQuestions(topicId, blockId) {
+  // 1. Загрузить блоки темы
+  var blockPath = '../data/blocks/topic_' + topicId + '_blocks.json';
+  var blocksModule;
+  try {
+    blocksModule = await import(/* @vite-ignore */ blockPath);
+  } catch (e) {
+    throw new Error('Блоки для темы ' + topicId + ' не найдены');
+  }
+  var blocks = blocksModule.default || blocksModule;
+
+  // 2. Найти нужный блок
+  var block = null;
+  for (var i = 0; i < blocks.length; i++) {
+    if (String(blocks[i].block_id) === String(blockId)) {
+      block = blocks[i];
+      break;
+    }
+  }
+  if (!block) {
+    throw new Error('Блок ' + blockId + ' не найден в теме ' + topicId);
+  }
+
+  // 3. Загрузить все вопросы темы
+  var allQuestions = await loadTopicQuestions(topicId);
+
+  // 4. Отфильтровать и сохранить порядок из блока
+  var questionMap = {};
+  for (var j = 0; j < allQuestions.length; j++) {
+    questionMap[allQuestions[j].id] = allQuestions[j];
+  }
+
+  var blockQuestions = [];
+  var questionIds = block.question_ids;
+  for (var k = 0; k < questionIds.length; k++) {
+    var q = questionMap[questionIds[k]];
+    if (q) blockQuestions.push(q);
+  }
+
+  return blockQuestions;
+}
+
+/**
  * Загружает метаданные тем.
  * @returns {Promise<Array>}
  */

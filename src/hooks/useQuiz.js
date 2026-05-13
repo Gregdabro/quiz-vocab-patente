@@ -2,32 +2,39 @@
  * useQuiz.js
  * Главный хук логики прохождения квиза.
  *
- * topicId: "1"–"25" | "all" | "errors"
+ * topicId: "1"–"25" | "all" | "errors" | "errors:N"
+ * options: { blockId } — режим блочного квиза
  *
  * Контракт:
- * { questions, current, goTo, answered, answer, results, isFinished, finish, reset, loading, error }
+ * { questions, current, goTo, answered, answer, results, isFinished, finish, reset, loading, error, isBlockMode, blockPassed }
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { loadTopicQuestions, loadAllQuestions, loadTopicErrorQuestions, pickSessionQuestions } from '../services/questionsService.js';
+import { loadTopicQuestions, loadAllQuestions, loadTopicErrorQuestions, loadBlockQuestions, pickSessionQuestions } from '../services/questionsService.js';
 import { getErrorQuestions } from '../services/errorsService.js';
 import { incrementError, decrementError } from '../services/errorsService.js';
 import { saveTestResult } from '../services/progressService.js';
+import { completeBlock as completeBlockService } from '../services/blockService.js';
 
-export default function useQuiz(topicId) {
+export default function useQuiz(topicId, options) {
+  var blockId = (options && options.blockId) || null;
+  var isBlockMode = blockId !== null;
+
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
-  
+
   // Map: questionId → boolean (ответ пользователя)
   const [answered, setAnswered] = useState(() => new Map());
-  
+
   // Массив { questionId, correct, topicId }
   const [results, setResults] = useState([]);
-  
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isFinished, setIsFinished] = useState(false);
   const [sessionKey, setSessionKey] = useState(0);
+  // Результат блочного квиза: true если ≥80% и блок сдан
+  const [blockPassed, setBlockPassed] = useState(false);
 
   // Ref для хранения всех вопросов при режиме "errors"
   const allQuestionsRef = useRef([]);
@@ -48,10 +55,14 @@ export default function useQuiz(topicId) {
     setIsFinished(false);
     isSavedRef.current = false;
     answeringRef.current = false;
+    setBlockPassed(false);
 
     let promise;
 
-    if (topicId === 'all') {
+    if (isBlockMode) {
+      // Блочный режим: конкретные вопросы блока, без shuffle
+      promise = loadBlockQuestions(topicId, blockId);
+    } else if (topicId === 'all') {
       promise = loadAllQuestions();
     } else if (topicId === 'errors') {
       promise = loadAllQuestions().then((all) => {
@@ -69,8 +80,13 @@ export default function useQuiz(topicId) {
     promise
       .then((raw) => {
         if (cancelled) return;
-        const session = pickSessionQuestions(raw);
-        setQuestions(session);
+        // В блочном режиме не шафлим и не обрезаем — порядок из JSON
+        if (isBlockMode) {
+          setQuestions(raw);
+        } else {
+          const session = pickSessionQuestions(raw);
+          setQuestions(session);
+        }
         setLoading(false);
       })
       .catch((err) => {
@@ -80,7 +96,7 @@ export default function useQuiz(topicId) {
       });
 
     return () => { cancelled = true; };
-  }, [topicId, sessionKey]);
+  }, [topicId, blockId, isBlockMode, sessionKey]);
 
   /**
    * Ответить на текущий вопрос.
@@ -120,7 +136,19 @@ export default function useQuiz(topicId) {
     // Проверяем завершение сессии
     if (newResults.length === questions.length && !isSavedRef.current) {
       const correctCount = newResults.filter((r) => r.correct).length;
-      saveTestResult(topicId, correctCount, questions.length);
+      if (isBlockMode) {
+        // Блочный режим: сохраняем с ключом "block:N" чтобы не мешать random-прогрессу
+        saveTestResult('block:' + topicId, correctCount, questions.length);
+        // Проверяем ≥80% для разблокировки следующего блока
+        var passed = correctCount >= Math.ceil(questions.length * 0.8);
+        if (passed) {
+          // totalBlocks неизвестен здесь — completeBlockService сам посчитает
+          completeBlockService(topicId, parseInt(blockId, 10), 999);
+        }
+        setBlockPassed(passed);
+      } else {
+        saveTestResult(topicId, correctCount, questions.length);
+      }
       isSavedRef.current = true;
       setIsFinished(true);
     }
@@ -130,7 +158,7 @@ export default function useQuiz(topicId) {
     setTimeout(() => {
       answeringRef.current = false;
     }, 50);
-  }, [questions, current, answered, results, isFinished]);
+  }, [questions, current, answered, results, isFinished, isBlockMode, blockId]);
 
   /**
    * Перейти к вопросу по индексу (кликабельная пагинация).
@@ -148,12 +176,21 @@ export default function useQuiz(topicId) {
   const finish = useCallback(() => {
     if (isSavedRef.current) return;
 
-    const correctCount = results.filter((r) => r.correct).length;
-    saveTestResult(topicId, correctCount, questions.length);
-    
+    var correctCount = results.filter(function (r) { return r.correct; }).length;
+    if (isBlockMode) {
+      saveTestResult('block:' + topicId, correctCount, questions.length);
+      var passed = correctCount >= Math.ceil(questions.length * 0.8);
+      if (passed) {
+        completeBlockService(topicId, parseInt(blockId, 10), 999);
+      }
+      setBlockPassed(passed);
+    } else {
+      saveTestResult(topicId, correctCount, questions.length);
+    }
+
     isSavedRef.current = true;
     setIsFinished(true);
-  }, [results, questions.length, topicId]);
+  }, [results, questions.length, topicId, isBlockMode, blockId]);
 
   /**
    * Сбросить сессию и запустить новую (для кнопки "Попробовать снова").
@@ -174,5 +211,7 @@ export default function useQuiz(topicId) {
     reset,
     loading,
     error,
+    isBlockMode,
+    blockPassed,
   };
 }

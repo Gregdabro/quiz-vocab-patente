@@ -18,6 +18,7 @@ function AppContent() {
       <main className="page-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/quiz/:topicId/block/:blockId" element={<QuizPage />} />
           <Route path="/quiz/:topicId" element={<QuizPage />} />
           <Route path="/topic/:topicId" element={<BlockSelectPage />} />
           <Route path="/vocab/:topicId" element={<VocabSessionPage />} />

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import useQuiz from '../hooks/useQuiz';
 import useSwipe from '../hooks/useSwipe';
 import Spinner from '../components/ui/Spinner';
@@ -17,35 +17,59 @@ import ConfirmationModal from '../components/ui/ConfirmationModal';
 /**
  * Страница прохождения теста (Рефакторинг v2).
  * Интегрирует модульные компоненты квиза.
+ *
+ * Режимы:
+ *   - random:  /quiz/:topicId (случайные 30 вопросов)
+ *   - block:   /quiz/:topicId/block/:blockId (конкретный блок)
+ *   - errors:  /quiz/errors, /quiz/errors:topicId
+ *   - all:     /quiz/all
  */
 const QuizPage = () => {
-  const { topicId } = useParams();
-  const navigate = useNavigate();
-  
-  const { 
-    questions, 
-    current, 
-    goTo, 
-    answer, 
-    answered, 
-    results,
-    isFinished, 
-    finish, 
-    reset,
-    loading, 
-    error 
-  } = useQuiz(topicId);
-  
-  const [showComment, setShowComment] = useState(false);
-  
+  var _a = useParams();
+  var topicId = _a.topicId;
+  var urlBlockId = _a.blockId;
+  var navigate = useNavigate();
+  var location = useLocation();
+
+  // blockId может прийти из URL (/quiz/:topicId/block/:blockId) или из location.state
+  var blockId = urlBlockId || (location.state && location.state.blockId) || null;
+
+  var _b = useQuiz(topicId, { blockId: blockId });
+  var questions = _b.questions;
+  var current = _b.current;
+  var goTo = _b.goTo;
+  var answer = _b.answer;
+  var answered = _b.answered;
+  var results = _b.results;
+  var isFinished = _b.isFinished;
+  var finish = _b.finish;
+  var reset = _b.reset;
+  var loading = _b.loading;
+  var error = _b.error;
+  var isBlockMode = _b.isBlockMode;
+  var blockPassed = _b.blockPassed;
+
+  var _c = useState(false);
+  var showComment = _c[0];
+  var setShowComment = _c[1];
+
   // Глобальное состояние перевода (сохраняется при смене вопроса)
-  const [globalTranslation, setGlobalTranslation] = useState(false);
-  
+  var _d = useState(false);
+  var globalTranslation = _d[0];
+  var setGlobalTranslation = _d[1];
+
   // Направление анимации перехода
-  const [transitionDirection, setTransitionDirection] = useState('forward');
-  
-  const [showResults, setShowResults] = useState(false);
-  const [isExitModalOpen, setIsExitModalOpen] = useState(false);
+  var _e = useState('forward');
+  var transitionDirection = _e[0];
+  var setTransitionDirection = _e[1];
+
+  var _f = useState(false);
+  var showResults = _f[0];
+  var setShowResults = _f[1];
+
+  var _g = useState(false);
+  var isExitModalOpen = _g[0];
+  var setIsExitModalOpen = _g[1];
 
   const handleGoTo = useCallback((index) => {
     setTransitionDirection(index > current ? 'forward' : 'backward');
@@ -61,7 +85,28 @@ const QuizPage = () => {
   });
 
   // Определяем куда возвращаться при выходе
-  const backPath = topicId.startsWith('errors:') ? '/errors' : '/';
+  var backPath;
+  if (isBlockMode) {
+    backPath = '/topic/' + topicId;
+  } else if (topicId.startsWith('errors:')) {
+    backPath = '/errors';
+  } else {
+    backPath = '/';
+  }
+
+  // Заголовок страницы
+  var headerTitle;
+  if (isBlockMode) {
+    headerTitle = 'Тема ' + topicId + ' — Блок ' + blockId;
+  } else if (topicId === 'errors') {
+    headerTitle = 'Работа над ошибками';
+  } else if (topicId === 'all') {
+    headerTitle = 'Случайный тест';
+  } else if (topicId.startsWith('errors:')) {
+    headerTitle = 'Ошибки — Тема ' + topicId.slice(7);
+  } else {
+    headerTitle = 'Тема ' + topicId;
+  }
 
   // Обработчик ответа
   const handleAnswer = useCallback((userAnswer) => {
@@ -104,12 +149,7 @@ const QuizPage = () => {
   return (
     <div className="page quiz-page" {...swipeHandlers}>
       <AppHeader 
-        title={
-          topicId === 'errors' ? 'Работа над ошибками' :
-          topicId === 'all'    ? 'Случайный тест' :
-          topicId.startsWith('errors:') ? `Ошибки — Тема ${topicId.slice(7)}` :
-          `Тема ${topicId}`
-        }
+        title={headerTitle}
         showBack={true}
         onBackOverride={handleExitRequest}
       />
@@ -147,15 +187,17 @@ const QuizPage = () => {
 
         {/* Экран результатов (Overlay) */}
         {showResults && (
-          <ResultScreen 
+          <ResultScreen
             results={results}
             total={questions.length}
-            onRestart={() => {
+            onRestart={function () {
               reset();
               setShowResults(false);
             }}
-            onClose={() => setShowResults(false)}
-            onFinish={() => navigate(backPath)}
+            onClose={function () { setShowResults(false); }}
+            onFinish={function () { navigate(backPath); }}
+            passThreshold={isBlockMode ? 80 : 87}
+            isBlockMode={isBlockMode}
           />
         )}
 

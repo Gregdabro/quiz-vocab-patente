@@ -4,18 +4,28 @@ import Button from '../ui/Button';
 /**
  * Итоговый экран после завершения теста.
  * Показывается поверх контента или как отдельный раздел.
- * 
+ *
  * @param {Array} results — массив { questionId, correct, topicId }
  * @param {number} total — общее количество вопросов (обычно 30)
  * @param {Function} onRestart — перезапуск теста
  * @param {Function} onClose — закрыть модалку результатов для просмотра вопросов
  * @param {Function} onFinish — выход к списку тем
+ * @param {number} [passThreshold] — порог сдачи в процентах (default: 87 — итал. экзамен)
+ * @param {boolean} [isBlockMode] — флаг блочного режима (меняет текст кнопки возврата)
  */
-const ResultScreen = ({ results, total, onRestart, onClose, onFinish }) => {
-  const correctCount = results.filter(r => r.correct).length;
-  const wrongCount = total - correctCount;
-  const scorePercent = Math.round((correctCount / total) * 100);
-  const isPassed = wrongCount <= 4; // В итальянских правах обычно до 4 ошибок
+const ResultScreen = function (props) {
+  var results = props.results;
+  var total = props.total;
+  var onRestart = props.onRestart;
+  var onClose = props.onClose;
+  var onFinish = props.onFinish;
+  var passThreshold = props.passThreshold !== undefined ? props.passThreshold : 87;
+  var isBlockMode = props.isBlockMode || false;
+
+  var correctCount = results.filter(function (r) { return r.correct; }).length;
+  var wrongCount = total - correctCount;
+  var scorePercent = Math.round((correctCount / total) * 100);
+  var isPassed = scorePercent >= passThreshold;
 
   return (
     <div className="result-screen">
@@ -64,7 +74,7 @@ const ResultScreen = ({ results, total, onRestart, onClose, onFinish }) => {
           </div>
           <div className="result-screen__action-button">
             <Button variant="vero" onClick={onFinish} style={{ backgroundColor: 'var(--color-text-secondary)' }}>
-              ← К списку тем
+              {isBlockMode ? '← К блокам' : '← К списку тем'}
             </Button>
           </div>
         </div>
