@@ -837,6 +837,705 @@
   margin-bottom: 2px;
 }
 
+/* ============================================================
+   BlockSelectPage (Phase 3.4)
+   ============================================================ */
+
+.block-select-container {
+  padding-top: var(--spacing-4);
+  padding-bottom: calc(var(--nav-height) + var(--spacing-6));
+}
+
+/* Мета-информация */
+.block-select-meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-select-meta__type {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 2px var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: #fff;
+  margin-right: var(--spacing-3);
+}
+
+.block-select-meta__count,
+.block-select-meta__questions {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-right: var(--spacing-4);
+}
+
+/* Кнопки действий текущего блока */
+.block-select-actions {
+  margin-bottom: var(--spacing-6);
+}
+
+.block-select-actions__btn {
+  width: 100%;
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-md);
+}
+
+/* Заголовок списка блоков */
+.block-select-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Состояния загрузки/ошибки/пусто */
+.block-select-loading,
+.block-select-error,
+.block-select-empty {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height) - var(--nav-height) - var(--spacing-8));
+  padding: var(--spacing-6);
+  text-align: center;
+}
+
+.block-select-loading__text,
+.block-select-error__text,
+.block-select-empty__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-4);
+}
+
+.block-select-error__text { color: var(--color-error); }
+
+/* ============================================================
+   BlockCard
+   ============================================================ */
+
+.block-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-5);
+  margin-bottom: var(--spacing-4);
+  border-left: 4px solid var(--color-border);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  -webkit-transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.block-card--current {
+  border-left-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.block-card--completed {
+  border-left-color: var(--color-correct);
+  opacity: 0.85;
+}
+
+.block-card--locked {
+  border-left-color: var(--color-unanswered);
+  opacity: 0.6;
+}
+
+/* Заголовок карточки */
+.block-card__header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.block-card__status {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.block-card__status-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  margin-right: var(--spacing-3);
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.block-card__status-icon--done {
+  background-color: var(--color-correct-bg);
+  color: var(--color-correct);
+}
+
+.block-card__status-icon--current {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  font-size: 18px;
+}
+
+.block-card__status-icon--locked {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.block-card__status-icon--open {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.block-card__number {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.block-card__overlap {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  padding: 2px var(--spacing-2);
+  border-radius: var(--radius-full);
+}
+
+/* Мета */
+.block-card__meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__meta-item {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-right: var(--spacing-4);
+}
+
+.block-card__meta-item--new {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Миниатюры знаков */
+.block-card__signs {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__sign-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  margin-right: var(--spacing-2);
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.block-card__sign-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.block-card__sign-more {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-2);
+}
+
+/* Шаблонные фразы */
+.block-card__phrases {
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__phrase {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.block-card__phrase:last-child {
+  margin-bottom: 0;
+}
+
+/* Числовые правила */
+.block-card__numbers {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__number-rule {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  background-color: #dbeafe;
+  color: #1e40af;
+  margin-right: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+}
+
+/* Кнопки действий */
+.block-card__actions {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.block-card__action-btn {
+  -webkit-flex: 1;
+  flex: 1;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  -webkit-transition: opacity var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  margin-right: var(--spacing-3);
+}
+
+.block-card__action-btn:last-child {
+  margin-right: 0;
+}
+
+.block-card__action-btn:active {
+  opacity: 0.7;
+}
+
+.block-card__action-btn--vocab {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  border: 1px solid transparent;
+}
+
+.block-card__action-btn--quiz {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.block-card__action-btn--review {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.block-card__action-btn--disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* ============================================================
+   VocabSessionPage
+   ============================================================ */
+
+.vocab-session-page {
+  min-height: calc(100vh - var(--header-height) - var(--nav-height));
+}
+
+.vocab-session-page__footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: var(--spacing-6) var(--spacing-4);
+  padding-bottom: calc(var(--nav-height) + var(--spacing-6));
+}
+
+.vocab-session-page__footer .btn {
+  min-width: 200px;
+}
+
+/* ============================================================
+   DictionaryPage (переработанный, Phase 3.4)
+   ============================================================ */
+
+.dictionary-container {
+  padding-top: var(--spacing-4);
+  padding-bottom: calc(var(--nav-height) + var(--spacing-6));
+}
+
+.dictionary-intro {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+  line-height: 1.6;
+}
+
+/* Список тем при выборе */
+.dictionary-topic-list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.dictionary-topic-item {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  -webkit-transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dictionary-topic-item:active {
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+}
+
+.dictionary-topic-item__image {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  background-color: var(--color-bg);
+  margin-right: var(--spacing-4);
+}
+
+.dictionary-topic-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dictionary-topic-item__body {
+  -webkit-flex: 1;
+  flex: 1;
+  min-width: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.dictionary-topic-item__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.dictionary-topic-item__count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.dictionary-topic-item__arrow {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-muted);
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  margin-left: var(--spacing-3);
+}
+
+/* Загрузка / Ошибка */
+.dictionary-loading,
+.dictionary-error {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height) - var(--nav-height) - var(--spacing-8));
+  padding: var(--spacing-6);
+  text-align: center;
+}
+
+.dictionary-loading__text {
+  margin-top: var(--spacing-4);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.dictionary-error__text {
+  font-size: var(--font-size-base);
+  color: var(--color-error);
+  margin-bottom: var(--spacing-6);
+}
+
+/* Статистика словаря */
+.dictionary-stats {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-5);
+  margin-bottom: var(--spacing-5);
+}
+
+.dictionary-stats__item {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.dictionary-stats__value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.dictionary-stats__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* Кнопка тренировки */
+.dictionary-actions {
+  margin-bottom: var(--spacing-6);
+}
+
+.dictionary-actions .btn {
+  width: 100%;
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-md);
+}
+
+/* Группы слов */
+.dictionary-groups {
+  /* прокручиваемые группы */
+}
+
+.dictionary-group {
+  margin-bottom: var(--spacing-6);
+}
+
+.dictionary-group__title {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  margin-bottom: var(--spacing-3);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.dictionary-group__count {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 var(--spacing-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-2);
+}
+
+/* Слова внутри группы */
+.dictionary-group__words {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.dictionary-word {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dictionary-word:last-child {
+  border-bottom: none;
+}
+
+.dictionary-word__main {
+  -webkit-flex: 1;
+  flex: 1;
+  min-width: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.dictionary-word__text {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.dictionary-word__translation {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.dictionary-word__meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  margin-left: var(--spacing-3);
+}
+
+.dictionary-word__freq {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-right: var(--spacing-2);
+}
+
+.dictionary-word__trap {
+  font-size: 11px;
+  font-weight: 600;
+  color: #b45309;
+  background-color: #fef3c7;
+  padding: 1px var(--spacing-2);
+  border-radius: var(--radius-full);
+  margin-right: var(--spacing-2);
+}
+
+.dictionary-word__phrase-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-primary);
+  background-color: var(--color-accent-light);
+  padding: 1px var(--spacing-2);
+  border-radius: var(--radius-full);
+  margin-right: var(--spacing-2);
+}
+
+.dictionary-word__box {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.dictionary-word__box--0 {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.dictionary-word__box--1 {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.dictionary-word__box--2 {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.dictionary-word__box--3 {
+  background-color: var(--color-correct-bg);
+  color: var(--color-correct);
+}
+
+.dictionary-word__box--4 {
+  background-color: var(--color-correct);
+  color: #fff;
+}
+
 /* === Accessibility / Performance === */
 @media (prefers-reduced-motion: reduce) {
   .slide-transition-card {

@@ -614,8 +614,9 @@ DictionaryPage.jsx    ← справочник слов темы + запуск 
 - [x] `src/components/vocab/VocabProgress.jsx` — кружки-индикаторы
 
 **3.4 Страницы**
-- [ ] `src/pages/BlockSelectPage.jsx` — список блоков темы, прогресс, замки
-- [ ] `src/pages/DictionaryPage.jsx` — справочник слов + запуск vocab-сессии
+- [x] `src/pages/BlockSelectPage.jsx` — список блоков темы, прогресс, замки
+- [x] `src/pages/DictionaryPage.jsx` — справочник слов + запуск vocab-сессии
+- [x] `src/pages/VocabSessionPage.jsx` — страница vocab-сессии (/vocab/:topicId)
 
 **3.5 Обновление QuizPage**
 - [ ] Добавить режим `block` (получает конкретный `blockId`, не случайные вопросы)
