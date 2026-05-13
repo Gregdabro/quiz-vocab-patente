@@ -619,12 +619,12 @@ DictionaryPage.jsx    ← справочник слов темы + запуск 
 - [x] `src/pages/VocabSessionPage.jsx` — страница vocab-сессии (/vocab/:topicId)
 
 **3.5 Обновление QuizPage**
-- [ ] Добавить режим `block` (получает конкретный `blockId`, не случайные вопросы)
-- [ ] Сохранить режим `random` (как сейчас)
+- [x] Добавить режим `block` (получает конкретный `blockId`, не случайные вопросы)
+- [x] Сохранить режим `random` (как сейчас)
 
 **3.6 Нулевой урок**
-- [ ] При первом запуске → `VocabSession` с `global_vocab.json` (22 слова)
-- [ ] Флаг в localStorage: `qp_onboarding_done: true`
+- [x] При первом запуске → `VocabSession` с `global_vocab.json` (22 слова)
+- [x] Флаг в localStorage: `qp_onboarding_done: true`
 
 ---
 

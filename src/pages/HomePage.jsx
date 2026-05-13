@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useTopics from '../hooks/useTopics';
 import useProgress from '../hooks/useProgress';
+import { isOnboardingDone } from '../services/vocabService';
 import Card from '../components/ui/Card';
 import ProgressBar from '../components/ui/ProgressBar';
 import Spinner from '../components/ui/Spinner';
@@ -11,11 +12,20 @@ import AppHeader from '../components/layout/AppHeader';
 /**
  * Главная страница приложения.
  * Список из 25 тематических категорий с прогрессом.
+ *
+ * При первом запуске (qp_onboarding_done !== true) перенаправляет
+ * на нулевой урок — /vocab/global (22 универсальных слова).
  */
 const HomePage = () => {
   const { topics, loading, error } = useTopics();
   const { progress } = useProgress();
   const navigate = useNavigate();
+
+  useEffect(function () {
+    if (!isOnboardingDone()) {
+      navigate('/vocab/global', { replace: true });
+    }
+  }, [navigate]);
 
   if (loading) return <Spinner />;
   if (error) return <div className="container error-container">{error}</div>;

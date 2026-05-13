@@ -192,6 +192,35 @@ export function clearVocab() {
 }
 
 // ---------------------------------------------------------------------------
+// Онбординг — нулевой урок (22 универсальных слова)
+// ---------------------------------------------------------------------------
+
+var ONBOARDING_KEY = 'qp_onboarding_done';
+
+/**
+ * Проверить, пройден ли нулевой урок.
+ * @returns {boolean}
+ */
+export function isOnboardingDone() {
+  try {
+    return localStorage.getItem(ONBOARDING_KEY) === 'true';
+  } catch (e) {
+    return false;
+  }
+}
+
+/**
+ * Отметить нулевой урок как пройденный.
+ */
+export function completeOnboarding() {
+  try {
+    localStorage.setItem(ONBOARDING_KEY, 'true');
+  } catch (e) {
+    console.error('vocabService: не удалось сохранить флаг онбординга', e);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Загрузка статических JSON-файлов
 // ---------------------------------------------------------------------------
 

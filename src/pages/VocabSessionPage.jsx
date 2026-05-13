@@ -4,6 +4,7 @@ import useVocab from '../hooks/useVocab';
 import useTopics from '../hooks/useTopics';
 import VocabSession from '../components/vocab/VocabSession';
 import AppHeader from '../components/layout/AppHeader';
+import { completeOnboarding } from '../services/vocabService';
 
 /**
  * VocabSessionPage — страница vocab-сессии для темы.
@@ -47,6 +48,7 @@ var VocabSessionPage = function () {
 
   var handleDone = function () {
     if (isGlobal) {
+      completeOnboarding();
       navigate('/');
     } else {
       navigate('/topic/' + topicId);
