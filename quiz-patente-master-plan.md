@@ -606,12 +606,12 @@ DictionaryPage.jsx    ← справочник слов темы + запуск 
 - [x] `src/hooks/useBlocks.js` — список блоков, разблокированные, текущий
 
 **3.3 Vocab-компоненты**
-- [ ] `src/components/vocab/VocabCard.jsx`
+- [x] `src/components/vocab/VocabCard.jsx`
   - Режим A (image-first): знак + слово + перевод + синонимы-ловушки
   - Режим C (phrase-first): шаблон с пропуском + число/ответ
   - Кнопки: [Знаю] / [Сложно] / [Не знаю]
-- [ ] `src/components/vocab/VocabSession.jsx` — полный цикл сессии
-- [ ] `src/components/vocab/VocabProgress.jsx` — кружки-индикаторы
+- [x] `src/components/vocab/VocabSession.jsx` — полный цикл сессии
+- [x] `src/components/vocab/VocabProgress.jsx` — кружки-индикаторы
 
 **3.4 Страницы**
 - [ ] `src/pages/BlockSelectPage.jsx` — список блоков темы, прогресс, замки
