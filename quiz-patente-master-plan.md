@@ -602,8 +602,8 @@ DictionaryPage.jsx    ← справочник слов темы + запуск 
 - [x] `src/services/blockService.js` — загрузка блоков, прогресс по блокам
 
 **3.2 Хуки**
-- [ ] `src/hooks/useVocab.js` — vocab-сессия (текущая карточка, оценка, прогресс)
-- [ ] `src/hooks/useBlocks.js` — список блоков, разблокированные, текущий
+- [x] `src/hooks/useVocab.js` — vocab-сессия (текущая карточка, оценка, прогресс)
+- [x] `src/hooks/useBlocks.js` — список блоков, разблокированные, текущий
 
 **3.3 Vocab-компоненты**
 - [ ] `src/components/vocab/VocabCard.jsx`

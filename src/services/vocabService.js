@@ -190,3 +190,40 @@ export function getRetentionRate(topicId, vocabIds) {
 export function clearVocab() {
   localStorage.removeItem(STORAGE_KEY);
 }
+
+// ---------------------------------------------------------------------------
+// Загрузка статических JSON-файлов
+// ---------------------------------------------------------------------------
+
+/**
+ * Загрузить словарь для конкретной темы из src/data/vocabulary/.
+ * @param {number|string} topicId
+ * @returns {Promise<Array>}
+ */
+export function loadTopicVocab(topicId) {
+  return import(
+    /* @vite-ignore */
+    `../data/vocabulary/topic_${topicId}_vocab.json`
+  ).then(function (module) {
+    return module.default;
+  }).catch(function (e) {
+    console.error('vocabService: не удалось загрузить словарь для темы ' + topicId, e);
+    return [];
+  });
+}
+
+/**
+ * Загрузить глобальный словарь (22 универсальных слова, Уровень 0).
+ * @returns {Promise<Array>}
+ */
+export function loadGlobalVocab() {
+  return import(
+    /* @vite-ignore */
+    '../data/vocabulary/global_vocab.json'
+  ).then(function (module) {
+    return module.default;
+  }).catch(function (e) {
+    console.error('vocabService: не удалось загрузить глобальный словарь', e);
+    return [];
+  });
+}
