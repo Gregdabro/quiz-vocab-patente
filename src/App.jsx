@@ -6,6 +6,7 @@ import DictionaryPage from './pages/DictionaryPage';
 import ErrorsPage from './pages/ErrorsPage';
 import BlockSelectPage from './pages/BlockSelectPage';
 import VocabSessionPage from './pages/VocabSessionPage';
+import TrainingPage from './pages/TrainingPage';
 import BottomNav from './components/layout/BottomNav';
 
 function AppContent() {
@@ -24,6 +25,7 @@ function AppContent() {
           <Route path="/vocab/:topicId" element={<VocabSessionPage />} />
           <Route path="/errors" element={<ErrorsPage />} />
           <Route path="/stats" element={<StatsPage />} />
+          <Route path="/training" element={<TrainingPage />} />
           <Route path="/dictionary" element={<DictionaryPage />} />
         </Routes>
       </main>

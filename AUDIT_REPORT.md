@@ -104,6 +104,13 @@
 
 **Вывод:** Маршрутизация технически правильная, но точка входа в vocab-first флоу не подключена к основному навигационному паттерну.
 
+**Исправление (2026-05-14):** 
+- Создана `TrainingPage.jsx` — отдельная страница выбора темы для vocab-first блочного флоу (клик по теме → `/topic/:id`).
+- Добавлен пункт «Тренировка» в `BottomNav` между «Главная» и «Ошибки».
+- Добавлен маршрут `/training` в `App.jsx`.
+- `HomePage` сохранена без изменений (базовый квиз через `/quiz/:id`).
+- **Статус:** RESOLVED. Vocab-first флоу теперь достижим через BottomNav → Тренировка → выбор темы → BlockSelectPage.
+
 ### 3.2 Сервисный слой
 
 Это **лучшая часть проекта**. Абстракция работает идеально:
@@ -227,24 +234,23 @@ Block 1 темы 2 содержит знак `014.jpg` (трамвай, 28 во�
 
 ## 5. UX/UI Audit
 
-### 5.1 Главный UX-дефект: vocab-first недостижим с главной страницы
+### 5.1 Главный UX-дефект: vocab-first недостижим с главной страницы — RESOLVED 2026-05-14
 
 ```
 Пользователь открывает приложение
   → Нулевой урок (22 слова) ← OK
   → HomePage (25 тем)
   → Клик на тему
-  → /quiz/N (случайные 30 вопросов) ← НЕВЕРНО
-```
-
-Должно быть:
-```
+  → /quiz/N (случайные 30 вопросов) ← базовый квиз (сохранён)
+  
+  ИЛИ (новый путь):
+  → BottomNav «Тренировка»
+  → TrainingPage (выбор темы)
   → Клик на тему
-  → /topic/N (BlockSelectPage)
-  → Учить слова / Начать тест
+  → /topic/N (BlockSelectPage) ← vocab-first флоу
 ```
 
-**Исправление: одна строка в HomePage.jsx** — `navigate('/quiz/${topic.topic_id}')` → `navigate('/topic/${topic.topic_id}')`.
+**Исправление:** Добавлена `TrainingPage` + пункт «Тренировка» в `BottomNav` + маршрут `/training`. `HomePage` сохранена без изменений — ведёт на базовый квиз.
 
 ### 5.2 Onboarding
 
@@ -351,7 +357,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | Серьёзность | Файл | Проблема | Влияние | Рекомендация |
 |---|---|---|---|---|
 | 🔴 КРИТИЧНО | `src/data/vocabulary/topic_*_vocab.json` | `translation_ru: null` у 100% слов | VocabCard не показывает перевод → vocab-система бесполезна | Заполнить переводы вручную или через API (DeepL/Google Translate) |
-| 🔴 КРИТИЧНО | `src/pages/HomePage.jsx:49` | `navigate('/quiz/${topic.topic_id}')` вместо `/topic/` | Весь vocab-first флоу недостижим с главной | Изменить на `navigate('/topic/${topic.topic_id}')` |
+| 🔴 КРИТИЧНО | `src/pages/HomePage.jsx:49` | `navigate('/quiz/${topic.topic_id}')` вместо `/topic/` | ~~Весь vocab-first флоу недостижим с главной~~ **RESOLVED 2026-05-14:** Добавлена TrainingPage + пункт «Тренировка» в BottomNav. HomePage сохранена для базового квиза. | RESOLVED |
 | 🟠 ВЫСОКОЕ | `src/hooks/useQuiz.js:146,184` | `completeBlockService(topicId, parseInt(blockId, 10), 999)` | После последнего блока `current_block` = несуществующий N+1 | Передавать реальное `totalBlocks` из контекста или загружать в `useQuiz` |
 | 🟠 ВЫСОКОЕ | `scripts/generate-blocks.py` | Вопросы в блоке не перемешиваются | Нет interleaving → снижение долгосрочного удержания | Добавить `random.shuffle(question_ids)` перед записью в JSON |
 | 🟠 ВЫСОКОЕ | `src/services/blockService.js`, `vocabService.js` | `import(/* @vite-ignore */ \`...\`)` | Файлы могут не попасть в production bundle Vite | Заменить на `import.meta.glob(...)` как в questionsService |
@@ -445,11 +451,11 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 
 ### Phase 1 — Критические исправления (1–2 дня)
 
-**1.1 Исправить навигацию HomePage**
-- Файл: `src/pages/HomePage.jsx`, строка 49
-- Изменить: `navigate('/quiz/${topic.topic_id}')` → `navigate('/topic/${topic.topic_id}')`
+**1.1 Исправить навигацию HomePage** — ✅ RESOLVED 2026-05-14
+- Файлы: `src/pages/TrainingPage.jsx` (новый), `src/App.jsx`, `src/components/layout/BottomNav.jsx`
+- Решение: Создана TrainingPage (выбор темы → `/topic/:id`), добавлен пункт «Тренировка» в BottomNav. HomePage сохранена без изменений.
 - Сложность: XS
-- Проверка: клик на тему → /topic/N → BlockSelectPage
+- Проверка: клик «Тренировка» → выбор темы → /topic/N → BlockSelectPage
 
 **1.2 Исправить динамические импорты в blockService и vocabService**
 - Файлы: `src/services/blockService.js`, `src/services/vocabService.js`
