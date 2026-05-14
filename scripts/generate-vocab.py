@@ -23,6 +23,29 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 QUESTIONS_DIR = ROOT / "src" / "data" / "questions"
 VOCAB_DIR = ROOT / "src" / "data" / "vocabulary"
+CACHE_PATH = ROOT / "scripts" / "translation_cache.json"
+
+# ── Translation cache ────────────────────────────────────────────────────────────
+_translation_cache: dict = {}
+
+def _load_cache():
+    """Load translation cache if available."""
+    global _translation_cache
+    if CACHE_PATH.exists():
+        with open(CACHE_PATH, encoding='utf-8') as f:
+            _translation_cache = json.load(f)
+        hits = sum(1 for v in _translation_cache.values() if v.get('translation'))
+        print(f"[INFO] Translation cache loaded: {hits}/{len(_translation_cache)} entries with translation")
+    else:
+        print("[WARN] translation_cache.json not found — run align-translations.py first")
+        _translation_cache = {}
+
+def _translate(word: str) -> str | None:
+    """Get Russian translation for an Italian word/phrase from cache."""
+    entry = _translation_cache.get(word)
+    if entry and entry.get('translation'):
+        return entry['translation']
+    return None
 
 # ── Topic type map (from master plan) ─────────────────────────────────────────
 TOPIC_TYPE = {}
@@ -413,7 +436,7 @@ def build_global_vocab(all_topic_vocabs: dict, lemma_levels: dict) -> list:
             'id': f"g{idx:03d}",
             'word': lem,
             'lemma': lem,
-            'translation_ru': None,
+            'translation_ru': _translate(lem),
             'frequency': freq,
             'topic_count': len(global_topics[lem]),
             'example_question_id': global_example.get(lem),
@@ -446,6 +469,7 @@ def main():
     print("=" * 60)
 
     VOCAB_DIR.mkdir(parents=True, exist_ok=True)
+    _load_cache()
 
     # ── Pass 1: Global Frequencies & Lemmatization ──────────────────────────
     print("[INFO] Pass 1: Global analysis...")
@@ -615,7 +639,7 @@ def process_topic_v2(topic_id: int, questions: list, lemma_map: dict, lemma_leve
             'id': f"v{idx:03d}",
             'word': bg,
             'lemma': f"{l1} {l2}",
-            'translation_ru': None,
+            'translation_ru': _translate(bg),
             'frequency': bg_count,
             'sign_images': bg_signs,
             'example_question_id': example_qid,
@@ -636,7 +660,7 @@ def process_topic_v2(topic_id: int, questions: list, lemma_map: dict, lemma_leve
             'id': f"v{idx:03d}",
             'word': lemma,
             'lemma': lemma,
-            'translation_ru': None,
+            'translation_ru': _translate(lemma),
             'frequency': topic_freq[lemma],
             'sign_images': sorted(word_to_signs.get(lemma, set())),
             'example_question_id': word_to_qids[lemma][0] if word_to_qids[lemma] else None,
