@@ -7,6 +7,7 @@
 import topicsData from '../data/topics.json';
 import { shuffle } from '../utils/shuffle.js';
 import { getErrors } from './errorsService.js';
+import { loadBlocks } from './blockService.js';
 
 const SESSION_SIZE = 30;
 
@@ -76,15 +77,16 @@ export async function loadTopicErrorQuestions(topicId) {
  * @returns {Promise<Array>}
  */
 export async function loadBlockQuestions(topicId, blockId) {
-  // 1. Загрузить блоки темы
-  var blockPath = '../data/blocks/topic_' + topicId + '_blocks.json';
-  var blocksModule;
+  // 1. Загрузить блоки темы через blockService
+  var blocks;
   try {
-    blocksModule = await import(/* @vite-ignore */ blockPath);
+    blocks = await loadBlocks(topicId);
+    if (!blocks.length) {
+      throw new Error('Блоки для темы ' + topicId + ' не найдены');
+    }
   } catch (e) {
     throw new Error('Блоки для темы ' + topicId + ' не найдены');
   }
-  var blocks = blocksModule.default || blocksModule;
 
   // 2. Найти нужный блок
   var block = null;

@@ -27,6 +27,9 @@
 
 var STORAGE_KEY = 'qp_vocab';
 
+var vocabCache = import.meta.glob('../data/vocabulary/topic_*_vocab.json');
+var globalVocabCache = import.meta.glob('../data/vocabulary/global_vocab.json');
+
 // Интервал показа в блоках для каждого ящика (индекс = номер ящика)
 var LEITNER_INTERVALS = [0, 1, 3, 7, 30];
 
@@ -226,14 +229,16 @@ export function completeOnboarding() {
 
 /**
  * Загрузить словарь для конкретной темы из src/data/vocabulary/.
+ * Использует import.meta.glob — Vite статически включает все matching файлы в сборку.
  * @param {number|string} topicId
  * @returns {Promise<Array>}
  */
 export function loadTopicVocab(topicId) {
-  return import(
-    /* @vite-ignore */
-    `../data/vocabulary/topic_${topicId}_vocab.json`
-  ).then(function (module) {
+  var path = '../data/vocabulary/topic_' + topicId + '_vocab.json';
+  if (!vocabCache[path]) {
+    return Promise.resolve([]);
+  }
+  return vocabCache[path]().then(function (module) {
     return module.default;
   }).catch(function (e) {
     console.error('vocabService: не удалось загрузить словарь для темы ' + topicId, e);
@@ -246,10 +251,8 @@ export function loadTopicVocab(topicId) {
  * @returns {Promise<Array>}
  */
 export function loadGlobalVocab() {
-  return import(
-    /* @vite-ignore */
-    '../data/vocabulary/global_vocab.json'
-  ).then(function (module) {
+  var path = '../data/vocabulary/global_vocab.json';
+  return globalVocabCache[path]().then(function (module) {
     return module.default;
   }).catch(function (e) {
     console.error('vocabService: не удалось загрузить глобальный словарь', e);

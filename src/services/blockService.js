@@ -24,6 +24,8 @@
 
 var STORAGE_KEY = 'qp_block_prog';
 
+var blocksCache = import.meta.glob('../data/blocks/topic_*_blocks.json');
+
 // ---------------------------------------------------------------------------
 // Внутренние хелперы
 // ---------------------------------------------------------------------------
@@ -78,15 +80,16 @@ export function getBlockProgress(topicId) {
 
 /**
  * Загрузить массив блоков для темы из статического JSON.
- * Использует динамический import() — Vite включает все matching файлы в сборку.
+ * Использует import.meta.glob — Vite статически включает все matching файлы в сборку.
  * @param {number|string} topicId
  * @returns {Promise<Array>}
  */
 export function loadBlocks(topicId) {
-  return import(
-    /* @vite-ignore */
-    `../data/blocks/topic_${topicId}_blocks.json`
-  ).then(function (module) {
+  var path = '../data/blocks/topic_' + topicId + '_blocks.json';
+  if (!blocksCache[path]) {
+    return Promise.resolve([]);
+  }
+  return blocksCache[path]().then(function (module) {
     return module.default;
   }).catch(function (e) {
     console.error('blockService: не удалось загрузить блоки для темы ' + topicId, e);

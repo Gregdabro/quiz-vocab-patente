@@ -162,6 +162,8 @@ localStorage → services (sync R/W) → hooks (state) → components
 
 Все операции обёрнуты в try/catch. Нет прямого доступа из компонентов. Нет утечек между сессиями. Нет риска коррупции данных (простой JSON, merge-стратегия).
 
+**Динамические импорты (исправлено 2026-05-14):** `blockService.js`, `vocabService.js` и `questionsService.js (loadBlockQuestions)` переведены с `import(/* @vite-ignore */)` на `import.meta.glob()`. Vite теперь статически включает все blocks/vocab JSON в production bundle — риск 404 устранён.
+
 **Потенциальная проблема:** `qp_vocab` будет расти со временем. При 3001 слове * ~50 байт на запись = ~150 KB. Для localStorage (обычно 5 MB лимит) — безопасно. Однако на iPad mini 2 с iOS 12 localStorage может быть ограничен 2.5 MB. При 25 темах * 120 слов * 50 байт = ~150 KB — в пределах нормы.
 
 ---
@@ -300,18 +302,11 @@ Block 1 темы 2 содержит знак `014.jpg` (трамвай, 28 во�
 
 Потенциальное улучшение для режима `errors`: сначала загрузить только темы, в которых есть ошибки (из `qp_errors`), а не все 25.
 
-### 6.2 Динамические импорты блоков и словарей
+### 6.2 Динамические импорты блоков и словарей — RESOLVED 2026-05-14
 
-`blockService.loadBlocks()` и `vocabService.loadTopicVocab()` используют template literal в `import()` с комментарием `/* @vite-ignore */`. Это означает Vite **не включает** эти файлы в граф зависимостей автоматически. Однако файлы попадут в сборку только если Vite их обнаруживает другим способом.
+~~`blockService.loadBlocks()` и `vocabService.loadTopicVocab()` используют template literal в `import()` с комментарием `/* @vite-ignore */`. Это означает Vite **не включает** эти файлы в граф зависимостей автоматически.~~
 
-**Риск:** `import(/* @vite-ignore */ \`../data/blocks/topic_${topicId}_blocks.json\`)` — Vite не может статически анализировать этот путь. В production сборке эти файлы могут **не быть bundled** и запросы будут 404.
-
-**Безопасный паттерн** (как в questionsService):
-```javascript
-const blocksCache = import.meta.glob('../data/blocks/topic_*_blocks.json');
-```
-
-`questionsService.js` использует именно этот паттерн — **корректно**. `blockService.js` и `vocabService.js` — используют `@vite-ignore` — **потенциально проблематично**.
+**Исправлено:** `blockService.js`, `vocabService.js` и `questionsService.js (loadBlockQuestions)` переведены на `import.meta.glob()`. Все 25 blocks JSON + 25 vocab JSON + global_vocab JSON теперь статически включаются в production bundle как отдельные чанки.
 
 ### 6.3 Re-renders
 
@@ -360,7 +355,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🔴 КРИТИЧНО | `src/pages/HomePage.jsx:49` | `navigate('/quiz/${topic.topic_id}')` вместо `/topic/` | ~~Весь vocab-first флоу недостижим с главной~~ **RESOLVED 2026-05-14:** Добавлена TrainingPage + пункт «Тренировка» в BottomNav. HomePage сохранена для базового квиза. | RESOLVED |
 | 🟠 ВЫСОКОЕ | `src/hooks/useQuiz.js:146,184` | `completeBlockService(topicId, parseInt(blockId, 10), 999)` | После последнего блока `current_block` = несуществующий N+1 | Передавать реальное `totalBlocks` из контекста или загружать в `useQuiz` |
 | 🟠 ВЫСОКОЕ | `scripts/generate-blocks.py` | Вопросы в блоке не перемешиваются | Нет interleaving → снижение долгосрочного удержания | Добавить `random.shuffle(question_ids)` перед записью в JSON |
-| 🟠 ВЫСОКОЕ | `src/services/blockService.js`, `vocabService.js` | `import(/* @vite-ignore */ \`...\`)` | Файлы могут не попасть в production bundle Vite | Заменить на `import.meta.glob(...)` как в questionsService |
+| 🟠 ВЫСОКОЕ | `src/services/blockService.js`, `vocabService.js`, `questionsService.js` | ~~`import(/* @vite-ignore */ ...)`~~ **RESOLVED 2026-05-14:** заменено на `import.meta.glob()` во всех трёх файлах | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | `example_question_id` не используется | Нет примера из реального вопроса | Загрузить вопрос по ID и показать текст |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | Нет flip-механизма (errorful generation) | Пассивное чтение вместо активного вспоминания | Добавить кнопку «Показать перевод» |
 | 🟡 СРЕДНЕЕ | `src/pages/DictionaryPage.jsx:58` | `useVocab(selectedTopicId \|\| 0, ...)` | При selectedTopicId=null загружается topic_0 (несуществующий) | Условно вызывать useVocab только при selectedTopicId !== null (или вынести в отдельный компонент) |
@@ -457,17 +452,12 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - Сложность: XS
 - Проверка: клик «Тренировка» → выбор темы → /topic/N → BlockSelectPage
 
-**1.2 Исправить динамические импорты в blockService и vocabService**
-- Файлы: `src/services/blockService.js`, `src/services/vocabService.js`
-- Заменить `import(/* @vite-ignore */ ...)` на паттерн с `import.meta.glob()`
-- Пример из questionsService:
-  ```javascript
-  const blocksCache = import.meta.glob('../data/blocks/topic_*_blocks.json');
-  const vocabCache = import.meta.glob('../data/vocabulary/topic_*_vocab.json');
-  const globalVocabCache = import.meta.glob('../data/vocabulary/global_vocab.json');
-  ```
+**1.2 Исправить динамические импорты в blockService и vocabService** — ✅ RESOLVED 2026-05-14
+- Файлы: `src/services/blockService.js`, `src/services/vocabService.js`, `src/services/questionsService.js`
+- Заменено: `import(/* @vite-ignore */ ...)` → `import.meta.glob(...)` во всех трёх файлах
+- `loadBlockQuestions()` теперь вызывает `loadBlocks()` из blockService вместо inline-импорта
 - Сложность: S
-- Проверка: production build → open /topic/2 → VocabSession loads
+- Проверка: production build — 25 blocks чанков + 25 vocab чанков + global_vocab чанк в сборке
 
 **1.3 Заполнить переводы translation_ru**
 - Файл: `scripts/generate-vocab.py` + все vocab JSON
