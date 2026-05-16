@@ -674,9 +674,9 @@
   },
   {
     "id": "v027",
-    "word": "veicolo",
+    "word": "veicoli",
     "lemma": "veicolo",
-    "translation_ru": "транспортное средство",
+    "translation_ru": "средство",
     "frequency": 118,
     "sign_images": [
       "054.jpg",
@@ -728,9 +728,9 @@
   },
   {
     "id": "v028",
-    "word": "mezzo",
+    "word": "mezzi",
     "lemma": "mezzo",
-    "translation_ru": "осевой",
+    "translation_ru": "транспорт",
     "frequency": 2,
     "sign_images": [
       "148.jpg"
@@ -794,9 +794,9 @@
   },
   {
     "id": "v030",
-    "word": "consentire",
+    "word": "consente",
     "lemma": "consentire",
-    "translation_ru": "обеспечение",
+    "translation_ru": "разрешать",
     "frequency": 77,
     "sign_images": [
       "054.jpg",
@@ -855,9 +855,9 @@
   },
   {
     "id": "v032",
-    "word": "permettere",
+    "word": "permette",
     "lemma": "permettere",
-    "translation_ru": "притереться",
+    "translation_ru": "позволять",
     "frequency": 3,
     "sign_images": [
       "058.jpg",
@@ -899,7 +899,7 @@
   },
   {
     "id": "v034",
-    "word": "passeggero",
+    "word": "passeggeri",
     "lemma": "passeggero",
     "translation_ru": "пассажир",
     "frequency": 3,
@@ -987,7 +987,7 @@
   },
   {
     "id": "v038",
-    "word": "trovare",
+    "word": "trova",
     "lemma": "trovare",
     "translation_ru": "находиться",
     "frequency": 2,
@@ -1009,9 +1009,9 @@
   },
   {
     "id": "v039",
-    "word": "segnalare",
+    "word": "segnalato",
     "lemma": "segnalare",
-    "translation_ru": "обозначение",
+    "translation_ru": "подать",
     "frequency": 2,
     "sign_images": [
       "056.jpg",
@@ -1031,9 +1031,9 @@
   },
   {
     "id": "v040",
-    "word": "seguire",
+    "word": "segue",
     "lemma": "seguire",
-    "translation_ru": "следовать",
+    "translation_ru": "следующий",
     "frequency": 2,
     "sign_images": [
       "057.jpg",
@@ -1055,7 +1055,7 @@
     "id": "v041",
     "word": "sinistro",
     "lemma": "sinistro",
-    "translation_ru": "ДТП",
+    "translation_ru": "ответственность",
     "frequency": 2,
     "sign_images": [
       "062.jpg",
@@ -1119,7 +1119,7 @@
   },
   {
     "id": "v044",
-    "word": "pubblico",
+    "word": "pubblica",
     "lemma": "pubblico",
     "translation_ru": "общественный",
     "frequency": 2,
@@ -1141,9 +1141,9 @@
   },
   {
     "id": "v045",
-    "word": "salito",
+    "word": "salita",
     "lemma": "salito",
-    "translation_ru": null,
+    "translation_ru": "подъём",
     "frequency": 2,
     "sign_images": [
       "084.jpg",
@@ -1269,9 +1269,9 @@
   },
   {
     "id": "v050",
-    "word": "segnalazione",
+    "word": "segnalazioni",
     "lemma": "segnalazione",
-    "translation_ru": "иной",
+    "translation_ru": "звуковой",
     "frequency": 2,
     "sign_images": [
       "059.jpg"
@@ -1290,7 +1290,7 @@
   },
   {
     "id": "v051",
-    "word": "acustico",
+    "word": "acustiche",
     "lemma": "acustico",
     "translation_ru": "звуковой",
     "frequency": 2,
@@ -1401,7 +1401,7 @@
   },
   {
     "id": "v056",
-    "word": "conducente",
+    "word": "conducenti",
     "lemma": "conducente",
     "translation_ru": "водитель",
     "frequency": 3,
@@ -1424,7 +1424,7 @@
     "id": "v057",
     "word": "striscia",
     "lemma": "striscia",
-    "translation_ru": "полоса",
+    "translation_ru": "линия",
     "frequency": 3,
     "sign_images": [
       "056.jpg",
@@ -1444,9 +1444,9 @@
   },
   {
     "id": "v058",
-    "word": "continuare",
+    "word": "continua",
     "lemma": "continuare",
-    "translation_ru": "продолжать",
+    "translation_ru": "сплошной",
     "frequency": 3,
     "sign_images": [
       "056.jpg",
@@ -1519,9 +1519,9 @@
   },
   {
     "id": "v061",
-    "word": "carreggiare",
+    "word": "carreggiata",
     "lemma": "carreggiare",
-    "translation_ru": null,
+    "translation_ru": "проезжая часть",
     "frequency": 4,
     "sign_images": [
       "055.jpg",
@@ -1588,9 +1588,9 @@
   },
   {
     "id": "v064",
-    "word": "ora",
+    "word": "ore",
     "lemma": "ora",
-    "translation_ru": null,
+    "translation_ru": "00",
     "frequency": 50,
     "sign_images": [
       "055.jpg",
@@ -1670,9 +1670,9 @@
   },
   {
     "id": "v067",
-    "word": "destro",
+    "word": "destra",
     "lemma": "destro",
-    "translation_ru": "правый",
+    "translation_ru": "направо",
     "frequency": 7,
     "sign_images": [
       "056.jpg",
@@ -1786,9 +1786,9 @@
   },
   {
     "id": "v072",
-    "word": "libero",
+    "word": "libera",
     "lemma": "libero",
-    "translation_ru": "незамедлительно",
+    "translation_ru": "свободный",
     "frequency": 2,
     "sign_images": [
       "080.jpg",
@@ -1852,9 +1852,9 @@
   },
   {
     "id": "v075",
-    "word": "regolare",
+    "word": "regola",
     "lemma": "regolare",
-    "translation_ru": "регулировать",
+    "translation_ru": "действовать",
     "frequency": 2,
     "sign_images": [
       "084.jpg",
@@ -1899,9 +1899,9 @@
   },
   {
     "id": "v077",
-    "word": "notture ne",
+    "word": "notturne",
     "lemma": "notture ne",
-    "translation_ru": null,
+    "translation_ru": "ночной",
     "frequency": 3,
     "sign_images": [
       "055.jpg",
@@ -2047,9 +2047,9 @@
   },
   {
     "id": "v083",
-    "word": "precedere",
+    "word": "precede",
     "lemma": "precedere",
-    "translation_ru": "предшествовать",
+    "translation_ru": "впереди",
     "frequency": 5,
     "sign_images": [
       "057.jpg",
@@ -2096,9 +2096,9 @@
   },
   {
     "id": "v085",
-    "word": "persona",
+    "word": "persone",
     "lemma": "persona",
-    "translation_ru": "прекращение",
+    "translation_ru": "человек",
     "frequency": 11,
     "sign_images": [
       "060.jpg",
@@ -2202,9 +2202,9 @@
   },
   {
     "id": "v089",
-    "word": "obbligare",
+    "word": "obbliga",
     "lemma": "obbligare",
-    "translation_ru": null,
+    "translation_ru": "обязывать",
     "frequency": 10,
     "sign_images": [
       "057.jpg",
@@ -2253,7 +2253,7 @@
   },
   {
     "id": "v091",
-    "word": "trasportare",
+    "word": "trasportano",
     "lemma": "trasportare",
     "translation_ru": "перевозить",
     "frequency": 15,
@@ -2329,7 +2329,7 @@
   },
   {
     "id": "v094",
-    "word": "metro",
+    "word": "metri",
     "lemma": "metro",
     "translation_ru": "метр",
     "frequency": 26,
@@ -2358,9 +2358,9 @@
   },
   {
     "id": "v095",
-    "word": "extraurbano",
+    "word": "extraurbane",
     "lemma": "extraurbano",
-    "translation_ru": "междугородний",
+    "translation_ru": "внегородский",
     "frequency": 6,
     "sign_images": [
       "056.jpg",
@@ -2404,9 +2404,9 @@
   },
   {
     "id": "v097",
-    "word": "mercare",
+    "word": "mercato",
     "lemma": "mercare",
-    "translation_ru": null,
+    "translation_ru": "часы",
     "frequency": 2,
     "sign_images": [
       "065.jpg"
@@ -2425,9 +2425,9 @@
   },
   {
     "id": "v098",
-    "word": "turistico",
+    "word": "turistici",
     "lemma": "turistico",
-    "translation_ru": "офис",
+    "translation_ru": "туристический",
     "frequency": 2,
     "sign_images": [
       "067.jpg"
@@ -2446,9 +2446,9 @@
   },
   {
     "id": "v099",
-    "word": "carrozzare",
+    "word": "carrozzati",
     "lemma": "carrozzare",
-    "translation_ru": null,
+    "translation_ru": "кузов",
     "frequency": 2,
     "sign_images": [
       "068.jpg"
@@ -2467,9 +2467,9 @@
   },
   {
     "id": "v100",
-    "word": "regolamentare",
+    "word": "regolamentata",
     "lemma": "regolamentare",
-    "translation_ru": "надпись",
+    "translation_ru": "парковочный",
     "frequency": 2,
     "sign_images": [
       "084.jpg"
@@ -2488,9 +2488,9 @@
   },
   {
     "id": "v101",
-    "word": "venire",
+    "word": "vengono",
     "lemma": "venire",
-    "translation_ru": null,
+    "translation_ru": "узнать",
     "frequency": 2,
     "sign_images": [
       "148.jpg"
@@ -2665,7 +2665,7 @@
   },
   {
     "id": "v108",
-    "word": "autocarro",
+    "word": "autocarri",
     "lemma": "autocarro",
     "translation_ru": "грузовой",
     "frequency": 32,
@@ -2700,9 +2700,9 @@
   },
   {
     "id": "v109",
-    "word": "fermato",
+    "word": "fermata",
     "lemma": "fermato",
-    "translation_ru": "остановиться",
+    "translation_ru": "остановка",
     "frequency": 20,
     "sign_images": [
       "055.jpg",
@@ -2727,9 +2727,9 @@
   },
   {
     "id": "v110",
-    "word": "riservato",
+    "word": "riservata",
     "lemma": "riservato",
-    "translation_ru": "предназначить",
+    "translation_ru": "зарезервированный",
     "frequency": 12,
     "sign_images": [
       "056.jpg",
@@ -2826,9 +2826,9 @@
   },
   {
     "id": "v113",
-    "word": "rappresentare",
+    "word": "rappresentate",
     "lemma": "rappresentare",
-    "translation_ru": "изображать",
+    "translation_ru": "представить",
     "frequency": 9,
     "sign_images": [
       "091.jpg",
@@ -2876,7 +2876,7 @@
     "id": "v115",
     "word": "indicazione",
     "lemma": "indicazione",
-    "translation_ru": "указание",
+    "translation_ru": "информационный",
     "frequency": 6,
     "sign_images": [
       "080.jpg",
@@ -3043,9 +3043,9 @@
   },
   {
     "id": "v121",
-    "word": "esplosivo",
+    "word": "esplosivi",
     "lemma": "esplosivo",
-    "translation_ru": "взрывчатка",
+    "translation_ru": "взрывчатый",
     "frequency": 4,
     "sign_images": [
       "073.jpg"
@@ -3064,9 +3064,9 @@
   },
   {
     "id": "v122",
-    "word": "trarre",
+    "word": "tratto",
     "lemma": "trarre",
-    "translation_ru": null,
+    "translation_ru": "участок",
     "frequency": 3,
     "sign_images": [
       "084.jpg",
@@ -3087,9 +3087,9 @@
   },
   {
     "id": "v123",
-    "word": "autovettura",
+    "word": "autovetture",
     "lemma": "autovettura",
-    "translation_ru": "легковой автомобиль",
+    "translation_ru": "легковой",
     "frequency": 16,
     "sign_images": [
       "054.jpg",
@@ -3148,7 +3148,7 @@
     "id": "v125",
     "word": "carico",
     "lemma": "carico",
-    "translation_ru": "нагрузка",
+    "translation_ru": "груз",
     "frequency": 24,
     "sign_images": [
       "054.jpg",

@@ -583,9 +583,9 @@
   },
   {
     "id": "v026",
-    "word": "destro",
+    "word": "destra",
     "lemma": "destro",
-    "translation_ru": "правый",
+    "translation_ru": "направо",
     "frequency": 79,
     "sign_images": [
       "093.jpg",
@@ -795,9 +795,9 @@
   },
   {
     "id": "v033",
-    "word": "consentire",
+    "word": "consente",
     "lemma": "consentire",
-    "translation_ru": "обеспечение",
+    "translation_ru": "разрешать",
     "frequency": 48,
     "sign_images": [
       "093.jpg",
@@ -853,9 +853,9 @@
   },
   {
     "id": "v035",
-    "word": "lente",
+    "word": "lenti",
     "lemma": "lente",
-    "translation_ru": null,
+    "translation_ru": "линза",
     "frequency": 2,
     "sign_images": [
       "096.jpg",
@@ -875,7 +875,7 @@
   },
   {
     "id": "v036",
-    "word": "proprio",
+    "word": "propria",
     "lemma": "proprio",
     "translation_ru": "свой",
     "frequency": 2,
@@ -919,7 +919,7 @@
   },
   {
     "id": "v038",
-    "word": "metro",
+    "word": "metri",
     "lemma": "metro",
     "translation_ru": "метр",
     "frequency": 2,
@@ -963,9 +963,9 @@
   },
   {
     "id": "v040",
-    "word": "mezzo",
+    "word": "mezzi",
     "lemma": "mezzo",
-    "translation_ru": "осевой",
+    "translation_ru": "транспорт",
     "frequency": 2,
     "sign_images": [
       "119.jpg",
@@ -1011,7 +1011,7 @@
   },
   {
     "id": "v042",
-    "word": "autocarro",
+    "word": "autocarri",
     "lemma": "autocarro",
     "translation_ru": "грузовой",
     "frequency": 10,
@@ -1055,7 +1055,7 @@
   },
   {
     "id": "v044",
-    "word": "pneumatico",
+    "word": "pneumatici",
     "lemma": "pneumatico",
     "translation_ru": "шина",
     "frequency": 6,
@@ -1149,9 +1149,9 @@
   },
   {
     "id": "v048",
-    "word": "carreggiare",
+    "word": "carreggiata",
     "lemma": "carreggiare",
-    "translation_ru": null,
+    "translation_ru": "проезжая часть",
     "frequency": 3,
     "sign_images": [
       "094.jpg",
@@ -1195,7 +1195,7 @@
   },
   {
     "id": "v050",
-    "word": "ciclomotore",
+    "word": "ciclomotori",
     "lemma": "ciclomotore",
     "translation_ru": "мопед",
     "frequency": 3,
@@ -1218,7 +1218,7 @@
   },
   {
     "id": "v051",
-    "word": "pedone",
+    "word": "pedoni",
     "lemma": "pedone",
     "translation_ru": "пешеход",
     "frequency": 23,
@@ -1267,9 +1267,9 @@
   },
   {
     "id": "v053",
-    "word": "rappresentare",
+    "word": "rappresentati",
     "lemma": "rappresentare",
-    "translation_ru": "изображать",
+    "translation_ru": "представить",
     "frequency": 3,
     "sign_images": [
       "150.jpg"
@@ -1395,9 +1395,9 @@
   },
   {
     "id": "v058",
-    "word": "vicinanza",
+    "word": "vicinanze",
     "lemma": "vicinanza",
-    "translation_ru": "вблизи",
+    "translation_ru": "поблизости",
     "frequency": 4,
     "sign_images": [
       "098.jpg",
@@ -1500,9 +1500,9 @@
   },
   {
     "id": "v062",
-    "word": "veicolo",
+    "word": "veicoli",
     "lemma": "veicolo",
-    "translation_ru": "транспортное средство",
+    "translation_ru": "средство",
     "frequency": 29,
     "sign_images": [
       "093.jpg",
@@ -1533,9 +1533,9 @@
   },
   {
     "id": "v063",
-    "word": "obbligare",
+    "word": "obbliga",
     "lemma": "obbligare",
-    "translation_ru": null,
+    "translation_ru": "обязывать",
     "frequency": 37,
     "sign_images": [
       "093.jpg",
@@ -1702,9 +1702,9 @@
   },
   {
     "id": "v069",
-    "word": "curvo",
+    "word": "curva",
     "lemma": "curvo",
-    "translation_ru": null,
+    "translation_ru": "поворот",
     "frequency": 6,
     "sign_images": [
       "094.jpg",
@@ -1759,7 +1759,7 @@
   },
   {
     "id": "v071",
-    "word": "fermare si",
+    "word": "fermarsi",
     "lemma": "fermare si",
     "translation_ru": "остановиться",
     "frequency": 10,
@@ -1804,7 +1804,7 @@
   },
   {
     "id": "v073",
-    "word": "regolare",
+    "word": "regolato",
     "lemma": "regolare",
     "translation_ru": "регулировать",
     "frequency": 2,
@@ -1826,9 +1826,9 @@
   },
   {
     "id": "v074",
-    "word": "autovettura",
+    "word": "autovetture",
     "lemma": "autovettura",
-    "translation_ru": "легковой автомобиль",
+    "translation_ru": "легковой",
     "frequency": 2,
     "sign_images": [
       "104.jpg",
@@ -1848,9 +1848,9 @@
   },
   {
     "id": "v075",
-    "word": "trarre",
+    "word": "tratto",
     "lemma": "trarre",
-    "translation_ru": null,
+    "translation_ru": "участок",
     "frequency": 2,
     "sign_images": [
       "107.jpg",
@@ -1870,9 +1870,9 @@
   },
   {
     "id": "v076",
-    "word": "occorrere",
+    "word": "occorre",
     "lemma": "occorrere",
-    "translation_ru": null,
+    "translation_ru": "необходимо",
     "frequency": 2,
     "sign_images": [
       "107.jpg",
@@ -2116,9 +2116,9 @@
   },
   {
     "id": "v086",
-    "word": "indicare",
+    "word": "indicata",
     "lemma": "indicare",
-    "translation_ru": "обозначение",
+    "translation_ru": "указанный",
     "frequency": 11,
     "sign_images": [
       "104.jpg",
@@ -2186,7 +2186,7 @@
   },
   {
     "id": "v089",
-    "word": "pericoloso",
+    "word": "pericolosa",
     "lemma": "pericoloso",
     "translation_ru": "опасный",
     "frequency": 9,
@@ -2271,9 +2271,9 @@
   },
   {
     "id": "v092",
-    "word": "significare",
+    "word": "significa",
     "lemma": "significare",
-    "translation_ru": "спасение",
+    "translation_ru": "означать",
     "frequency": 2,
     "sign_images": [
       "094.jpg"
@@ -2292,9 +2292,9 @@
   },
   {
     "id": "v093",
-    "word": "disporso",
+    "word": "disporsi",
     "lemma": "disporso",
-    "translation_ru": null,
+    "translation_ru": "перестроиться",
     "frequency": 2,
     "sign_images": [
       "098.jpg"
@@ -2355,9 +2355,9 @@
   },
   {
     "id": "v096",
-    "word": "tonnellare",
+    "word": "tonnellate",
     "lemma": "tonnellare",
-    "translation_ru": null,
+    "translation_ru": "масса",
     "frequency": 2,
     "sign_images": [
       "106.jpg"
@@ -2376,9 +2376,9 @@
   },
   {
     "id": "v097",
-    "word": "biciclettare",
+    "word": "bicicletta",
     "lemma": "biciclettare",
-    "translation_ru": null,
+    "translation_ru": "велосипед",
     "frequency": 2,
     "sign_images": [
       "112.jpg"
@@ -2397,9 +2397,9 @@
   },
   {
     "id": "v098",
-    "word": "cavallo",
+    "word": "cavalli",
     "lemma": "cavallo",
-    "translation_ru": "наезжий",
+    "translation_ru": "лошадь",
     "frequency": 2,
     "sign_images": [
       "117.jpg"
@@ -2445,7 +2445,7 @@
     "id": "v100",
     "word": "indicazione",
     "lemma": "indicazione",
-    "translation_ru": "указание",
+    "translation_ru": "информационный",
     "frequency": 12,
     "sign_images": [
       "093.jpg",
@@ -2475,7 +2475,7 @@
   },
   {
     "id": "v101",
-    "word": "freccia",
+    "word": "frecce",
     "lemma": "freccia",
     "translation_ru": "стрелка",
     "frequency": 3,
@@ -2541,7 +2541,7 @@
   },
   {
     "id": "v104",
-    "word": "trovare",
+    "word": "trova",
     "lemma": "trovare",
     "translation_ru": "находиться",
     "frequency": 4,
@@ -2587,9 +2587,9 @@
   },
   {
     "id": "v106",
-    "word": "bisognare",
+    "word": "bisogna",
     "lemma": "bisognare",
-    "translation_ru": null,
+    "translation_ru": "необходимо",
     "frequency": 7,
     "sign_images": [
       "094.jpg",
@@ -2715,7 +2715,7 @@
   },
   {
     "id": "v111",
-    "word": "conducente",
+    "word": "conducenti",
     "lemma": "conducente",
     "translation_ru": "водитель",
     "frequency": 16,
@@ -2807,9 +2807,9 @@
   },
   {
     "id": "v114",
-    "word": "pistare",
+    "word": "pista",
     "lemma": "pistare",
-    "translation_ru": null,
+    "translation_ru": "дорожка",
     "frequency": 12,
     "sign_images": [
       "110.jpg",
@@ -2891,9 +2891,9 @@
   },
   {
     "id": "v117",
-    "word": "catena",
+    "word": "catene",
     "lemma": "catena",
-    "translation_ru": "приводной",
+    "translation_ru": "цепь",
     "frequency": 8,
     "sign_images": [
       "107.jpg"
@@ -2958,9 +2958,9 @@
   },
   {
     "id": "v120",
-    "word": "svolgere",
+    "word": "svolta",
     "lemma": "svolgere",
-    "translation_ru": "автомагнитола",
+    "translation_ru": "поворот",
     "frequency": 14,
     "sign_images": [
       "093.jpg",
@@ -3010,7 +3010,7 @@
   },
   {
     "id": "v122",
-    "word": "munito",
+    "word": "muniti",
     "lemma": "munito",
     "translation_ru": "оборудовать",
     "frequency": 3,
@@ -3063,7 +3063,7 @@
   },
   {
     "id": "v124",
-    "word": "arrestare si",
+    "word": "arrestarsi",
     "lemma": "arrestare si",
     "translation_ru": "остановиться",
     "frequency": 6,

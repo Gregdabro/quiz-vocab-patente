@@ -1036,9 +1036,9 @@
   },
   {
     "id": "v030",
-    "word": "norma",
+    "word": "norme",
     "lemma": "norma",
-    "translation_ru": "правило",
+    "translation_ru": "согласно",
     "frequency": 122,
     "sign_images": [
       "613.jpg",
@@ -1068,9 +1068,9 @@
   },
   {
     "id": "v031",
-    "word": "transitare",
+    "word": "transitano",
     "lemma": "transitare",
-    "translation_ru": "проехать",
+    "translation_ru": "проезжать",
     "frequency": 50,
     "sign_images": [
       "604.jpg",
@@ -1159,9 +1159,9 @@
   },
   {
     "id": "v033",
-    "word": "libero",
+    "word": "libera",
     "lemma": "libero",
-    "translation_ru": "незамедлительно",
+    "translation_ru": "свободный",
     "frequency": 4,
     "sign_images": [
       "638.jpg",
@@ -1206,7 +1206,7 @@
   },
   {
     "id": "v035",
-    "word": "proseguire",
+    "word": "prosegue",
     "lemma": "proseguire",
     "translation_ru": "прямо",
     "frequency": 4,
@@ -1451,9 +1451,9 @@
   },
   {
     "id": "v045",
-    "word": "rappresentare",
+    "word": "rappresentata",
     "lemma": "rappresentare",
-    "translation_ru": "изображать",
+    "translation_ru": "ситуация",
     "frequency": 46,
     "sign_images": [
       "608.jpg",
@@ -1556,9 +1556,9 @@
   },
   {
     "id": "v049",
-    "word": "fermare",
+    "word": "ferma",
     "lemma": "fermare",
-    "translation_ru": "остановиться",
+    "translation_ru": "останавливаться",
     "frequency": 6,
     "sign_images": [
       "617.jpg",
@@ -1581,9 +1581,9 @@
   },
   {
     "id": "v050",
-    "word": "destro",
+    "word": "destra",
     "lemma": "destro",
-    "translation_ru": "правый",
+    "translation_ru": "направо",
     "frequency": 9,
     "sign_images": [
       "620.jpg",
@@ -1634,9 +1634,9 @@
   },
   {
     "id": "v052",
-    "word": "svolgere",
+    "word": "svolta",
     "lemma": "svolgere",
-    "translation_ru": "автомагнитола",
+    "translation_ru": "поворот",
     "frequency": 6,
     "sign_images": [
       "607.jpg",
@@ -1686,9 +1686,9 @@
   },
   {
     "id": "v054",
-    "word": "dovere",
+    "word": "dovendo",
     "lemma": "dovere",
-    "translation_ru": "юридический",
+    "translation_ru": "пересечение",
     "frequency": 27,
     "sign_images": [
       "606.jpg",
@@ -1710,9 +1710,9 @@
   },
   {
     "id": "v055",
-    "word": "provenire",
+    "word": "proveniente",
     "lemma": "provenire",
-    "translation_ru": "откуда",
+    "translation_ru": "приближаться",
     "frequency": 3,
     "sign_images": [
       "648.jpg",
@@ -1732,7 +1732,7 @@
   },
   {
     "id": "v056",
-    "word": "fermare si",
+    "word": "fermarsi",
     "lemma": "fermare si",
     "translation_ru": "остановиться",
     "frequency": 5,
@@ -1756,9 +1756,9 @@
   },
   {
     "id": "v057",
-    "word": "passare",
+    "word": "passa",
     "lemma": "passare",
-    "translation_ru": "проехать",
+    "translation_ru": "проезжать",
     "frequency": 101,
     "sign_images": [
       "604.jpg",
@@ -1846,9 +1846,9 @@
   },
   {
     "id": "v060",
-    "word": "manovro",
+    "word": "manovra",
     "lemma": "manovro",
-    "translation_ru": null,
+    "translation_ru": "манёвр",
     "frequency": 3,
     "sign_images": [
       "617.jpg",
@@ -1995,9 +1995,9 @@
   },
   {
     "id": "v064",
-    "word": "occupare",
+    "word": "occupata",
     "lemma": "occupare",
-    "translation_ru": "занимать",
+    "translation_ru": "занятый",
     "frequency": 2,
     "sign_images": [
       "620.jpg",
@@ -2043,9 +2043,9 @@
   },
   {
     "id": "v066",
-    "word": "ordina",
+    "word": "ordine",
     "lemma": "ordina",
-    "translation_ru": "приказывать",
+    "translation_ru": "порядок",
     "frequency": 42,
     "sign_images": [
       "604.jpg",
@@ -2083,9 +2083,9 @@
   },
   {
     "id": "v067",
-    "word": "transitato",
+    "word": "transitati",
     "lemma": "transitato",
-    "translation_ru": "шествие",
+    "translation_ru": "дождаться",
     "frequency": 6,
     "sign_images": [
       "634.jpg",
@@ -2195,9 +2195,9 @@
   },
   {
     "id": "v071",
-    "word": "giungere",
+    "word": "giungendo",
     "lemma": "giungere",
-    "translation_ru": null,
+    "translation_ru": "перекрёсток",
     "frequency": 30,
     "sign_images": [
       "634.jpg",
@@ -2555,9 +2555,9 @@
   },
   {
     "id": "v085",
-    "word": "concludere",
+    "word": "conclude",
     "lemma": "concludere",
-    "translation_ru": "завершить",
+    "translation_ru": "завершать",
     "frequency": 4,
     "sign_images": [
       "617.jpg",
@@ -2599,9 +2599,9 @@
   },
   {
     "id": "v087",
-    "word": "essere si",
+    "word": "essersi",
     "lemma": "essere si",
-    "translation_ru": "безопасный",
+    "translation_ru": "ждать",
     "frequency": 2,
     "sign_images": [
       "617.jpg",
@@ -2621,9 +2621,9 @@
   },
   {
     "id": "v088",
-    "word": "portare",
+    "word": "portato",
     "lemma": "portare",
-    "translation_ru": null,
+    "translation_ru": "ждать",
     "frequency": 2,
     "sign_images": [
       "617.jpg",

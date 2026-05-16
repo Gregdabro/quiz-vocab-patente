@@ -40,11 +40,15 @@ def _load_cache():
         print("[WARN] translation_cache.json not found — run align-translations.py first")
         _translation_cache = {}
 
-def _translate(word: str) -> str | None:
+def _translate(word: str, fallback: str = None) -> str | None:
     """Get Russian translation for an Italian word/phrase from cache."""
     entry = _translation_cache.get(word)
     if entry and entry.get('translation'):
         return entry['translation']
+    if fallback:
+        entry = _translation_cache.get(fallback)
+        if entry and entry.get('translation'):
+            return entry['translation']
     return None
 
 # ── Topic type map (from master plan) ─────────────────────────────────────────
@@ -614,6 +618,17 @@ def process_topic_v2(topic_id: int, questions: list, lemma_map: dict, lemma_leve
         for s in signs:
             sign_to_words[s].add(w)
 
+    # Build lemma → most common original word form mapping.
+    # Fixes spaCy lemmatization errors (e.g. "carreggiata" → "carreggiare").
+    # Uses the original form that appears in question texts as the display word.
+    lemma_to_best_word = {}
+    lemma_form_counts = defaultdict(Counter)
+    for qd in q_data:
+        for tok, lemma in zip(qd['tokens'], qd['lemmas']):
+            lemma_form_counts[lemma][tok] += 1
+    for lemma, form_counts in lemma_form_counts.items():
+        lemma_to_best_word[lemma] = form_counts.most_common(1)[0][0]
+
     top_set = set(top_words)
     entries = []
     idx = 1
@@ -652,15 +667,16 @@ def process_topic_v2(topic_id: int, questions: list, lemma_map: dict, lemma_leve
         bigram_added.update([l1, l2])
         idx += 1
 
-    # Individuals
+    # Individuals — use original word form (not spaCy lemma) for display
     for lemma in top_words:
         if lemma in bigram_added and topic_freq[lemma] < 10:
             continue
+        var_best_word = lemma_to_best_word.get(lemma, lemma)
         entries.append({
             'id': f"v{idx:03d}",
-            'word': lemma,
+            'word': var_best_word,
             'lemma': lemma,
-            'translation_ru': _translate(lemma),
+            'translation_ru': _translate(var_best_word, lemma),
             'frequency': topic_freq[lemma],
             'sign_images': sorted(word_to_signs.get(lemma, set())),
             'example_question_id': word_to_qids[lemma][0] if word_to_qids[lemma] else None,
