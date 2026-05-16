@@ -4,12 +4,10 @@ import useBlocks from '../hooks/useBlocks';
 import useTopics from '../hooks/useTopics';
 import useVocab from '../hooks/useVocab';
 import { navigateToBlock } from '../services/blockService';
+import { SIGN_IMAGE_BASE } from '../constants.js';
 import Spinner from '../components/ui/Spinner';
 import AppHeader from '../components/layout/AppHeader';
 import VocabSession from '../components/vocab/VocabSession';
-
-var SIGN_IMAGE_BASE =
-  'https://quizpatentelng.s3.eu-central-1.amazonaws.com/imgquiz/';
 
 var TOPIC_TYPE_LABELS = { A: 'Знаки', B: 'Смешанная', C: 'Правила' };
 var TOPIC_TYPE_COLORS = { A: '#2563eb', B: '#7c3aed', C: '#059669' };

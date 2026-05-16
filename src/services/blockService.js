@@ -23,9 +23,9 @@
  *   - Vite обрабатывает template literal pattern и включает все JSON в сборку
  */
 
-var STORAGE_KEY = 'qp_block_prog';
+const STORAGE_KEY = 'qp_block_prog';
 
-var blocksCache = import.meta.glob('../data/blocks/topic_*_blocks.json');
+const blocksCache = import.meta.glob('../data/blocks/topic_*_blocks.json');
 
 // ---------------------------------------------------------------------------
 // Внутренние хелперы

@@ -364,8 +364,8 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🟡 СРЕДНЕЕ | `src/styles/layout.css` | ~~`position: sticky` без `-webkit-sticky`~~ **RESOLVED 2026-05-16:** Добавлен `-webkit-sticky` префикс в CSS-класс `.app-header`, убран из inline style | RESOLVED |
 | 🟢 НИЗКОЕ | `src/pages/BlockSelectPage.jsx` | ~~Нет объяснения почему кнопка «Тест» заблокирована~~ **RESOLVED 2026-05-16:** Текст-подсказка «Сначала изучите слова этого блока» под заблокированной кнопкой | RESOLVED |
 | 🟢 НИЗКОЕ | `src/components/quiz/ResultScreen.jsx` | ~~Не сообщает об разблокировке следующего блока~~ **RESOLVED 2026-05-16:** Уведомление «🎉 Следующий блок разблокирован!» при isBlockMode && isPassed | RESOLVED |
-| 🟢 НИЗКОЕ | `src/hooks/useVocab.js` | `var _a = useState(...)` вместо деструктуризации | Читаемость кода | Рефакторинг на стандартный синтаксис (legacy plugin всё равно транспилирует) |
-| 🟢 НИЗКОЕ | Все сервисы | `var` вместо `const/let` | Читаемость кода | Не критично (legacy plugin транспилирует оба варианта), но рефакторинг улучшит DX |
+| 🟢 НИЗКОЕ | `src/hooks/useVocab.js` | ~~`var _a = useState(...)`~~ **RESOLVED 2026-05-16:** Деструктуризация в useVocab, useBlocks | RESOLVED |
+| 🟢 НИЗКОЕ | Все сервисы | ~~`var` вместо `const/let`~~ **RESOLVED 2026-05-16:** Модульные константы заменены на `const` | RESOLVED |
 
 ---
 
@@ -384,7 +384,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - `example_question_id` в vocab JSON — поле присутствует, но ни один компонент его не читает
 - `lemma` в vocab JSON — поле не используется в frontend
 - `level` (0/1/2/3) в vocab JSON — поле не используется для фильтрации карточек
-- `SIGN_IMAGE_BASE` определён в **двух местах**: `BlockSelectPage.jsx` и `VocabCard.jsx` — вынести в константу
+- ~~`SIGN_IMAGE_BASE` определён в двух местах~~ → **RESOLVED 2026-05-16:** Вынесен в `src/constants.js`
 
 ---
 

@@ -9,7 +9,7 @@
  * }
  */
 
-var STORAGE_KEY = 'qp_progress';
+const STORAGE_KEY = 'qp_progress';
 
 /**
  * Получить весь прогресс.

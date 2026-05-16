@@ -29,33 +29,13 @@ export default function useVocab(topicId, options) {
   var freeVocabIds = (options && options.vocabIds) || null;
   var overrideBlock = (options && options.blockNumber) || null;
 
-  var _a = useState([]);
-  var cards = _a[0];
-  var setCards = _a[1];
-
-  var _b = useState(0);
-  var currentIndex = _b[0];
-  var setCurrentIndex = _b[1];
-
-  var _c = useState(function () { return new Set(); });
-  var ratedIndices = _c[0];
-  var setRatedIndices = _c[1];
-
-  var _d = useState(true);
-  var loading = _d[0];
-  var setLoading = _d[1];
-
-  var _e = useState(null);
-  var error = _e[0];
-  var setError = _e[1];
-
-  var _f = useState({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 });
-  var boxStats = _f[0];
-  var setBoxStats = _f[1];
-
-  var _g = useState(0);
-  var sessionKey = _g[0];
-  var setSessionKey = _g[1];
+  var [cards, setCards] = useState([]);
+  var [currentIndex, setCurrentIndex] = useState(0);
+  var [ratedIndices, setRatedIndices] = useState(function () { return new Set(); });
+  var [loading, setLoading] = useState(true);
+  var [error, setError] = useState(null);
+  var [boxStats, setBoxStats] = useState({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 });
+  var [sessionKey, setSessionKey] = useState(0);
 
   var currentBlockRef = useRef(1);
 

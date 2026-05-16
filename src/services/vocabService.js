@@ -25,15 +25,15 @@
  *   'dontknow'  → box - 1 (min 0)
  */
 
-var STORAGE_KEY = 'qp_vocab';
+const STORAGE_KEY = 'qp_vocab';
 
-var vocabCache = import.meta.glob('../data/vocabulary/topic_*_vocab.json');
-var globalVocabCache = import.meta.glob('../data/vocabulary/global_vocab.json');
+const vocabCache = import.meta.glob('../data/vocabulary/topic_*_vocab.json');
+const globalVocabCache = import.meta.glob('../data/vocabulary/global_vocab.json');
 
 // Интервал показа в блоках для каждого ящика (индекс = номер ящика)
-var LEITNER_INTERVALS = [0, 1, 3, 7, 30];
+const LEITNER_INTERVALS = [0, 1, 3, 7, 30];
 
-var MAX_BOX = 4;
+const MAX_BOX = 4;
 
 // ---------------------------------------------------------------------------
 // Внутренние хелперы
@@ -198,7 +198,7 @@ export function clearVocab() {
 // Онбординг — нулевой урок (22 универсальных слова)
 // ---------------------------------------------------------------------------
 
-var ONBOARDING_KEY = 'qp_onboarding_done';
+const ONBOARDING_KEY = 'qp_onboarding_done';
 
 /**
  * Проверить, пройден ли нулевой урок.

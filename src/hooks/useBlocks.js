@@ -22,21 +22,10 @@ import {
 } from '../services/blockService.js';
 
 export default function useBlocks(topicId) {
-  var _a = useState([]);
-  var blocks = _a[0];
-  var setBlocks = _a[1];
-
-  var _b = useState(true);
-  var loading = _b[0];
-  var setLoading = _b[1];
-
-  var _c = useState(null);
-  var error = _c[0];
-  var setError = _c[1];
-
-  var _d = useState(function () { return getBlockProgress(topicId); });
-  var progress = _d[0];
-  var setProgress = _d[1];
+  var [blocks, setBlocks] = useState([]);
+  var [loading, setLoading] = useState(true);
+  var [error, setError] = useState(null);
+  var [progress, setProgress] = useState(function () { return getBlockProgress(topicId); });
 
   // ---------------------------------------------------------------------------
   // Загрузка блоков

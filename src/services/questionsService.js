@@ -128,7 +128,7 @@ export async function loadTopics() {
 }
 
 // Кэш загруженных вопросов по темам (для loadQuestionText)
-var _questionsByTopic = {};
+const _questionsByTopic = {};
 
 /**
  * Загружает текст вопроса по ID темы и ID вопроса.

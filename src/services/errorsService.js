@@ -9,7 +9,7 @@
  * При count === 0 — ключ удаляется.
  */
 
-var STORAGE_KEY = 'qp_errors';
+const STORAGE_KEY = 'qp_errors';
 
 /**
  * Получить все ошибки.

@@ -19,9 +19,7 @@
 
 import { useState, useEffect } from 'react';
 import { loadQuestionText } from '../../services/questionsService.js';
-
-var SIGN_IMAGE_BASE =
-  'https://quizpatentelng.s3.eu-central-1.amazonaws.com/imgquiz/';
+import { SIGN_IMAGE_BASE } from '../../constants.js';
 
 export default function VocabCard(_a) {
   var card = _a.card;
