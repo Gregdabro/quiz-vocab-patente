@@ -195,6 +195,87 @@ export function clearVocab() {
 }
 
 // ---------------------------------------------------------------------------
+// Cross-topic vocab tracking (лемматизация + Leitner-прогресс по всем темам)
+// ---------------------------------------------------------------------------
+
+var _lemmaTopicMap = null;
+
+/**
+ * Загрузить lemma → {topicId: vocabId} маппинг (лениво).
+ * @returns {Promise<Object>}
+ */
+function _loadLemmaMap() {
+  if (_lemmaTopicMap) return Promise.resolve(_lemmaTopicMap);
+  return import('../data/lemma_topic_map.json').then(function (m) {
+    _lemmaTopicMap = m.default || m;
+    return _lemmaTopicMap;
+  }).catch(function () {
+    return {};
+  });
+}
+
+/**
+ * Проверить, освоено ли слово (box ≥ 3) в других темах.
+ * Освоенные слова фильтруются чтобы не повторять изученное.
+ * @param {string} lemma — лемма слова (первое слово фразы)
+ * @param {number|string} currentTopicId
+ * @param {Object} lemmaMap — предзагруженный маппинг
+ * @returns {boolean}
+ */
+function _isMasteredElsewhere(lemma, currentTopicId, lemmaMap, progress) {
+  var topics = lemmaMap[lemma];
+  if (!topics) return false;
+  var keys = Object.keys(topics);
+  for (var i = 0; i < keys.length; i++) {
+    var tid = keys[i];
+    if (String(tid) === String(currentTopicId)) continue;
+    var vocabId = topics[tid];
+    var key = String(tid) + '_' + vocabId;
+    var state = progress[key];
+    if (state && state.box >= 3) return true;
+  }
+  return false;
+}
+
+/**
+ * Отфильтровать карточки — убрать слова, освоенные в других темах.
+ * Возвращает { filtered: [...], removedCount: number, allMastered: boolean }
+ * @param {number|string} topicId
+ * @param {Array} cards — массив vocab-карточек
+ * @returns {Promise<Object>}
+ */
+export function filterMasteredWords(topicId, cards) {
+  if (!cards || !cards.length) return Promise.resolve({ filtered: cards, removedCount: 0, allMastered: false });
+
+  return _loadLemmaMap().then(function (lemmaMap) {
+    var progress = getVocabProgress();
+    var filtered = [];
+    var removedCount = 0;
+
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      // Number cards always go through
+      if (card.isNumberCard) {
+        filtered.push(card);
+        continue;
+      }
+      var lemma = (card.lemma || card.word || '').split(' ')[0];
+      if (_isMasteredElsewhere(lemma, topicId, lemmaMap, progress)) {
+        removedCount++;
+      } else {
+        filtered.push(card);
+      }
+    }
+
+    return {
+      filtered: filtered,
+      removedCount: removedCount,
+      allMastered: filtered.length === 0 && removedCount > 0,
+    };
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Онбординг — нулевой урок (22 универсальных слова)
 // ---------------------------------------------------------------------------
 

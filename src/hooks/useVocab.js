@@ -19,6 +19,7 @@ import {
   getCardsForSession,
   saveCardResult,
   getBoxStats,
+  filterMasteredWords,
 } from '../services/vocabService.js';
 import { loadBlocks, getBlockProgress } from '../services/blockService.js';
 
@@ -153,9 +154,13 @@ export default function useVocab(topicId, options) {
               sessionCards = numberCards.concat(sessionCards);
             }
 
-            setCards(sessionCards);
-            setBoxStats(getBoxStats(topicId, vocab.map(function (v) { return v.id; })));
-            setLoading(false);
+            // Cross-topic filtering: убрать слова, освоенные в других темах
+            return filterMasteredWords(topicId, sessionCards).then(function (result) {
+              if (cancelled) return;
+              setCards(result.filtered);
+              setBoxStats(getBoxStats(topicId, vocab.map(function (v) { return v.id; })));
+              setLoading(false);
+            });
           });
         });
       } catch (err) {

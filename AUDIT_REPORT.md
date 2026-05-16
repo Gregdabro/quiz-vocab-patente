@@ -529,9 +529,9 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - `buildNumberCards()` конвертирует `number_rules` из блока в карточки-шаблоны (число заменено на `___`). `VocabCard` показывает метку «Числовое правило», контекст с пропуском, кнопку «Показать ответ», и число крупным шрифтом после раскрытия. Карточки добавляются в начало сессии.
 - Сложность: M
 
-**4.2 Cross-topic vocab tracking**
-- При загрузке vocab-сессии — фильтровать слова, уже освоенные в других темах
-- Требует глобального словаря с mapping word→topics
+**4.2 Cross-topic vocab tracking** — ✅ RESOLVED 2026-05-16
+- Файлы: `src/data/lemma_topic_map.json` (новый), `src/services/vocabService.js`, `src/hooks/useVocab.js`
+- `lemma_topic_map.json` — статический маппинг 684 лемм → {topicId: vocabId}. `filterMasteredWords()` проверяет Leitner-прогресс (box ≥ 3) по всем темам и убирает уже освоенные слова из сессии. 45% слов (310 из 684) встречаются в нескольких темах — фильтрация даёт реальное сокращение дублирования.
 - Сложность: L
 
 **4.3 Exam Traps режим**
