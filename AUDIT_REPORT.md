@@ -541,8 +541,9 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 
 ### Phase 5 — Performance & Polish
 
-**5.1 Оптимизировать режим 'errors' в useQuiz**
-- Загружать только темы, где есть ошибки (из qp_errors) вместо всех 25
+**5.1 Оптимизировать режим 'errors' в useQuiz** — ✅ RESOLVED 2026-05-16
+- Файлы: `src/data/question_topic_map.json` (новый), `src/services/questionsService.js`, `src/hooks/useQuiz.js`
+- Создан маппинг questionId→topicId (80 KB → 51 KB gzip). `loadErrorQuestions()` загружает только темы с ошибками, а не все 25. Маппинг загружается лениво только в режиме errors.
 - Сложность: S
 
 **5.2 Auto-advance после ответа**

@@ -130,6 +130,64 @@ export async function loadTopics() {
 // Кэш загруженных вопросов по темам (для loadQuestionText)
 const _questionsByTopic = {};
 
+// Маппинг questionId → topicId (ленивая загрузка)
+var _questionTopicMap = null;
+
+/**
+ * Загружает вопросы с ошибками, только из тем где эти ошибки есть.
+ * Вместо загрузки всех 25 тем (~17 MB) грузит только нужные.
+ * @returns {Promise<Array>}
+ */
+export async function loadErrorQuestions() {
+  var errorIds = getErrors();
+  if (!Object.keys(errorIds).length) return [];
+
+  // Ленивая загрузка маппинга questionId → topicId
+  if (!_questionTopicMap) {
+    try {
+      var mapModule = await import('../data/question_topic_map.json');
+      _questionTopicMap = mapModule.default || mapModule;
+    } catch (e) {
+      console.error('questionsService: не удалось загрузить question_topic_map', e);
+      return [];
+    }
+  }
+
+  // Найти уникальные topicId для ошибочных вопросов
+  var topicIds = {};
+  var errorIdList = Object.keys(errorIds);
+  for (var i = 0; i < errorIdList.length; i++) {
+    var tid = _questionTopicMap[errorIdList[i]];
+    if (tid !== undefined) topicIds[tid] = true;
+  }
+
+  var uniqueTopics = Object.keys(topicIds);
+  if (!uniqueTopics.length) return [];
+
+  // Загрузить вопросы только из нужных тем
+  var allQuestions = [];
+  var BATCH_SIZE = 5;
+  for (var b = 0; b < uniqueTopics.length; b += BATCH_SIZE) {
+    var batch = uniqueTopics.slice(b, b + BATCH_SIZE);
+    var results = await Promise.all(
+      batch.map(function (tid) { return loadTopicQuestions(tid); })
+    );
+    for (var j = 0; j < results.length; j++) {
+      allQuestions.push.apply(allQuestions, results[j]);
+    }
+  }
+
+  // Отфильтровать по ошибкам
+  return allQuestions.filter(function (q) {
+    return errorIds[String(q.id)];
+  });
+}
+
+// Экспорт для сброса кэша (если нужно)
+export function clearQuestionTopicMap() {
+  _questionTopicMap = null;
+}
+
 /**
  * Загружает текст вопроса по ID темы и ID вопроса.
  * Использует кэш — повторные вызовы для той же темы не делают сетевых запросов.

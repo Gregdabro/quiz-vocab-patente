@@ -10,8 +10,7 @@
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { loadTopicQuestions, loadAllQuestions, loadTopicErrorQuestions, loadBlockQuestions, pickSessionQuestions } from '../services/questionsService.js';
-import { getErrorQuestions } from '../services/errorsService.js';
+import { loadTopicQuestions, loadAllQuestions, loadErrorQuestions, loadTopicErrorQuestions, loadBlockQuestions, pickSessionQuestions } from '../services/questionsService.js';
 import { incrementError, decrementError } from '../services/errorsService.js';
 import { saveTestResult } from '../services/progressService.js';
 import { completeBlock as completeBlockService, loadBlocks } from '../services/blockService.js';
@@ -36,8 +35,6 @@ export default function useQuiz(topicId, options) {
   // Результат блочного квиза: true если ≥80% и блок сдан
   const [blockPassed, setBlockPassed] = useState(false);
 
-  // Ref для хранения всех вопросов при режиме "errors"
-  const allQuestionsRef = useRef([]);
   // Защита от двойного сохранения статистики
   const isSavedRef = useRef(false);
   // Защита от Race Condition при быстром клике
@@ -76,10 +73,8 @@ export default function useQuiz(topicId, options) {
     } else if (topicId === 'all') {
       promise = loadAllQuestions();
     } else if (topicId === 'errors') {
-      promise = loadAllQuestions().then((all) => {
-        allQuestionsRef.current = all;
-        return getErrorQuestions(all);
-      });
+      // Загружаем только темы с ошибками (не все 25)
+      promise = loadErrorQuestions();
     } else if (typeof topicId === 'string' && topicId.startsWith('errors:')) {
       // Режим «ошибки по конкретной теме»
       const tid = topicId.slice(7); // убираем префикс 'errors:'
