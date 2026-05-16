@@ -312,6 +312,9 @@ var BlockCard = function (props) {
               >
                 Тест
               </button>
+              {!vocabDone && (
+                <p className="block-card__hint">Сначала изучите слова этого блока</p>
+              )}
             </>
           ) : (
             <button className="block-card__action-btn block-card__action-btn--review" onClick={onStartQuiz}>

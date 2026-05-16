@@ -1187,6 +1187,14 @@
   cursor: default;
 }
 
+.block-card__hint {
+  margin: var(--spacing-2) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
 /* ============================================================
    VocabSessionPage
    ============================================================ */
