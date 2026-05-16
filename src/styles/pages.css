@@ -765,6 +765,65 @@
   padding-top: var(--spacing-4);
 }
 
+/* Баннер ловушек на главной */
+.home-traps-banner {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 100%;
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  border: 2px solid #fde68a;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  cursor: pointer;
+  text-align: left;
+}
+
+.home-traps-banner:hover,
+.home-traps-banner:active {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.home-traps-banner__icon {
+  font-size: 28px;
+  margin-right: var(--spacing-3);
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.home-traps-banner__text {
+  -webkit-flex: 1;
+  flex: 1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.home-traps-banner__title {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 2px;
+}
+
+.home-traps-banner__desc {
+  font-size: var(--font-size-sm);
+  color: #a16207;
+  line-height: 1.4;
+}
+
+.home-traps-banner__arrow {
+  font-size: var(--font-size-xl);
+  color: #b45309;
+  margin-left: var(--spacing-2);
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
 .home-title {
   margin-bottom: var(--spacing-4);
   font-size: var(--font-size-xl);

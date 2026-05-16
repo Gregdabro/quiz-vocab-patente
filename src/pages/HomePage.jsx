@@ -36,7 +36,19 @@ const HomePage = () => {
       
       <div className="container home-container">
         <ProgressSummary progress={progress} />
-        
+
+        <button
+          className="home-traps-banner"
+          onClick={() => navigate('/traps')}
+        >
+          <span className="home-traps-banner__icon">🎯</span>
+          <span className="home-traps-banner__text">
+            <span className="home-traps-banner__title">Ловушки экзамена</span>
+            <span className="home-traps-banner__desc">Вопросы с подвохом — почти одинаковые, но с разными ответами</span>
+          </span>
+          <span className="home-traps-banner__arrow">›</span>
+        </button>
+
         <h2 className="home-title">
           Выберите тему
         </h2>
