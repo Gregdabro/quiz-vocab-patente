@@ -7,6 +7,7 @@ import ErrorsPage from './pages/ErrorsPage';
 import BlockSelectPage from './pages/BlockSelectPage';
 import VocabSessionPage from './pages/VocabSessionPage';
 import TrainingPage from './pages/TrainingPage';
+import TrapsPage from './pages/TrapsPage';
 import BottomNav from './components/layout/BottomNav';
 
 function AppContent() {
@@ -26,6 +27,7 @@ function AppContent() {
           <Route path="/errors" element={<ErrorsPage />} />
           <Route path="/stats" element={<StatsPage />} />
           <Route path="/training" element={<TrainingPage />} />
+          <Route path="/traps" element={<TrapsPage />} />
           <Route path="/dictionary" element={<DictionaryPage />} />
         </Routes>
       </main>
