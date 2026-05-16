@@ -291,7 +291,7 @@ Block 1 темы 2 содержит знак `014.jpg` (трамвай, 28 во�
 
 Лучше, чем планировалось. Добавлена группировка по `semantic_group`, Leitner-бейдж (`L0`–`L4`), статистика (слов / групп / изучено). Это полезные дополнения сверх плана.
 
-**Проблема:** `useVocab` вызывается с `selectedTopicId || 0` когда тема не выбрана. Это вызывает попытку загрузить `topic_0_vocab.json` (несуществующий файл). Файл не найден → возвращается `[]` (пустой массив) → `vocab.isFinished = true` (т.к. `total = 0`). Это не крашит приложение, но запускает ненужный сетевой запрос при каждом рендере в состоянии «выбор темы».
+**Проблема (исправлено 2026-05-16):** ~~`useVocab` вызывается с `selectedTopicId \|\| 0` когда тема не выбрана.~~ **RESOLVED:** `useVocab` вынесен в `DictionaryTopicView` — отдельный компонент, рендерящийся только при `selectedTopicId !== null`.
 
 ---
 
@@ -358,7 +358,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🟠 ВЫСОКОЕ | `src/services/blockService.js`, `vocabService.js`, `questionsService.js` | ~~`import(/* @vite-ignore */ ...)`~~ **RESOLVED 2026-05-14:** заменено на `import.meta.glob()` во всех трёх файлах | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | ~~`example_question_id` не используется~~ **RESOLVED 2026-05-16:** `VocabCard` загружает текст вопроса через `loadQuestionText()` и показывает blockquote | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | ~~Нет flip-механизма (errorful generation)~~ **RESOLVED 2026-05-16:** Добавлен state `revealed`, кнопка «Показать перевод», кнопки оценки после раскрытия | RESOLVED |
-| 🟡 СРЕДНЕЕ | `src/pages/DictionaryPage.jsx:58` | `useVocab(selectedTopicId \|\| 0, ...)` | При selectedTopicId=null загружается topic_0 (несуществующий) | Условно вызывать useVocab только при selectedTopicId !== null (или вынести в отдельный компонент) |
+| 🟡 СРЕДНЕЕ | `src/pages/DictionaryPage.jsx:58` | ~~`useVocab(selectedTopicId \|\| 0, ...)`~~ **RESOLVED 2026-05-16:** `useVocab` вынесен в `DictionaryTopicView`, рендерящийся только при `selectedTopicId !== null` | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/hooks/useQuiz.js:99` | `isBlockMode` в deps массиве useEffect | isBlockMode — производная от blockId, двойной триггер эффекта | Убрать `isBlockMode` из зависимостей |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx:33` | `useEffect(..., [card && card.id])` | Нестандартный dependency (выражение вместо значения) | `[card?.id]` или `[card]` |
 | 🟡 СРЕДНЕЕ | `src/styles/layout.css` | ~~`position: sticky` без `-webkit-sticky`~~ **RESOLVED 2026-05-16:** Добавлен `-webkit-sticky` префикс в CSS-класс `.app-header`, убран из inline style | RESOLVED |
@@ -511,9 +511,9 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - Текст-подсказка «Сначала изучите слова этого блока» под заблокированной кнопкой «Тест».
 - Сложность: XS
 
-**3.5 Починить DictionaryPage useVocab с id=0**
+**3.5 Починить DictionaryPage useVocab с id=0** — ✅ RESOLVED 2026-05-16
 - Файл: `src/pages/DictionaryPage.jsx`
-- Перенести `useVocab` в отдельный компонент, который рендерится только при `selectedTopicId !== null`
+- `useVocab` вынесен в `DictionaryTopicView` — компонент рендерится только при `selectedTopicId !== null`.
 - Сложность: S
 
 ### Phase 4 — Обучающая система (1-2 недели)

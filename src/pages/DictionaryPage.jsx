@@ -22,47 +22,95 @@ var DictionaryPage = function () {
   var navigate = useNavigate();
   var topics = useTopics().topics;
 
-  // Выбранная тема (null = ещё не выбрана)
   var _a = useState(null);
   var selectedTopicId = _a[0];
   var setSelectedTopicId = _a[1];
 
-  // Словарь
-  var _b = useState(null);
-  var vocabData = _b[0];
-  var setVocabData = _b[1];
+  // Состояние: выбор темы
+  if (selectedTopicId === null) {
+    return (
+      <div className="page dictionary-page">
+        <AppHeader title="Словарь" />
+        <div className="container dictionary-container">
+          <p className="dictionary-intro">
+            Выберите тему для просмотра словаря и тренировки слов.
+          </p>
+          <div className="dictionary-topic-list">
+            {topics.map(function (topic) {
+              return (
+                <button
+                  key={topic.topic_id}
+                  className="dictionary-topic-item"
+                  onClick={function () { setSelectedTopicId(topic.topic_id); }}
+                >
+                  <div className="dictionary-topic-item__image">
+                    <img src={topic.image} alt="" loading="lazy" />
+                  </div>
+                  <div className="dictionary-topic-item__body">
+                    <span className="dictionary-topic-item__title">{topic.title}</span>
+                    <span className="dictionary-topic-item__count">{topic.questions_count} вопросов</span>
+                  </div>
+                  <span className="dictionary-topic-item__arrow">›</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-  var _c = useState(true);
-  var loadingVocab = _c[0];
-  var setLoadingVocab = _c[1];
+  return (
+    <DictionaryTopicView
+      topicId={selectedTopicId}
+      topics={topics}
+      onBack={function () { setSelectedTopicId(null); }}
+    />
+  );
+};
 
-  var _d = useState(null);
-  var errorVocab = _d[0];
-  var setErrorVocab = _d[1];
+// ---------------------------------------------------------------------------
+// DictionaryTopicView — просмотр словаря + сессия для выбранной темы
+// Выделен в отдельный компонент чтобы useVocab вызывался только при
+// валидном topicId (не 0 при selectedTopicId=null).
+// ---------------------------------------------------------------------------
 
-  // Режим сессии
-  var _e = useState(false);
-  var showSession = _e[0];
-  var setShowSession = _e[1];
+var DictionaryTopicView = function (props) {
+  var topicId = props.topicId;
+  var topics = props.topics;
+  var onBack = props.onBack;
 
-  var _f = useState(0);
-  var sessionKey = _f[0];
-  var setSessionKey = _f[1];
+  var navigate = useNavigate();
 
-  // Vocab-сессия (free mode)
+  var _a = useState(null);
+  var vocabData = _a[0];
+  var setVocabData = _a[1];
+
+  var _b = useState(true);
+  var loadingVocab = _b[0];
+  var setLoadingVocab = _b[1];
+
+  var _c = useState(null);
+  var errorVocab = _c[0];
+  var setErrorVocab = _c[1];
+
+  var _d = useState(false);
+  var showSession = _d[0];
+  var setShowSession = _d[1];
+
+  var _e = useState(0);
+  var sessionKey = _e[0];
+  var setSessionKey = _e[1];
+
   var allVocabIds = useMemo(function () {
     if (!vocabData) return [];
     return vocabData.map(function (v) { return v.id; });
   }, [vocabData]);
 
-  var vocab = useVocab(selectedTopicId || 0, {
-    mode: 'free',
-    vocabIds: allVocabIds,
-  });
+  var vocab = useVocab(topicId, { mode: 'free', vocabIds: allVocabIds });
 
   // Загрузка словаря при смене темы
   useEffect(function () {
-    if (!selectedTopicId) return;
     var cancelled = false;
 
     setLoadingVocab(true);
@@ -70,7 +118,7 @@ var DictionaryPage = function () {
     setVocabData(null);
     setShowSession(false);
 
-    loadTopicVocab(selectedTopicId).then(function (data) {
+    loadTopicVocab(topicId).then(function (data) {
       if (cancelled) return;
       setVocabData(data);
       setLoadingVocab(false);
@@ -81,9 +129,8 @@ var DictionaryPage = function () {
     });
 
     return function () { cancelled = true; };
-  }, [selectedTopicId]);
+  }, [topicId]);
 
-  // Группировка слов по semantic_group
   var groupedWords = useMemo(function () {
     if (!vocabData) return {};
     var groups = {};
@@ -95,22 +142,17 @@ var DictionaryPage = function () {
     return groups;
   }, [vocabData]);
 
-  // Прогресс Leitner для слов выбранной темы
   var leitnerProgress = useMemo(function () {
-    if (!selectedTopicId || !vocabData) return {};
+    if (!vocabData) return {};
     var progress = getVocabProgress();
     var result = {};
     vocabData.forEach(function (word) {
-      var key = String(selectedTopicId) + '_' + word.id;
+      var key = String(topicId) + '_' + word.id;
       var state = progress[key];
       result[word.id] = state ? state.box : 0;
     });
     return result;
-  }, [selectedTopicId, vocabData]);
-
-  var handleSelectTopic = function (topicId) {
-    setSelectedTopicId(topicId);
-  };
+  }, [topicId, vocabData]);
 
   var handleStartSession = function () {
     setSessionKey(function (prev) { return prev + 1; });
@@ -121,14 +163,8 @@ var DictionaryPage = function () {
     setShowSession(false);
   };
 
-  var handleBackToPick = function () {
-    setSelectedTopicId(null);
-    setVocabData(null);
-    setShowSession(false);
-  };
-
   // Состояние: активная сессия
-  if (showSession && selectedTopicId !== null) {
+  if (showSession) {
     var sessionDone = vocab.isFinished;
     return (
       <div className="page dictionary-page">
@@ -170,45 +206,11 @@ var DictionaryPage = function () {
     );
   }
 
-  // Состояние: выбор темы
-  if (selectedTopicId === null) {
-    return (
-      <div className="page dictionary-page">
-        <AppHeader title="Словарь" />
-        <div className="container dictionary-container">
-          <p className="dictionary-intro">
-            Выберите тему для просмотра словаря и тренировки слов.
-          </p>
-          <div className="dictionary-topic-list">
-            {topics.map(function (topic) {
-              return (
-                <button
-                  key={topic.topic_id}
-                  className="dictionary-topic-item"
-                  onClick={function () { handleSelectTopic(topic.topic_id); }}
-                >
-                  <div className="dictionary-topic-item__image">
-                    <img src={topic.image} alt="" loading="lazy" />
-                  </div>
-                  <div className="dictionary-topic-item__body">
-                    <span className="dictionary-topic-item__title">{topic.title}</span>
-                    <span className="dictionary-topic-item__count">{topic.questions_count} вопросов</span>
-                  </div>
-                  <span className="dictionary-topic-item__arrow">›</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   // Состояние: загрузка словаря
   if (loadingVocab) {
     return (
       <div className="page dictionary-page">
-        <AppHeader title="Словарь" showBack={true} onBackOverride={handleBackToPick} />
+        <AppHeader title="Словарь" showBack={true} onBackOverride={onBack} />
         <div className="dictionary-loading">
           <Spinner />
           <p className="dictionary-loading__text">Загружаем словарь...</p>
@@ -221,10 +223,10 @@ var DictionaryPage = function () {
   if (errorVocab) {
     return (
       <div className="page dictionary-page">
-        <AppHeader title="Словарь" showBack={true} onBackOverride={handleBackToPick} />
+        <AppHeader title="Словарь" showBack={true} onBackOverride={onBack} />
         <div className="dictionary-error">
           <p className="dictionary-error__text">{errorVocab}</p>
-          <button className="btn btn-primary" onClick={handleBackToPick}>
+          <button className="btn btn-primary" onClick={onBack}>
             Выбрать другую тему
           </button>
         </div>
@@ -235,12 +237,11 @@ var DictionaryPage = function () {
   // Состояние: просмотр словаря
   var topicMeta = null;
   for (var i = 0; i < topics.length; i++) {
-    if (topics[i].topic_id === selectedTopicId) { topicMeta = topics[i]; break; }
+    if (topics[i].topic_id === topicId) { topicMeta = topics[i]; break; }
   }
   var groupNames = Object.keys(groupedWords).sort();
   var totalWords = vocabData ? vocabData.length : 0;
 
-  // Статистика по ящикам
   var boxCounts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 };
   groupNames.forEach(function (group) {
     groupedWords[group].forEach(function (word) {
@@ -251,10 +252,9 @@ var DictionaryPage = function () {
 
   return (
     <div className="page dictionary-page">
-      <AppHeader title={topicMeta ? topicMeta.title : 'Словарь'} showBack={true} onBackOverride={handleBackToPick} />
+      <AppHeader title={topicMeta ? topicMeta.title : 'Словарь'} showBack={true} onBackOverride={onBack} />
 
       <div className="container dictionary-container">
-        {/* Статистика */}
         <div className="dictionary-stats">
           <div className="dictionary-stats__item">
             <span className="dictionary-stats__value">{totalWords}</span>
@@ -270,14 +270,12 @@ var DictionaryPage = function () {
           </div>
         </div>
 
-        {/* Кнопка сессии */}
         <div className="dictionary-actions">
           <button className="btn btn-primary" onClick={handleStartSession}>
             Тренировать все слова
           </button>
         </div>
 
-        {/* Группы слов */}
         <div className="dictionary-groups">
           {groupNames.map(function (group) {
             var words = groupedWords[group];
