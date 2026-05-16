@@ -31,7 +31,6 @@ const AppHeader = ({
       display: 'flex',
       alignItems: 'center',
       padding: '0 var(--spacing-4)',
-      position: 'sticky',
       top: 0,
       zIndex: 1000,
       boxShadow: 'var(--shadow-sm)'

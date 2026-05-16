@@ -332,8 +332,7 @@ Block 1 темы 2 содержит знак `014.jpg` (трамвай, 28 во�
 
 **Потенциальные проблемы:**
 - `CSS Custom Properties (variables)` — поддерживаются в Chrome 49+, iOS 10+ ✅
-- `position: sticky` для AppHeader — поддерживается в Chrome 56+, iOS 13+ ⚠️
-  - iOS 12 (Safari) поддерживает `sticky` только с `-webkit-sticky`. Chrome 92 на iOS 12 может использовать WebKit движок. Если AppHeader не прилипает — это причина.
+- ~~`position: sticky` для AppHeader без `-webkit-sticky`~~ → **RESOLVED 2026-05-16:** Добавлен `-webkit-sticky` префикс в `.app-header` CSS-класс, убран из inline style.
 
 ### 7.2 CSS структура
 
@@ -361,7 +360,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🟡 СРЕДНЕЕ | `src/pages/DictionaryPage.jsx:58` | `useVocab(selectedTopicId \|\| 0, ...)` | При selectedTopicId=null загружается topic_0 (несуществующий) | Условно вызывать useVocab только при selectedTopicId !== null (или вынести в отдельный компонент) |
 | 🟡 СРЕДНЕЕ | `src/hooks/useQuiz.js:99` | `isBlockMode` в deps массиве useEffect | isBlockMode — производная от blockId, двойной триггер эффекта | Убрать `isBlockMode` из зависимостей |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx:33` | `useEffect(..., [card && card.id])` | Нестандартный dependency (выражение вместо значения) | `[card?.id]` или `[card]` |
-| 🟡 СРЕДНЕЕ | `src/styles/layout.css` | `position: sticky` для AppHeader без `-webkit-sticky` | На iOS 12 Safari хедер может не прилипать | Добавить `position: -webkit-sticky` |
+| 🟡 СРЕДНЕЕ | `src/styles/layout.css` | ~~`position: sticky` без `-webkit-sticky`~~ **RESOLVED 2026-05-16:** Добавлен `-webkit-sticky` префикс в CSS-класс `.app-header`, убран из inline style | RESOLVED |
 | 🟢 НИЗКОЕ | `src/pages/BlockSelectPage.jsx` | Нет объяснения почему кнопка «Тест» заблокирована | UX непонятен | Добавить tooltip или текст под кнопкой |
 | 🟢 НИЗКОЕ | `src/components/quiz/ResultScreen.jsx` | Не сообщает об разблокировке следующего блока | Слабая мотивация | Добавить «🎉 Следующий блок разблокирован!» |
 | 🟢 НИЗКОЕ | `src/hooks/useVocab.js` | `var _a = useState(...)` вместо деструктуризации | Читаемость кода | Рефакторинг на стандартный синтаксис (legacy plugin всё равно транспилирует) |
@@ -484,9 +483,9 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - Решение: `useQuiz` загружает блоки через `loadBlocks()` параллельно с вопросами и передаёт `blocks.length` в `completeBlock`. `blockService.completeBlock` при `nextBlock > totalBlocks` оставляет `current_block` на последнем блоке и устанавливает `topic_completed: true`.
 - Сложность: S
 
-**2.3 Добавить `-webkit-sticky` для AppHeader**
-- Файл: `src/styles/layout.css`
-- `position: -webkit-sticky; position: sticky;`
+**2.3 Добавить `-webkit-sticky` для AppHeader** — ✅ RESOLVED 2026-05-16
+- Файлы: `src/styles/layout.css`, `src/components/layout/AppHeader.jsx`
+- Добавлен CSS-класс `.app-header` с `position: -webkit-sticky; position: sticky;`. `position: 'sticky'` убран из inline style в AppHeader.
 - Сложность: XS
 
 ### Phase 3 — UX улучшения (3-5 дней)

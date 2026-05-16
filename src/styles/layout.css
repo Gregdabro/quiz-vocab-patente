@@ -26,6 +26,12 @@
   padding-bottom: var(--spacing-10);
 }
 
+/* AppHeader — sticky с вендорным префиксом для iOS 12 */
+.app-header {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 /* Двухколоночная сетка для карточек тем */
 .grid-2col {
   display: -webkit-flex;
