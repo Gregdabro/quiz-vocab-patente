@@ -129,7 +129,7 @@
 - `cancelled` флаг предотвращает setState после размонтирования
 - Все topicId варианты обрабатываются
 
-Небольшой дефект: `isBlockMode` входит в зависимости `useEffect` (`[topicId, blockId, isBlockMode, sessionKey]`), но `isBlockMode` — производная от `blockId`, поэтому при изменении `blockId` эффект запускается дважды (один раз из-за `blockId`, второй из-за `isBlockMode`). На практике это не вызывает проблем из-за `cancelled` флага, но излишне.
+~~Небольшой дефект: `isBlockMode` в deps useEffect.~~ → **RESOLVED 2026-05-16:** `isBlockMode` убран из зависимостей.
 
 **useVocab.js** — функционально корректен, но написан в неидиоматичном стиле. Использование `var _a = useState(...)` вместо деструктуризации — очевидно, попытка поддержать старые движки, но `@vitejs/plugin-legacy` транспилирует деструктуризацию автоматически. Это создаёт 15+ лишних строк кода. Функциональных дефектов нет.
 
@@ -359,8 +359,8 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | ~~`example_question_id` не используется~~ **RESOLVED 2026-05-16:** `VocabCard` загружает текст вопроса через `loadQuestionText()` и показывает blockquote | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | ~~Нет flip-механизма (errorful generation)~~ **RESOLVED 2026-05-16:** Добавлен state `revealed`, кнопка «Показать перевод», кнопки оценки после раскрытия | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/pages/DictionaryPage.jsx:58` | ~~`useVocab(selectedTopicId \|\| 0, ...)`~~ **RESOLVED 2026-05-16:** `useVocab` вынесен в `DictionaryTopicView`, рендерящийся только при `selectedTopicId !== null` | RESOLVED |
-| 🟡 СРЕДНЕЕ | `src/hooks/useQuiz.js:99` | `isBlockMode` в deps массиве useEffect | isBlockMode — производная от blockId, двойной триггер эффекта | Убрать `isBlockMode` из зависимостей |
-| 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx:33` | `useEffect(..., [card && card.id])` | Нестандартный dependency (выражение вместо значения) | `[card?.id]` или `[card]` |
+| 🟡 СРЕДНЕЕ | `src/hooks/useQuiz.js:99` | ~~`isBlockMode` в deps массиве useEffect~~ **RESOLVED 2026-05-16** | RESOLVED |
+| 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx:33` | ~~`useEffect(..., [card && card.id])`~~ **RESOLVED 2026-05-16:** `[card?.id, topicId]` | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/styles/layout.css` | ~~`position: sticky` без `-webkit-sticky`~~ **RESOLVED 2026-05-16:** Добавлен `-webkit-sticky` префикс в CSS-класс `.app-header`, убран из inline style | RESOLVED |
 | 🟢 НИЗКОЕ | `src/pages/BlockSelectPage.jsx` | ~~Нет объяснения почему кнопка «Тест» заблокирована~~ **RESOLVED 2026-05-16:** Текст-подсказка «Сначала изучите слова этого блока» под заблокированной кнопкой | RESOLVED |
 | 🟢 НИЗКОЕ | `src/components/quiz/ResultScreen.jsx` | ~~Не сообщает об разблокировке следующего блока~~ **RESOLVED 2026-05-16:** Уведомление «🎉 Следующий блок разблокирован!» при isBlockMode && isPassed | RESOLVED |

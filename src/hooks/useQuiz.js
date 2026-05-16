@@ -107,7 +107,7 @@ export default function useQuiz(topicId, options) {
       });
 
     return () => { cancelled = true; };
-  }, [topicId, blockId, isBlockMode, sessionKey]);
+  }, [topicId, blockId, sessionKey]);
 
   /**
    * Ответить на текущий вопрос.

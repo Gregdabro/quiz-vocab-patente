@@ -53,7 +53,7 @@ export default function VocabCard(_a) {
       });
       return function () { cancelled = true; };
     }
-  }, [card && card.id, topicId]);
+  }, [card?.id, topicId]);
 
   if (!card) return null;
 
