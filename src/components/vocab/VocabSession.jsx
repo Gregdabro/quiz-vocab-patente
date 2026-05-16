@@ -49,6 +49,7 @@ export default function VocabSession(_a) {
   var boxStats = _a.boxStats;
   var loading = _a.loading;
   var error = _a.error;
+  var topicId = _a.topicId;
 
   // Локальный трекинг рейтингов: { [cardId]: 'know' | 'hard' | 'dontknow' }
   var _b = useState({});
@@ -194,6 +195,7 @@ export default function VocabSession(_a) {
         <VocabCard
           key={currentCard.id}
           card={currentCard}
+          topicId={topicId}
           onRate={handleRate}
         />
       )}

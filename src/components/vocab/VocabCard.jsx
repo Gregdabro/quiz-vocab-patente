@@ -18,12 +18,14 @@
  */
 
 import { useState, useEffect } from 'react';
+import { loadQuestionText } from '../../services/questionsService.js';
 
 var SIGN_IMAGE_BASE =
   'https://quizpatentelng.s3.eu-central-1.amazonaws.com/imgquiz/';
 
 export default function VocabCard(_a) {
   var card = _a.card;
+  var topicId = _a.topicId;
   var onRate = _a.onRate;
 
   var _b = useState(null);
@@ -34,11 +36,24 @@ export default function VocabCard(_a) {
   var revealed = _c[0];
   var setRevealed = _c[1];
 
-  // Сброс состояния при смене карточки
+  var _d = useState(null);
+  var exampleText = _d[0];
+  var setExampleText = _d[1];
+
+  // Сброс состояния при смене карточки + загрузка примера из вопроса
   useEffect(function () {
     setRated(null);
     setRevealed(false);
-  }, [card && card.id]);
+    setExampleText(null);
+
+    if (card && card.example_question_id && topicId) {
+      var cancelled = false;
+      loadQuestionText(topicId, card.example_question_id).then(function (text) {
+        if (!cancelled) setExampleText(text);
+      });
+      return function () { cancelled = true; };
+    }
+  }, [card && card.id, topicId]);
 
   if (!card) return null;
 
@@ -89,6 +104,13 @@ export default function VocabCard(_a) {
         {/* Перевод — скрыт до нажатия «Показать перевод» (errorful generation) */}
         {revealed && card.translation_ru && (
           <p className="vocab-card__translation">{card.translation_ru}</p>
+        )}
+
+        {/* Пример из реального вопроса */}
+        {revealed && exampleText && (
+          <blockquote className="vocab-card__example">
+            <p className="vocab-card__example-text">{exampleText}</p>
+          </blockquote>
         )}
 
         {/* Кнопка раскрытия перевода */}

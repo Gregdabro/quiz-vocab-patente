@@ -126,3 +126,34 @@ export async function loadBlockQuestions(topicId, blockId) {
 export async function loadTopics() {
   return topicsData;
 }
+
+// Кэш загруженных вопросов по темам (для loadQuestionText)
+var _questionsByTopic = {};
+
+/**
+ * Загружает текст вопроса по ID темы и ID вопроса.
+ * Использует кэш — повторные вызовы для той же темы не делают сетевых запросов.
+ * @param {number|string} topicId
+ * @param {number|string} questionId
+ * @returns {Promise<string|null>} — текст вопроса или null
+ */
+export async function loadQuestionText(topicId, questionId) {
+  var tid = String(topicId);
+  var qid = typeof questionId === 'string' ? parseInt(questionId, 10) : questionId;
+
+  try {
+    if (!_questionsByTopic[tid]) {
+      var all = await loadTopicQuestions(tid);
+      var map = {};
+      for (var i = 0; i < all.length; i++) {
+        map[all[i].id] = all[i];
+      }
+      _questionsByTopic[tid] = map;
+    }
+    var q = _questionsByTopic[tid][qid];
+    return q ? q.text : null;
+  } catch (e) {
+    console.error('questionsService: не удалось загрузить текст вопроса ' + qid, e);
+    return null;
+  }
+}

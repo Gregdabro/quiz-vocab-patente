@@ -187,12 +187,14 @@ localStorage → services (sync R/W) → hooks (state) → components
 
 **Оставшаяся задача:** 212 слов без перевода (7.1%) — итальянский spaCy ошибочно лемматизирует существительные как глаголы (напр. `carreggiata` → `carreggiare`, `bicicletta` → `biciclettare`). Эти «слова» не существуют в текстах вопросов → выравнивание невозможно. Требуется исправление лемматизации в `generate-vocab.py`.
 
-### 4.2 Отсутствие примеров из реальных вопросов в карточке
+### 4.2 Отсутствие примеров из реальных вопросов в карточке — RESOLVED 2026-05-16
 
-NLP_ANALYSIS.md (Часть 2.3) требует:
-> «Один пример предложения из реального вопроса экзамена»
+~~NLP_ANALYSIS.md (Часть 2.3): «Один пример предложения из реального вопроса экзамена». `example_question_id` не используется.~~
 
-В vocab JSON присутствует поле `example_question_id`. В `VocabCard.jsx` это поле **не используется**. Карточка не загружает и не показывает реальный пример предложения. Это нарушает принцип «контекстной привязки» и «errorful generation» из раздела психологии обучения.
+**Исправление:**
+- `questionsService.loadQuestionText(topicId, questionId)` — загружает текст вопроса по ID с кэшированием по темам.
+- `VocabCard` принимает `topicId`, загружает пример через `useEffect`, показывает blockquote после раскрытия перевода.
+- `VocabSession`, `VocabSessionPage`, `BlockSelectPage` — пробрасывают `topicId`.
 
 ### 4.3 Errorful generation не реализован — RESOLVED 2026-05-16
 
@@ -354,7 +356,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🟠 ВЫСОКОЕ | `src/hooks/useQuiz.js:146,184` | ~~`completeBlockService(..., 999)`~~ **RESOLVED 2026-05-16:** `useQuiz` загружает реальное `totalBlocks` через `loadBlocks()`; `blockService.completeBlock` добавляет `topic_completed: true` при завершении всех блоков | RESOLVED |
 | 🟠 ВЫСОКОЕ | `scripts/generate-blocks.py` | ~~Вопросы в блоке не перемешиваются~~ **RESOLVED 2026-05-16:** `random.shuffle` добавлен для типов A (после interleave) и C (вместо сортировки по длине) | RESOLVED |
 | 🟠 ВЫСОКОЕ | `src/services/blockService.js`, `vocabService.js`, `questionsService.js` | ~~`import(/* @vite-ignore */ ...)`~~ **RESOLVED 2026-05-14:** заменено на `import.meta.glob()` во всех трёх файлах | RESOLVED |
-| 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | `example_question_id` не используется | Нет примера из реального вопроса | Загрузить вопрос по ID и показать текст |
+| 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | ~~`example_question_id` не используется~~ **RESOLVED 2026-05-16:** `VocabCard` загружает текст вопроса через `loadQuestionText()` и показывает blockquote | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | ~~Нет flip-механизма (errorful generation)~~ **RESOLVED 2026-05-16:** Добавлен state `revealed`, кнопка «Показать перевод», кнопки оценки после раскрытия | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/pages/DictionaryPage.jsx:58` | `useVocab(selectedTopicId \|\| 0, ...)` | При selectedTopicId=null загружается topic_0 (несуществующий) | Условно вызывать useVocab только при selectedTopicId !== null (или вынести в отдельный компонент) |
 | 🟡 СРЕДНЕЕ | `src/hooks/useQuiz.js:99` | `isBlockMode` в deps массиве useEffect | isBlockMode — производная от blockId, двойной триггер эффекта | Убрать `isBlockMode` из зависимостей |
@@ -494,10 +496,10 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - Добавлен state `revealed` (по умолчанию `false`). Кнопка «Показать перевод» → revealed=true → кнопки оценки. Для карточек без перевода кнопки оценки доступны сразу.
 - Сложность: S
 
-**3.2 Показать пример из реального вопроса**
-- Файлы: `src/components/vocab/VocabCard.jsx`, `src/services/questionsService.js`
-- Загрузить вопрос по `example_question_id` и показать его текст на карточке
-- Сложность: M (нужна загрузка вопросов по одному ID без всего файла — или передавать вопросы в компонент)
+**3.2 Показать пример из реального вопроса** — ✅ RESOLVED 2026-05-16
+- Файлы: `src/services/questionsService.js`, `src/components/vocab/VocabCard.jsx`, `VocabSession.jsx`, `VocabSessionPage.jsx`, `BlockSelectPage.jsx`, `src/styles/components.css`
+- `loadQuestionText(topicId, questionId)` с кэшированием по темам. `topicId` проброшен через VocabSession → VocabCard. Пример показывается как blockquote после раскрытия перевода.
+- Сложность: M
 
 **3.3 Уведомление о разблокировке в ResultScreen**
 - Файл: `src/components/quiz/ResultScreen.jsx`

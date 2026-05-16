@@ -358,6 +358,7 @@ var VocabSessionWrapper = function (props) {
     boxStats: boxStats,
     loading: loading,
     error: error,
+    topicId: topicId,
   };
 
   if (isFinished) {

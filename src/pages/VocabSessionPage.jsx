@@ -71,6 +71,7 @@ var VocabSessionPage = function () {
         boxStats={vocab.boxStats}
         loading={vocab.loading}
         error={vocab.error}
+        topicId={topicId}
       />
 
       {vocab.isFinished && (

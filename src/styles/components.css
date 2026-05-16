@@ -975,6 +975,24 @@
   margin-bottom: var(--spacing-3);
 }
 
+/* Пример из реального вопроса */
+.vocab-card__example {
+  margin: 0;
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: var(--color-surface-alt);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.vocab-card__example-text {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+}
+
 /* Предупреждение о слове-ловушке */
 .vocab-card__trap-notice {
   font-size: var(--font-size-sm);
