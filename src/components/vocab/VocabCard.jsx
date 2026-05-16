@@ -2,11 +2,14 @@
  * VocabCard.jsx
  * Флэш-карточка слова/фразы для vocab-сессии.
  *
+ * Errorful generation: перевод изначально скрыт — студент пытается
+ * вспомнить его сам, затем открывает кнопкой «Показать перевод».
+ *
  * Два режима:
  *   - image-first (тип A): если card.sign_images не пуст — изображение знака сверху
  *   - phrase-first (тип C): если нет изображения — текстовая карточка
  *
- * Кнопки оценки: [Знаю] [Сложно] [Не знаю]
+ * Кнопки оценки: [Знаю] [Сложно] [Не знаю] — появляются после раскрытия перевода.
  * После оценки показывает обратную связь и блокирует кнопки.
  *
  * Props:
@@ -27,9 +30,14 @@ export default function VocabCard(_a) {
   var rated = _b[0];
   var setRated = _b[1];
 
+  var _c = useState(false);
+  var revealed = _c[0];
+  var setRevealed = _c[1];
+
   // Сброс состояния при смене карточки
   useEffect(function () {
     setRated(null);
+    setRevealed(false);
   }, [card && card.id]);
 
   if (!card) return null;
@@ -78,9 +86,19 @@ export default function VocabCard(_a) {
         {/* Основное слово/фраза на итальянском */}
         <h2 className="vocab-card__word">{card.word}</h2>
 
-        {/* Перевод (если есть) */}
-        {card.translation_ru && (
+        {/* Перевод — скрыт до нажатия «Показать перевод» (errorful generation) */}
+        {revealed && card.translation_ru && (
           <p className="vocab-card__translation">{card.translation_ru}</p>
+        )}
+
+        {/* Кнопка раскрытия перевода */}
+        {!revealed && card.translation_ru && (
+          <button
+            className="vocab-card__reveal-btn"
+            onClick={function () { setRevealed(true); }}
+          >
+            Показать перевод
+          </button>
         )}
 
         {/* Семантическая группа */}
@@ -112,41 +130,43 @@ export default function VocabCard(_a) {
         )}
       </div>
 
-      {/* Кнопки оценки */}
-      <div className="vocab-card__actions">
-        <button
-          className={
-            'vocab-card__rate-btn vocab-card__rate-btn--dontknow' +
-            (rated === 'dontknow' ? ' vocab-card__rate-btn--active' : '')
-          }
-          onClick={function () { handleRate('dontknow'); }}
-          disabled={disabled}
-        >
-          Не знаю
-        </button>
+      {/* Кнопки оценки — после раскрытия перевода, или сразу если перевода нет */}
+      {(revealed || !card.translation_ru) && (
+        <div className="vocab-card__actions">
+          <button
+            className={
+              'vocab-card__rate-btn vocab-card__rate-btn--dontknow' +
+              (rated === 'dontknow' ? ' vocab-card__rate-btn--active' : '')
+            }
+            onClick={function () { handleRate('dontknow'); }}
+            disabled={disabled}
+          >
+            Не знаю
+          </button>
 
-        <button
-          className={
-            'vocab-card__rate-btn vocab-card__rate-btn--hard' +
-            (rated === 'hard' ? ' vocab-card__rate-btn--active' : '')
-          }
-          onClick={function () { handleRate('hard'); }}
-          disabled={disabled}
-        >
-          Сложно
-        </button>
+          <button
+            className={
+              'vocab-card__rate-btn vocab-card__rate-btn--hard' +
+              (rated === 'hard' ? ' vocab-card__rate-btn--active' : '')
+            }
+            onClick={function () { handleRate('hard'); }}
+            disabled={disabled}
+          >
+            Сложно
+          </button>
 
-        <button
-          className={
-            'vocab-card__rate-btn vocab-card__rate-btn--know' +
-            (rated === 'know' ? ' vocab-card__rate-btn--active' : '')
-          }
-          onClick={function () { handleRate('know'); }}
-          disabled={disabled}
-        >
-          Знаю
-        </button>
-      </div>
+          <button
+            className={
+              'vocab-card__rate-btn vocab-card__rate-btn--know' +
+              (rated === 'know' ? ' vocab-card__rate-btn--active' : '')
+            }
+            onClick={function () { handleRate('know'); }}
+            disabled={disabled}
+          >
+            Знаю
+          </button>
+        </div>
+      )}
 
       {/* Обратная связь после оценки */}
       {rated && (

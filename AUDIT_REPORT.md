@@ -65,7 +65,7 @@
 | Фаза 3: blockService | ✅ | ✅ | Полностью | — | Корректно, магич. число 999 — технический долг |
 | Фаза 3: useVocab | ✅ | ✅ | Полностью | — | Все три режима: block/global/free |
 | Фаза 3: useBlocks | ✅ | ✅ | Полностью | — | |
-| Фаза 3: VocabCard | ✅ | ⚠️ | Частично | КРИТИЧНО | Нет перевода (null), нет примера из вопроса, нет errorful generation |
+| Фаза 3: VocabCard | ✅ | ⚠️ | Частично | СРЕДНЕЕ | Переводы есть (92.9%), errorful generation реализован, пример из вопроса — ожидает |
 | Фаза 3: VocabSession | ✅ | ✅ | Полностью | — | Все состояния обработаны |
 | Фаза 3: VocabProgress | ✅ | ✅ | Полностью | — | Аналог QuizPagination |
 | Фаза 3: BlockSelectPage | ✅ | ✅ | Полностью | — | Корректно, все состояния |
@@ -194,12 +194,11 @@ NLP_ANALYSIS.md (Часть 2.3) требует:
 
 В vocab JSON присутствует поле `example_question_id`. В `VocabCard.jsx` это поле **не используется**. Карточка не загружает и не показывает реальный пример предложения. Это нарушает принцип «контекстной привязки» и «errorful generation» из раздела психологии обучения.
 
-### 4.3 Errorful generation не реализован
+### 4.3 Errorful generation не реализован — RESOLVED 2026-05-16
 
-Master-plan (раздел 7, принцип 3):
-> «Показывать итальянское слово → студент вспоминает перевод до показа. Даже при ошибке — это лучше для памяти, чем пассивное чтение.»
+~~Master-plan (раздел 7, принцип 3): «Показывать итальянское слово → студент вспоминает перевод до показа.» `VocabCard` показывает слово и перевод одновременно, нет механизма «flip card».~~
 
-`VocabCard` показывает слово и перевод одновременно (перевод — `null`, поэтому не видно, но архитектурно он не скрывается за кнопкой «Показать»). Нет механизма «flip card».
+**Исправление:** Добавлен state `revealed` (по умолчанию `false`). Перевод скрыт за кнопкой «Показать перевод». После раскрытия появляются кнопки оценки. При смене карточки `revealed` сбрасывается. Для карточек без перевода (212) кнопки оценки доступны сразу.
 
 ### 4.4 Interleaving вопросов в блоках — RESOLVED 2026-05-16
 
@@ -282,8 +281,8 @@ Block 1 темы 2 содержит знак `014.jpg` (трамвай, 28 во�
 - Автопереход к следующей неоценённой карточке
 
 **Плохо:**
-- Нет flip-анимации (показать/скрыть перевод)
-- Перевод показывается сразу (пассивное чтение вместо errorful generation)
+- ~~Нет flip-анимации (показать/скрыть перевод)~~ → RESOLVED: кнопка «Показать перевод»
+- ~~Перевод показывается сразу (пассивное чтение вместо errorful generation)~~ → RESOLVED
 - Изображение знака занимает много места, но показывается только первый знак — для слова `tratto strada`, связанного с 24 знаками, это бессмысленно
 
 ### 5.7 DictionaryPage
@@ -356,7 +355,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🟠 ВЫСОКОЕ | `scripts/generate-blocks.py` | ~~Вопросы в блоке не перемешиваются~~ **RESOLVED 2026-05-16:** `random.shuffle` добавлен для типов A (после interleave) и C (вместо сортировки по длине) | RESOLVED |
 | 🟠 ВЫСОКОЕ | `src/services/blockService.js`, `vocabService.js`, `questionsService.js` | ~~`import(/* @vite-ignore */ ...)`~~ **RESOLVED 2026-05-14:** заменено на `import.meta.glob()` во всех трёх файлах | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | `example_question_id` не используется | Нет примера из реального вопроса | Загрузить вопрос по ID и показать текст |
-| 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | Нет flip-механизма (errorful generation) | Пассивное чтение вместо активного вспоминания | Добавить кнопку «Показать перевод» |
+| 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | ~~Нет flip-механизма (errorful generation)~~ **RESOLVED 2026-05-16:** Добавлен state `revealed`, кнопка «Показать перевод», кнопки оценки после раскрытия | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/pages/DictionaryPage.jsx:58` | `useVocab(selectedTopicId \|\| 0, ...)` | При selectedTopicId=null загружается topic_0 (несуществующий) | Условно вызывать useVocab только при selectedTopicId !== null (или вынести в отдельный компонент) |
 | 🟡 СРЕДНЕЕ | `src/hooks/useQuiz.js:99` | `isBlockMode` в deps массиве useEffect | isBlockMode — производная от blockId, двойной триггер эффекта | Убрать `isBlockMode` из зависимостей |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx:33` | `useEffect(..., [card && card.id])` | Нестандартный dependency (выражение вместо значения) | `[card?.id]` или `[card]` |
@@ -490,10 +489,9 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 
 ### Phase 3 — UX улучшения (3-5 дней)
 
-**3.1 Реализовать flip-карточку (errorful generation)**
-- Файл: `src/components/vocab/VocabCard.jsx`
-- Добавить state `revealed`, скрыть перевод изначально
-- Кнопка «Показать перевод» → revealed=true → показать кнопки оценки
+**3.1 Реализовать flip-карточку (errorful generation)** — ✅ RESOLVED 2026-05-16
+- Файлы: `src/components/vocab/VocabCard.jsx`, `src/styles/components.css`
+- Добавлен state `revealed` (по умолчанию `false`). Кнопка «Показать перевод» → revealed=true → кнопки оценки. Для карточек без перевода кнопки оценки доступны сразу.
 - Сложность: S
 
 **3.2 Показать пример из реального вопроса**

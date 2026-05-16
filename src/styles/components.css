@@ -938,6 +938,28 @@
   line-height: 1.5;
 }
 
+/* Кнопка «Показать перевод» (errorful generation) */
+.vocab-card__reveal-btn {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-md);
+  background: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.vocab-card__reveal-btn:hover,
+.vocab-card__reveal-btn:active {
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
 /* Семантическая группа */
 .vocab-card__group {
   display: -webkit-inline-flex;
