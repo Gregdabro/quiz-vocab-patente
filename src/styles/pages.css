@@ -333,6 +333,19 @@
   color: var(--color-text-secondary);
 }
 
+/* Уведомление о разблокировке блока */
+.result-screen__unlock-notice {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: #15803d;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-5);
+  text-align: center;
+}
+
 /* Stats wrapper with borders */
 .result-screen__stats {
   display: -webkit-flex;

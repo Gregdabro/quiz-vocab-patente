@@ -273,7 +273,7 @@ Block 1 темы 2 содержит знак `014.jpg` (трамвай, 28 во�
 
 `ResultScreen` получает `passThreshold` (80 для блочного режима, 87 для обычного) и показывает `isPassed`. Но `blockPassed` из `useQuiz` в `QuizPage` не используется напрямую — он рассчитывается повторно внутри `ResultScreen` через `scorePercent >= passThreshold`. Это избыточное дублирование логики, хотя результат одинаков.
 
-`ResultScreen` не сообщает пользователю «следующий блок разблокирован» — важный мотивационный момент.
+`ResultScreen` не сообщает пользователю «следующий блок разблокирован» → **RESOLVED 2026-05-16:** добавлено уведомление «🎉 Следующий блок разблокирован!» при `isBlockMode && isPassed`.
 
 ### 5.6 VocabCard UX
 
@@ -363,7 +363,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx:33` | `useEffect(..., [card && card.id])` | Нестандартный dependency (выражение вместо значения) | `[card?.id]` или `[card]` |
 | 🟡 СРЕДНЕЕ | `src/styles/layout.css` | ~~`position: sticky` без `-webkit-sticky`~~ **RESOLVED 2026-05-16:** Добавлен `-webkit-sticky` префикс в CSS-класс `.app-header`, убран из inline style | RESOLVED |
 | 🟢 НИЗКОЕ | `src/pages/BlockSelectPage.jsx` | Нет объяснения почему кнопка «Тест» заблокирована | UX непонятен | Добавить tooltip или текст под кнопкой |
-| 🟢 НИЗКОЕ | `src/components/quiz/ResultScreen.jsx` | Не сообщает об разблокировке следующего блока | Слабая мотивация | Добавить «🎉 Следующий блок разблокирован!» |
+| 🟢 НИЗКОЕ | `src/components/quiz/ResultScreen.jsx` | ~~Не сообщает об разблокировке следующего блока~~ **RESOLVED 2026-05-16:** Уведомление «🎉 Следующий блок разблокирован!» при isBlockMode && isPassed | RESOLVED |
 | 🟢 НИЗКОЕ | `src/hooks/useVocab.js` | `var _a = useState(...)` вместо деструктуризации | Читаемость кода | Рефакторинг на стандартный синтаксис (legacy plugin всё равно транспилирует) |
 | 🟢 НИЗКОЕ | Все сервисы | `var` вместо `const/let` | Читаемость кода | Не критично (legacy plugin транспилирует оба варианта), но рефакторинг улучшит DX |
 
@@ -501,9 +501,9 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - `loadQuestionText(topicId, questionId)` с кэшированием по темам. `topicId` проброшен через VocabSession → VocabCard. Пример показывается как blockquote после раскрытия перевода.
 - Сложность: M
 
-**3.3 Уведомление о разблокировке в ResultScreen**
-- Файл: `src/components/quiz/ResultScreen.jsx`
-- Если `isBlockMode && isPassed` — показать «🎉 Следующий блок разблокирован!»
+**3.3 Уведомление о разблокировке в ResultScreen** — ✅ RESOLVED 2026-05-16
+- Файлы: `src/components/quiz/ResultScreen.jsx`, `src/styles/pages.css`
+- Уведомление «🎉 Следующий блок разблокирован!» (зелёный блок) при `isBlockMode && isPassed`.
 - Сложность: S
 
 **3.4 Объяснить почему кнопка «Тест» заблокирована**

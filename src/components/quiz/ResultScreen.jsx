@@ -40,6 +40,13 @@ const ResultScreen = function (props) {
           {isPassed ? 'Вы успешно прошли тест!' : 'К сожалению, вы совершили слишком много ошибок.'}
         </div>
 
+        {/* Уведомление о разблокировке следующего блока */}
+        {isBlockMode && isPassed && (
+          <div className="result-screen__unlock-notice">
+            🎉 Следующий блок разблокирован!
+          </div>
+        )}
+
         <div className="result-screen__stats">
           <div className="result-screen__stat">
             <div className="result-screen__stat-value" style={{ color: 'var(--color-correct)' }}>
