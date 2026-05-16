@@ -16,6 +16,7 @@ Type C (rules):   template phrases + number extraction
 
 import json
 import re
+import random
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -198,9 +199,11 @@ def build_type_a_blocks(topic_id: int, questions: list, vocab_entries: list) -> 
             block_vocab |= sign_vocab[best_sign]
             used_signs.add(best_sign)
 
-        # Interleave questions across signs (not all from one sign first)
+        # Interleave questions across signs, then shuffle to break long runs
+        # from dominant signs (e.g. 28/30 questions from one sign)
         interleaved = _interleave([sign_to_qids[s] for s in block_signs])
         final_qids = interleaved[:BLOCK_SIZE]
+        random.shuffle(final_qids)
 
         # Vocab IDs for this block
         block_vocab_ids = sorted(vocab_set_for_questions(
@@ -332,11 +335,12 @@ def build_type_c_blocks(topic_id: int, questions: list, vocab_entries: list) -> 
     prev_vocab: set = set()
 
     # Split questions into chunks of BLOCK_SIZE
-    # Sort by text length ascending (simpler first)
-    sorted_qs = sorted(questions, key=lambda q: len(q['text']))
+    # Shuffle for interleaving (avoid clustering by text source order)
+    shuffled_qs = questions.copy()
+    random.shuffle(shuffled_qs)
 
-    for chunk_start in range(0, len(sorted_qs), BLOCK_SIZE):
-        chunk = sorted_qs[chunk_start:chunk_start + BLOCK_SIZE]
+    for chunk_start in range(0, len(shuffled_qs), BLOCK_SIZE):
+        chunk = shuffled_qs[chunk_start:chunk_start + BLOCK_SIZE]
         if len(chunk) < MIN_BLOCK_SIZE and blocks:
             # Append small tail to last block
             blocks[-1]['question_ids'].extend(q['id'] for q in chunk)
