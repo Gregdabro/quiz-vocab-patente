@@ -158,10 +158,23 @@ export default function useQuiz(topicId, options) {
       setIsFinished(true);
     }
 
-    // Снимаем блокировку через небольшую задержку
-    // чтобы предотвратить дебаунс на уровне UI
-    setTimeout(() => {
+    // Снимаем блокировку + авто-переход к следующему неотвеченному
+    var allAnswered = newResults.length === questions.length;
+    setTimeout(function () {
       answeringRef.current = false;
+      if (!allAnswered) {
+        // Auto-advance через 800мс к следующему вопросу
+        setTimeout(function () {
+          var next = current + 1;
+          while (next < questions.length) {
+            if (!newAnswered.has(questions[next].id)) {
+              setCurrent(next);
+              return;
+            }
+            next++;
+          }
+        }, 800);
+      }
     }, 50);
   }, [questions, current, answered, results, isFinished, isBlockMode, blockId]);
 
