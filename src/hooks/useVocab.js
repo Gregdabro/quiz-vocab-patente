@@ -24,6 +24,38 @@ import { loadBlocks, getBlockProgress } from '../services/blockService.js';
 
 const GLOBAL_TOPIC_ID = 'global';
 
+/**
+ * Преобразует number_rules из блока в карточки-шаблоны.
+ * Контекст с пропуском числа: «Il limite è di ___ km/h»
+ */
+function buildNumberCards(numberRules) {
+  return numberRules.map(function (rule, idx) {
+    var context = rule.context || '';
+    var value = rule.value || '';
+    // Заменяем число в контексте на ___
+    var blanked = context.replace(value, '___');
+    // Если замена не сработала (число в другом формате), ставим ___ в конец
+    if (blanked === context) {
+      blanked = context + ' ___';
+    }
+    return {
+      id: 'n' + (idx + 1),
+      word: blanked,
+      lemma: blanked,
+      translation_ru: value,
+      frequency: 1,
+      sign_images: [],
+      example_question_id: rule.question_id || null,
+      semantic_group: 'numeri_regole',
+      synonyms: [],
+      trap_word: false,
+      is_phrase: true,
+      isNumberCard: true,
+      level: 2,
+    };
+  });
+}
+
 export default function useVocab(topicId, options) {
   var mode = (options && options.mode) || 'block';
   var freeVocabIds = (options && options.vocabIds) || null;
@@ -114,6 +146,13 @@ export default function useVocab(topicId, options) {
             vocab.forEach(function (v) { vocabMap[v.id] = v; });
 
             var sessionCards = dueIds.map(function (id) { return vocabMap[id]; }).filter(Boolean);
+
+            // Number cards for Type C topics (number_rules из блока)
+            if (block.number_rules && block.number_rules.length > 0) {
+              var numberCards = buildNumberCards(block.number_rules);
+              sessionCards = numberCards.concat(sessionCards);
+            }
+
             setCards(sessionCards);
             setBoxStats(getBoxStats(topicId, vocab.map(function (v) { return v.id; })));
             setLoading(false);

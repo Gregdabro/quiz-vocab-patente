@@ -92,15 +92,24 @@ export default function VocabCard(_a) {
 
       <div className="vocab-card__body">
         {/* Метка типа карточки */}
-        {isPhrase && (
+        {card.isNumberCard ? (
+          <span className="vocab-card__type-badge vocab-card__type-badge--number">Числовое правило</span>
+        ) : isPhrase ? (
           <span className="vocab-card__type-badge">Выражение</span>
-        )}
+        ) : null}
 
         {/* Основное слово/фраза на итальянском */}
-        <h2 className="vocab-card__word">{card.word}</h2>
+        <h2 className={'vocab-card__word' + (card.isNumberCard ? ' vocab-card__word--number' : '')}>
+          {card.word}
+        </h2>
 
-        {/* Перевод — скрыт до нажатия «Показать перевод» (errorful generation) */}
-        {revealed && card.translation_ru && (
+        {/* Числовая карточка: показываем пропущенное число */}
+        {card.isNumberCard && revealed && card.translation_ru && (
+          <p className="vocab-card__translation vocab-card__translation--number">{card.translation_ru}</p>
+        )}
+
+        {/* Обычный перевод — скрыт до нажатия «Показать перевод» (errorful generation) */}
+        {!card.isNumberCard && revealed && card.translation_ru && (
           <p className="vocab-card__translation">{card.translation_ru}</p>
         )}
 
@@ -111,30 +120,30 @@ export default function VocabCard(_a) {
           </blockquote>
         )}
 
-        {/* Кнопка раскрытия перевода */}
+        {/* Кнопка раскрытия */}
         {!revealed && card.translation_ru && (
           <button
             className="vocab-card__reveal-btn"
             onClick={function () { setRevealed(true); }}
           >
-            Показать перевод
+            {card.isNumberCard ? 'Показать ответ' : 'Показать перевод'}
           </button>
         )}
 
         {/* Семантическая группа */}
-        {card.semantic_group && card.semantic_group !== 'generale' && (
+        {card.semantic_group && card.semantic_group !== 'generale' && !card.isNumberCard && (
           <span className="vocab-card__group">{card.semantic_group}</span>
         )}
 
         {/* Ловушка — слово, которое часто путают */}
-        {isTrap && !hasSynonyms && (
+        {isTrap && !hasSynonyms && !card.isNumberCard && (
           <div className="vocab-card__trap-notice">
             Внимание: легко перепутать
           </div>
         )}
 
         {/* Синонимы / альтернативные формулировки */}
-        {hasSynonyms && (
+        {hasSynonyms && !card.isNumberCard && (
           <div className="vocab-card__synonyms">
             <span className="vocab-card__synonyms-label">
               Также в вопросах:
