@@ -14,7 +14,7 @@ import { loadTopicQuestions, loadAllQuestions, loadTopicErrorQuestions, loadBloc
 import { getErrorQuestions } from '../services/errorsService.js';
 import { incrementError, decrementError } from '../services/errorsService.js';
 import { saveTestResult } from '../services/progressService.js';
-import { completeBlock as completeBlockService } from '../services/blockService.js';
+import { completeBlock as completeBlockService, loadBlocks } from '../services/blockService.js';
 
 export default function useQuiz(topicId, options) {
   var blockId = (options && options.blockId) || null;
@@ -42,6 +42,8 @@ export default function useQuiz(topicId, options) {
   const isSavedRef = useRef(false);
   // Защита от Race Condition при быстром клике
   const answeringRef = useRef(false);
+  // Реальное количество блоков (загружается для блочного режима)
+  const totalBlocksRef = useRef(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -61,7 +63,16 @@ export default function useQuiz(topicId, options) {
 
     if (isBlockMode) {
       // Блочный режим: конкретные вопросы блока, без shuffle
-      promise = loadBlockQuestions(topicId, blockId);
+      // Параллельно загружаем блоки чтобы знать real totalBlocks
+      promise = Promise.all([
+        loadBlockQuestions(topicId, blockId),
+        loadBlocks(topicId),
+      ]).then(function (result) {
+        var questions = result[0];
+        var blocks = result[1];
+        totalBlocksRef.current = blocks.length;
+        return questions;
+      });
     } else if (topicId === 'all') {
       promise = loadAllQuestions();
     } else if (topicId === 'errors') {
@@ -142,8 +153,7 @@ export default function useQuiz(topicId, options) {
         // Проверяем ≥80% для разблокировки следующего блока
         var passed = correctCount >= Math.ceil(questions.length * 0.8);
         if (passed) {
-          // totalBlocks неизвестен здесь — completeBlockService сам посчитает
-          completeBlockService(topicId, parseInt(blockId, 10), 999);
+          completeBlockService(topicId, parseInt(blockId, 10), totalBlocksRef.current);
         }
         setBlockPassed(passed);
       } else {
@@ -181,7 +191,7 @@ export default function useQuiz(topicId, options) {
       saveTestResult('block:' + topicId, correctCount, questions.length);
       var passed = correctCount >= Math.ceil(questions.length * 0.8);
       if (passed) {
-        completeBlockService(topicId, parseInt(blockId, 10), 999);
+        completeBlockService(topicId, parseInt(blockId, 10), totalBlocksRef.current);
       }
       setBlockPassed(passed);
     } else {

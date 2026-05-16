@@ -119,9 +119,7 @@
 - `try/catch` везде, graceful degradation на `{}` при ошибке парсинга.
 - Ни один компонент не обращается к `localStorage` напрямую — принцип соблюдён.
 
-**Единственная проблема:** В `useQuiz.js` вызов `completeBlockService(topicId, parseInt(blockId, 10), 999)` — передача `999` как `totalBlocks`. Функция `completeBlock` в blockService проверяет `if (nextBlock <= totalBlocks)` перед установкой `current_block = blockId + 1`. Это означает что после завершения последнего блока `current_block` устанавливается на несуществующий блок `N+1`. При следующем открытии `BlockSelectPage` хук `useBlocks` не находит блок с `id = N+1` и откатывается к `blocks[0]` — то есть к первому блоку. Это создаёт **внешне корректное поведение** (первый блок снова активен), но логически неверное: пользователь, завершивший все блоки, видит «Текущий блок: 1» снова.
-
-**Правильное решение:** Передавать реальное количество блоков из `useBlocks` или `loadBlocks`. Либо добавить проверку в `blockService`: если `nextBlock > totalBlocks` — оставлять `current_block` на последнем.
+**Единственная проблема (исправлено 2026-05-16):** ~~В `useQuiz.js` вызов `completeBlockService(topicId, parseInt(blockId, 10), 999)` — магическое число.~~ **RESOLVED:** `useQuiz` теперь загружает блоки через `loadBlocks()` и передаёт реальное `totalBlocks`. `blockService.completeBlock` при `nextBlock > totalBlocks` оставляет `current_block` на последнем блоке и устанавливает `topic_completed: true`.
 
 ### 3.3 Хуки
 
@@ -355,7 +353,7 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 |---|---|---|---|---|
 | 🔴 КРИТИЧНО | `src/data/vocabulary/topic_*_vocab.json` | ~~`translation_ru: null` у 100% слов~~ **RESOLVED 2026-05-14:** Статистическое word alignment из параллельного корпуса + 68 ручных правок. 92.9% заполнено. | RESOLVED (212 артефактов лемматизации — отдельная задача) |
 | 🔴 КРИТИЧНО | `src/pages/HomePage.jsx:49` | `navigate('/quiz/${topic.topic_id}')` вместо `/topic/` | ~~Весь vocab-first флоу недостижим с главной~~ **RESOLVED 2026-05-14:** Добавлена TrainingPage + пункт «Тренировка» в BottomNav. HomePage сохранена для базового квиза. | RESOLVED |
-| 🟠 ВЫСОКОЕ | `src/hooks/useQuiz.js:146,184` | `completeBlockService(topicId, parseInt(blockId, 10), 999)` | После последнего блока `current_block` = несуществующий N+1 | Передавать реальное `totalBlocks` из контекста или загружать в `useQuiz` |
+| 🟠 ВЫСОКОЕ | `src/hooks/useQuiz.js:146,184` | ~~`completeBlockService(..., 999)`~~ **RESOLVED 2026-05-16:** `useQuiz` загружает реальное `totalBlocks` через `loadBlocks()`; `blockService.completeBlock` добавляет `topic_completed: true` при завершении всех блоков | RESOLVED |
 | 🟠 ВЫСОКОЕ | `scripts/generate-blocks.py` | ~~Вопросы в блоке не перемешиваются~~ **RESOLVED 2026-05-16:** `random.shuffle` добавлен для типов A (после interleave) и C (вместо сортировки по длине) | RESOLVED |
 | 🟠 ВЫСОКОЕ | `src/services/blockService.js`, `vocabService.js`, `questionsService.js` | ~~`import(/* @vite-ignore */ ...)`~~ **RESOLVED 2026-05-14:** заменено на `import.meta.glob()` во всех трёх файлах | RESOLVED |
 | 🟡 СРЕДНЕЕ | `src/components/vocab/VocabCard.jsx` | `example_question_id` не используется | Нет примера из реального вопроса | Загрузить вопрос по ID и показать текст |
@@ -481,11 +479,10 @@ BEM-like naming (`block__element--modifier`) последователен. Не�
 - Результат: макс. последовательных одного знака снижен с 26 до 13 (для блока с 28/30 одного знака)
 - Сложность: XS
 
-**2.2 Исправить completeBlock с totalBlocks=999**
+**2.2 Исправить completeBlock с totalBlocks=999** — ✅ RESOLVED 2026-05-16
 - Файлы: `src/hooks/useQuiz.js`, `src/services/blockService.js`
-- Вариант A: в useQuiz загружать блоки темы асинхронно и передавать `blocks.length`
-- Вариант B (проще): в `blockService.completeBlock` — если `nextBlock > totalBlocks` → не менять `current_block`, добавить флаг `topic_completed: true`
-- Сложность: S-M
+- Решение: `useQuiz` загружает блоки через `loadBlocks()` параллельно с вопросами и передаёт `blocks.length` в `completeBlock`. `blockService.completeBlock` при `nextBlock > totalBlocks` оставляет `current_block` на последнем блоке и устанавливает `topic_completed: true`.
+- Сложность: S
 
 **2.3 Добавить `-webkit-sticky` для AppHeader**
 - Файл: `src/styles/layout.css`

@@ -9,7 +9,8 @@
  *   "2": {
  *     current_block: 1,          — ID текущего активного блока
  *     completed_blocks: [1, 2],  — массив ID завершённых блоков
- *     vocab_phase_done: false    — пройдена ли vocab-фаза текущего блока
+ *     vocab_phase_done: false,   — пройдена ли vocab-фаза текущего блока
+ *     topic_completed: false     — все блоки темы завершены
  *   }
  * }
  *
@@ -176,6 +177,10 @@ export function completeBlock(topicId, blockId, totalBlocks) {
   if (nextBlock <= totalBlocks) {
     progress.current_block = nextBlock;
     progress.vocab_phase_done = false;
+  } else {
+    // Все блоки завершены — остаёмся на последнем, помечаем тему завершённой
+    progress.current_block = blockId;
+    progress.topic_completed = true;
   }
 
   all[key] = progress;
