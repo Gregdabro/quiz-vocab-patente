@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useVocab from '../hooks/useVocab';
 import useTopics from '../hooks/useTopics';
@@ -46,6 +46,22 @@ var VocabSessionPage = function () {
     }
   };
 
+  // Для empty-сессий (total=0) добавляем задержку перед показом footer,
+  // чтобы пользователь успел прочитать сообщение «Все слова изучены».
+  var _b = useState(function () {
+    return vocab.total > 0 && vocab.isFinished;
+  });
+  var showFooter = _b[0];
+  var setShowFooter = _b[1];
+
+  useEffect(function () {
+    if (vocab.total === 0 && vocab.isFinished) {
+      var id = setTimeout(function () { setShowFooter(true); }, 1000);
+      return function () { clearTimeout(id); };
+    }
+    setShowFooter(vocab.isFinished);
+  }, [vocab.isFinished, vocab.total]);
+
   var handleDone = function () {
     if (isGlobal) {
       completeOnboarding();
@@ -74,7 +90,7 @@ var VocabSessionPage = function () {
         topicId={topicId}
       />
 
-      {vocab.isFinished && (
+      {showFooter && (
         <div className="vocab-session-page__footer">
           <button className="btn btn-primary" onClick={handleDone}>
             Продолжить
