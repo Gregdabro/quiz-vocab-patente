@@ -81,7 +81,7 @@ var BlockSelectPage = function () {
   };
 
   var handleStartQuiz = function (blockId) {
-    navigate('/quiz/' + topicId, { state: { blockId: blockId } });
+    navigate('/quiz/' + topicId + '/block/' + blockId);
   };
 
   var handleBack = function () { navigate('/'); };
