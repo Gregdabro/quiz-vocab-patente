@@ -105,6 +105,18 @@ def overlap_coefficient(set_a: set, set_b: set) -> float:
     return len(set_a & set_b) / min(len(set_a), len(set_b))
 
 
+def _vocab_frequency_map(vocab_entries: list) -> dict:
+    """Return {vocab_id: frequency} lookup."""
+    return {e['id']: e.get('frequency', 0) for e in vocab_entries}
+
+
+def _limit_block1_new_vocab(new_vocab_ids: list, vocab_freq: dict, max_new: int = 12) -> list:
+    """Limit Block 1 new_vocab_ids to top-N by frequency."""
+    if len(new_vocab_ids) <= max_new:
+        return new_vocab_ids
+    return sorted(new_vocab_ids, key=lambda vid: -vocab_freq.get(vid, 0))[:max_new]
+
+
 # ── Type A: Sign-based blocks ──────────────────────────────────────────────────
 
 def build_type_a_blocks(topic_id: int, questions: list, vocab_entries: list) -> list:
@@ -129,6 +141,7 @@ def build_type_a_blocks(topic_id: int, questions: list, vocab_entries: list) -> 
     q_tokens = {q['id']: tokenize(q['text']) for q in questions}
 
     vocab_idx = vocab_index_by_word(vocab_entries)
+    vocab_freq = _vocab_frequency_map(vocab_entries)
 
     # Vocab set per sign
     sign_vocab = {}
@@ -215,6 +228,10 @@ def build_type_a_blocks(topic_id: int, questions: list, vocab_entries: list) -> 
         for b in blocks:
             prev_vocab.update(b['vocab_ids'])
         new_vocab_ids = sorted(set(block_vocab_ids) - prev_vocab)
+
+        # Limit Block 1 new vocab to top-12 by frequency
+        if block_id == 1:
+            new_vocab_ids = _limit_block1_new_vocab(new_vocab_ids, vocab_freq)
 
         # Overlap score: average pairwise overlap between signs in block
         ov_score = 0.0
@@ -327,6 +344,7 @@ def build_type_c_blocks(topic_id: int, questions: list, vocab_entries: list) -> 
     """Phrase-first blocks for rule-based topics."""
     q_tokens = {q['id']: tokenize(q['text']) for q in questions}
     vocab_idx = vocab_index_by_word(vocab_entries)
+    vocab_freq = _vocab_frequency_map(vocab_entries)
     template_phrases = extract_template_phrases(questions)
     number_rules = extract_number_rules(questions) if topic_id in NUMERIC_TOPICS else []
 
@@ -351,6 +369,10 @@ def build_type_c_blocks(topic_id: int, questions: list, vocab_entries: list) -> 
             set(chunk_qids), q_tokens, vocab_idx
         ))
         new_vocab = sorted(set(chunk_vocab) - prev_vocab)
+
+        # Limit Block 1 new vocab to top-12 by frequency
+        if block_id == 1:
+            new_vocab = _limit_block1_new_vocab(new_vocab, vocab_freq)
 
         # Template phrases for this specific chunk
         chunk_templates = extract_template_phrases(chunk, top_n=5)

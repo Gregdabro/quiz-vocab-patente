@@ -20,6 +20,8 @@ import {
   saveCardResult,
   getBoxStats,
   filterMasteredWords,
+  getCardState,
+  isCardDue,
 } from '../services/vocabService.js';
 import { loadBlocks, getBlockProgress } from '../services/blockService.js';
 
@@ -141,7 +143,21 @@ export default function useVocab(topicId, options) {
 
           return loadTopicVocab(topicId).then(function (vocab) {
             if (cancelled) return;
-            var dueIds = getCardsForSession(topicId, block.vocab_ids, blockNum);
+            // New words for this block (limited to new_vocab_ids)
+            var newIds = block.new_vocab_ids || block.vocab_ids;
+            var newDueIds = getCardsForSession(topicId, newIds, blockNum);
+            // Review candidates: already-seen cards from full vocab that are due
+            var reviewIds = [];
+            for (var j = 0; j < block.vocab_ids.length; j++) {
+              var vid = block.vocab_ids[j];
+              if (newIds.indexOf(vid) === -1) {
+                var state = getCardState(topicId, vid);
+                if (state.last_seen_block !== null && isCardDue(topicId, vid, blockNum)) {
+                  reviewIds.push(vid);
+                }
+              }
+            }
+            var dueIds = newDueIds.concat(reviewIds);
 
             var vocabMap = {};
             vocab.forEach(function (v) { vocabMap[v.id] = v; });

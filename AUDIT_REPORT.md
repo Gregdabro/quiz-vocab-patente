@@ -582,3 +582,4 @@ var handleStartQuiz = function (blockId) {
 | Дата | Шаг | Статус | Описание | Файлы |
 |---|---|---|---|---|
 | 2026-05-28 | P1.1 — blockId URL routing | **DONE** | Заменён `navigate` в `handleStartQuiz`: blockId теперь передаётся через URL (`/quiz/${topicId}/block/${blockId}`), а не через `location.state`. При обновлении страницы blockId сохраняется. | `src/pages/BlockSelectPage.jsx:84` |
+| 2026-05-28 | P1.2 — Block 1 vocab overload | **DONE** | (1) `generate-blocks.py`: добавлен хелпер `_limit_block1_new_vocab` — ограничивает `new_vocab_ids` первого блока топ-12 по frequency. Перегенерированы все 25 `topic_N_blocks.json`. (2) `useVocab.js`: block-режим теперь использует `new_vocab_ids` для новых слов + Leitner-due review из полного `vocab_ids` (исключая never-seen карточки, не попавшие в new_vocab_ids). Block 1 сессия сокращена с ~30 до ~12 карточек. | `scripts/generate-blocks.py`, `src/data/blocks/*.json`, `src/hooks/useVocab.js` |
