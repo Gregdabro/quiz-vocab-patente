@@ -259,7 +259,7 @@ export function filterMasteredWords(topicId, cards) {
         filtered.push(card);
         continue;
       }
-      var lemma = (card.lemma || card.word || '').split(' ')[0];
+      var lemma = card.lemma || card.word || '';
       if (_isMasteredElsewhere(lemma, topicId, lemmaMap, progress)) {
         removedCount++;
       } else {
