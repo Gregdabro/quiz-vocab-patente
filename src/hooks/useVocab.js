@@ -66,7 +66,8 @@ export default function useVocab(topicId, options) {
 
   var [cards, setCards] = useState([]);
   var [currentIndex, setCurrentIndex] = useState(0);
-  var [ratedIndices, setRatedIndices] = useState(function () { return new Set(); });
+  var ratedIndicesRef = useRef(new Set());
+  var [ratedCount, setRatedCount] = useState(0);
   var [loading, setLoading] = useState(true);
   var [error, setError] = useState(null);
   var [boxStats, setBoxStats] = useState({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 });
@@ -85,7 +86,8 @@ export default function useVocab(topicId, options) {
     setError(null);
     setCards([]);
     setCurrentIndex(0);
-    setRatedIndices(new Set());
+    ratedIndicesRef.current = new Set();
+    setRatedCount(0);
     setBoxStats({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 });
 
     function resolve() {
@@ -222,11 +224,12 @@ export default function useVocab(topicId, options) {
       currentBlockRef.current
     );
 
-    // Отметить как оценённую
-    var next = new Set(ratedIndices);
+    // Отметить как оценённую (ref не триггерит пересоздание callback)
+    var next = new Set(ratedIndicesRef.current);
     next.add(currentIndex);
-    setRatedIndices(next);
-  }, [cards, currentIndex, ratedIndices, topicId, mode]);
+    ratedIndicesRef.current = next;
+    setRatedCount(next.size);
+  }, [cards, currentIndex, topicId, mode]);
 
   /**
    * Перейти к карточке по индексу.
@@ -251,7 +254,7 @@ export default function useVocab(topicId, options) {
 
   var currentCard = cards[currentIndex] || null;
   var total = cards.length;
-  var rated = ratedIndices.size;
+  var rated = ratedCount;
   var isFinished = total === 0 || rated >= total;
 
   return {
