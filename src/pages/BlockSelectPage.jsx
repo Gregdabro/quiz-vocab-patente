@@ -315,9 +315,14 @@ var BlockCard = function (props) {
               )}
             </>
           ) : (
-            <button className="block-card__action-btn block-card__action-btn--review" onClick={onStartQuiz}>
-              Повторить
-            </button>
+            <>
+              <button className="block-card__action-btn block-card__action-btn--vocab" onClick={onStartVocab}>
+                Слова
+              </button>
+              <button className="block-card__action-btn block-card__action-btn--review" onClick={onStartQuiz}>
+                Повторить
+              </button>
+            </>
           )}
         </div>
       )}
