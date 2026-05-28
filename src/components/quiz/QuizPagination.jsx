@@ -19,12 +19,13 @@ const QuizPagination = ({
   onFinish,
   isFinished = false
 }) => {
-  const viewportRef = useRef(null);
+  var viewportRef = useRef(null);
+  var finishBtnRef = useRef(null);
 
   // Автоматическая прокрутка к активному вопросу при его смене
-  useEffect(() => {
+  useEffect(function () {
     if (viewportRef.current) {
-      const activeItem = viewportRef.current.children[0].children[current];
+      var activeItem = viewportRef.current.children[0].children[current];
       if (activeItem) {
         activeItem.scrollIntoView({
           behavior: 'smooth',
@@ -34,6 +35,17 @@ const QuizPagination = ({
       }
     }
   }, [current]);
+
+  // Авто-прокрутка к VERIFICA когда все вопросы отвечены
+  useEffect(function () {
+    if (isFinished && finishBtnRef.current) {
+      finishBtnRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, [isFinished]);
 
   return (
     <div className="quiz-pagination-slider" data-no-swipe="true">
@@ -61,9 +73,10 @@ const QuizPagination = ({
             })}
             
             {/* Кнопка "Финиш" (VERIFICA) в конце ленты */}
-            <div 
-              className={`pagination-item pagination-item--finish ${!isFinished ? 'disabled' : ''}`}
-              onClick={() => isFinished && onFinish()}
+            <div
+              ref={finishBtnRef}
+              className={'pagination-item pagination-item--finish' + (!isFinished ? ' disabled' : '')}
+              onClick={function () { isFinished && onFinish(); }}
             >
               VERIFICA
             </div>
