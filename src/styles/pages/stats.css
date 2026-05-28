@@ -1,0 +1,124 @@
+/* === Stats Page === */
+.stats-container {
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+}
+
+.stats-summary {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-6);
+}
+
+.stats-summary__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-4);
+}
+
+/* Grid for summary cards — using margin instead of gap (iOS 12 fix) */
+.stats-summary__grid {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.stats-summary__card {
+  -webkit-flex: 1;
+  flex: 1;
+  min-width: 140px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  color: #fff;
+  text-align: center;
+  margin-right: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+}
+
+.stats-summary__card:last-child {
+  margin-right: 0;
+}
+
+.stats-summary__card-label {
+  font-size: var(--font-size-xs);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stats-summary__card-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.stats-summary__card-total {
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+  font-weight: var(--font-weight-normal);
+}
+
+.stats-topics {
+  margin-bottom: var(--spacing-6);
+}
+
+.stats-topics__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-4);
+}
+
+.stats-topics__list {
+  /* Will contain TopicStatRow components */
+}
+
+.stats-empty {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height) - var(--nav-height) - var(--spacing-8));
+  padding: var(--spacing-4);
+  text-align: center;
+}
+
+.stats-empty__text {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.stats-error {
+  padding: var(--spacing-6) var(--spacing-4);
+  text-align: center;
+  color: var(--color-error);
+  font-size: var(--font-size-base);
+}
+
+/* Responsive: Stack summary cards on small screens */
+@media (max-width: 480px) {
+  .stats-summary__grid {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .stats-summary__card {
+    min-width: auto;
+    margin-right: 0;
+    margin-bottom: var(--spacing-3);
+  }
+
+  .stats-summary__card:last-child {
+    margin-right: 0;
+  }
+}
+

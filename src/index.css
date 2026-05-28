@@ -5,7 +5,13 @@
 @import './styles/global.css';
 @import './styles/layout.css';
 @import './styles/components.css';
-@import './styles/pages.css';
+@import './styles/pages/home.css';
+@import './styles/pages/quiz.css';
+@import './styles/pages/errors.css';
+@import './styles/pages/stats.css';
+@import './styles/pages/blocks.css';
+@import './styles/pages/vocab-dictionary.css';
+@import './styles/pages/accessibility.css';
 
 /* Контейнер приложения */
 #root {

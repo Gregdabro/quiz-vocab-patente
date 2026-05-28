@@ -1,0 +1,345 @@
+/* ============================================================
+   BlockSelectPage (Phase 3.4)
+   ============================================================ */
+
+.block-select-container {
+  padding-top: var(--spacing-4);
+  padding-bottom: calc(var(--nav-height) + var(--spacing-6));
+}
+
+/* Мета-информация */
+.block-select-meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-select-meta__type {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 2px var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: #fff;
+  margin-right: var(--spacing-3);
+}
+
+.block-select-meta__count,
+.block-select-meta__questions {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-right: var(--spacing-4);
+}
+
+/* Кнопки действий текущего блока */
+.block-select-actions {
+  margin-bottom: var(--spacing-6);
+}
+
+.block-select-actions__btn {
+  width: 100%;
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-md);
+}
+
+/* Заголовок списка блоков */
+.block-select-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Состояния загрузки/ошибки/пусто */
+.block-select-loading,
+.block-select-error,
+.block-select-empty {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height) - var(--nav-height) - var(--spacing-8));
+  padding: var(--spacing-6);
+  text-align: center;
+}
+
+.block-select-loading__text,
+.block-select-error__text,
+.block-select-empty__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-4);
+}
+
+.block-select-error__text { color: var(--color-error); }
+
+/* ============================================================
+   BlockCard
+   ============================================================ */
+
+.block-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-5);
+  margin-bottom: var(--spacing-4);
+  border-left: 4px solid var(--color-border);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  -webkit-transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.block-card--current {
+  border-left-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.block-card--completed {
+  border-left-color: var(--color-correct);
+  opacity: 0.85;
+}
+
+.block-card--locked {
+  border-left-color: var(--color-unanswered);
+  opacity: 0.6;
+}
+
+/* Заголовок карточки */
+.block-card__header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.block-card__status {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.block-card__status-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  margin-right: var(--spacing-3);
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.block-card__status-icon--done {
+  background-color: var(--color-correct-bg);
+  color: var(--color-correct);
+}
+
+.block-card__status-icon--current {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  font-size: 18px;
+}
+
+.block-card__status-icon--locked {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.block-card__status-icon--open {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.block-card__number {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.block-card__overlap {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  padding: 2px var(--spacing-2);
+  border-radius: var(--radius-full);
+}
+
+/* Мета */
+.block-card__meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__meta-item {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-right: var(--spacing-4);
+}
+
+.block-card__meta-item--new {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Миниатюры знаков */
+.block-card__signs {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__sign-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  margin-right: var(--spacing-2);
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.block-card__sign-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.block-card__sign-more {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-2);
+}
+
+/* Шаблонные фразы */
+.block-card__phrases {
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__phrase {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.block-card__phrase:last-child {
+  margin-bottom: 0;
+}
+
+/* Числовые правила */
+.block-card__numbers {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-4);
+}
+
+.block-card__number-rule {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  background-color: #dbeafe;
+  color: #1e40af;
+  margin-right: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+}
+
+/* Кнопки действий */
+.block-card__actions {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.block-card__action-btn {
+  -webkit-flex: 1;
+  flex: 1;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  -webkit-transition: opacity var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  margin-right: var(--spacing-3);
+}
+
+.block-card__action-btn:last-child {
+  margin-right: 0;
+}
+
+.block-card__action-btn:active {
+  opacity: 0.7;
+}
+
+.block-card__action-btn--vocab {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  border: 1px solid transparent;
+}
+
+.block-card__action-btn--quiz {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.block-card__action-btn--review {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.block-card__action-btn--disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.block-card__hint {
+  margin: var(--spacing-2) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
