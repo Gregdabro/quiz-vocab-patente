@@ -338,13 +338,20 @@
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-2);
   border-radius: var(--radius-md);
-  font-size: var(--font-size-xs);
+  font-size: 12px;
   font-weight: 500;
   color: var(--color-text-muted);
   transition: color var(--transition-fast), background-color var(--transition-fast);
   -webkit-transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.bottom-nav__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .bottom-nav__item--active {
