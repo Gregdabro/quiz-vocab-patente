@@ -24,25 +24,11 @@ const AppHeader = ({
   };
 
   return (
-    <header className="app-header" style={{
-      height: 'var(--header-height)',
-      backgroundColor: 'var(--color-header-bg)',
-      color: 'var(--color-header-text)',
-      display: 'flex',
-      alignItems: 'center',
-      padding: '0 var(--spacing-4)',
-      top: 0,
-      zIndex: 1000,
-      boxShadow: 'var(--shadow-sm)'
-    }}>
-      <div className="container" style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+    <header className="app-header">
+      <div className="container app-header__container">
+        <div className="app-header__left">
           {showBack && (
-            <button 
+            <button
               className="header-back-btn"
               onClick={handleBack}
               title="Назад"
@@ -50,18 +36,11 @@ const AppHeader = ({
               <Icon name="arrow-left" size={22} />
             </button>
           )}
-          <h1 style={{
-            fontSize: 'var(--font-size-lg)',
-            fontWeight: 'var(--font-weight-bold)',
-            margin: 0,
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis'
-          }}>
+          <h1 className="app-header__title">
             {title}
           </h1>
         </div>
-        
+
         <div className="header-actions">
           {/* Место для дополнительных кнопок, если понадобятся */}
         </div>
