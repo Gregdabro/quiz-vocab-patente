@@ -105,6 +105,11 @@ export default function useVocab(topicId, options) {
         }
 
         if (mode === 'free') {
+          // null = ещё не готово (ждём загрузки vocabData)
+          if (freeVocabIds === null) {
+            setLoading(true);
+            return Promise.resolve();
+          }
           var ids = freeVocabIds || [];
           if (!ids.length) {
             setCards([]);

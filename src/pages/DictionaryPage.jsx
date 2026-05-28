@@ -102,10 +102,8 @@ var DictionaryTopicView = function (props) {
   var sessionKey = _e[0];
   var setSessionKey = _e[1];
 
-  var allVocabIds = useMemo(function () {
-    if (!vocabData) return [];
-    return vocabData.map(function (v) { return v.id; });
-  }, [vocabData]);
+  // null пока vocabData не загружен — useVocab не инициализируется вхолостую
+  var allVocabIds = vocabData ? vocabData.map(function (v) { return v.id; }) : null;
 
   var vocab = useVocab(topicId, { mode: 'free', vocabIds: allVocabIds });
 
