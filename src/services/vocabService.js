@@ -57,7 +57,11 @@ function _save(progress) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   } catch (e) {
-    console.error('vocabService: не удалось сохранить прогресс', e);
+    if (e.name === 'QuotaExceededError') {
+      console.error('vocabService: localStorage quota exceeded — данные не сохранены');
+    } else {
+      console.error('vocabService: не удалось сохранить прогресс', e);
+    }
   }
 }
 

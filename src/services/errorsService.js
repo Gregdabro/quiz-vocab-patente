@@ -117,6 +117,10 @@ function _save(errors) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(errors));
   } catch (e) {
-    console.error('errorsService: не удалось сохранить ошибки', e);
+    if (e.name === 'QuotaExceededError') {
+      console.error('errorsService: localStorage quota exceeded — данные не сохранены');
+    } else {
+      console.error('errorsService: не удалось сохранить ошибки', e);
+    }
   }
 }

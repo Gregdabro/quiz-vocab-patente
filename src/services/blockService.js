@@ -39,7 +39,11 @@ function _save(all) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
   } catch (e) {
-    console.error('blockService: не удалось сохранить прогресс', e);
+    if (e.name === 'QuotaExceededError') {
+      console.error('blockService: localStorage quota exceeded — данные не сохранены');
+    } else {
+      console.error('blockService: не удалось сохранить прогресс', e);
+    }
   }
 }
 

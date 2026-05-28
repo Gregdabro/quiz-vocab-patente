@@ -56,7 +56,11 @@ export function saveTestResult(topicId, correct, total) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   } catch (e) {
-    console.error('progressService: не удалось сохранить прогресс', e);
+    if (e.name === 'QuotaExceededError') {
+      console.error('progressService: localStorage quota exceeded — данные не сохранены');
+    } else {
+      console.error('progressService: не удалось сохранить прогресс', e);
+    }
   }
 }
 
